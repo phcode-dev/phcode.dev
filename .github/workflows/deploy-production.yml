@@ -28,13 +28,10 @@ jobs:
           mkdir -p ./public
           cp -r ./phoenix/dist/. ./public
         shell: bash
-      - name: Creating CNAME for github page custom domain activation
-        run: |
-          echo "phcode.dev" >> ./public/CNAME
-        shell: bash
       - name: Deploy Github Pages
         uses: peaceiris/actions-gh-pages@v3
         if: github.ref == 'refs/heads/main'
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
+          cname: phcode.dev
