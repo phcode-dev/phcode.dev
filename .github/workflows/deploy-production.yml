@@ -17,6 +17,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: phcode-dev/phoenix
+          ref: prod
           path: './phoenix'
       - name: Building phoenix release artifacts
         working-directory: ./phoenix
