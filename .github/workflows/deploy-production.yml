@@ -23,7 +23,7 @@ jobs:
         working-directory: ./phoenix
         run: |
           npm install
-          npm run release
+          npm run release:prod
         shell: bash
 
       - name: Copying release artifacts to public folder
