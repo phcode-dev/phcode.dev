@@ -44,13 +44,19 @@ define(function (require, exports, module) {
         DocumentManager     = brackets.getModule("document/DocumentManager"),
         FileSystem         = brackets.getModule("filesystem/FileSystem");
 
-    function _isPreviewableFile(filePath) {
+    function _getExtension(filePath) {
         let pathSplit = filePath.split('.');
-        let extension = pathSplit && pathSplit.length>1 ? pathSplit[pathSplit.length-1] : null;
-        if(['html', 'htm', 'jpg', 'jpeg', 'png', 'svg', 'pdf'].includes(extension.toLowerCase())){
-            return true;
-        }
-        return false;
+        return pathSplit && pathSplit.length>1 ? pathSplit[pathSplit.length-1] : null;
+    }
+
+    function _isPreviewableFile(filePath) {
+        let extension = _getExtension(filePath);
+        return ['html', 'htm', 'jpg', 'jpeg', 'png', 'svg', 'pdf', 'md', 'markdown'].includes(extension.toLowerCase());
+    }
+
+    function _isMarkdownFile(filePath) {
+        let extension = _getExtension(filePath);
+        return ['md', 'markdown'].includes(extension.toLowerCase());
     }
 
     function getNoPreviewURL(){
@@ -90,11 +96,17 @@ define(function (require, exports, module) {
             const currentFile = currentDocument? currentDocument.file : ProjectManager.getSelectedItem();
             if(currentFile){
                 let fullPath = currentFile.fullPath;
+                let httpFilePath = null;
+                if(fullPath.startsWith("http://") || fullPath.startsWith("https://")){
+                    httpFilePath = fullPath;
+                }
                 if(_isPreviewableFile(fullPath)){
-                    const relativePath = path.relative(projectRoot, fullPath);
+                    const filePath = httpFilePath || path.relative(projectRoot, fullPath);
                     resolve({
-                        URL: `${projectRootUrl}${relativePath}`,
-                        filePath: relativePath
+                        URL: httpFilePath || `${projectRootUrl}${filePath}`,
+                        filePath: filePath,
+                        fullPath: fullPath,
+                        isMarkdownFile: _isMarkdownFile(fullPath)
                     });
                 } else {
                     resolve({}); // not a previewable file
