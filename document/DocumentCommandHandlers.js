@@ -42,7 +42,7 @@ define(function (require, exports, module) {
         InMemoryFile        = require("document/InMemoryFile"),
         StringUtils         = require("utils/StringUtils"),
         Async               = require("utils/Async"),
-        HealthLogger        = require("utils/HealthLogger"),
+        Metrics             = require("utils/Metrics"),
         Dialogs             = require("widgets/Dialogs"),
         DefaultDialogs      = require("widgets/DefaultDialogs"),
         Strings             = require("strings"),
@@ -147,6 +147,97 @@ define(function (require, exports, module) {
      * @type {function}
      */
     var handleFileSaveAs;
+
+    /**
+     * For analytics. Whenever a file is opened call this function. The function will record the number of times
+     * the standard file types have been opened. We only log the standard filetypes
+     * @param {String} filePath          The path of the file to be registered
+     * @param {boolean} addedToWorkingSet set to true if extensions of files added to the
+     *                                    working set needs to be logged
+     */
+    function _fileOpened(filePath, addedToWorkingSet, encoding) {
+        let language = LanguageManager.getLanguageForPath(filePath);
+
+        Metrics.countEvent(Metrics.EVENT_TYPE.EDITOR, "fileEncoding", encoding || 'UTF-8', 1);
+        if(addedToWorkingSet){
+            Metrics.countEvent(Metrics.EVENT_TYPE.EDITOR, "fileAddToWorkingSet",
+                language._name.toLowerCase(), 1);
+        } else {
+            Metrics.countEvent(Metrics.EVENT_TYPE.EDITOR, "fileOpen", language._name.toLowerCase(), 1);
+        }
+    }
+
+    /**
+     * For analytics. Whenever a file is saved call this function.
+     * The function will send the analytics Data
+     * We only log the standard filetypes and fileSize
+     * @param {String} filePath The path of the file to be registered
+     */
+    function _fileSaved(docToSave) {
+        if (!docToSave) {
+            return;
+        }
+        let fileType = docToSave.language ? docToSave.language._name : "";
+        Metrics.countEvent(Metrics.EVENT_TYPE.EDITOR, "fileSave", fileType, 1);
+    }
+
+    /**
+     * For analytics. Whenever a file is closed call this function.
+     * The function will send the analytics Data.
+     * We only log the standard filetypes and fileSize
+     * @param {String} filePath The path of the file to be registered
+     */
+    function _fileClosed(file) {
+        if (!file) {
+            return;
+        }
+        var language = LanguageManager.getLanguageForPath(file._path),
+            size = -1;
+
+        function _sendData(fileSizeInKB) {
+            let subType = "",
+                fileSizeInMB = fileSizeInKB/1024;
+
+            if(fileSizeInMB <= 1) {
+                // We don't log exact file sizes for privacy.
+                if(fileSizeInKB < 0) {
+                    subType = "";
+                }
+                if(fileSizeInKB <= 10) {
+                    subType = "0_to_10KB";
+                } else if (fileSizeInKB <= 50) {
+                    subType = "10_to_50KB";
+                } else if (fileSizeInKB <= 100) {
+                    subType = "50_to_100KB";
+                } else if (fileSizeInKB <= 500) {
+                    subType = "100_to_500KB";
+                } else {
+                    subType = "500KB_to_1MB";
+                }
+
+            } else {
+                if(fileSizeInMB <= 2) {
+                    subType = "1_to_2MB";
+                } else if(fileSizeInMB <= 5) {
+                    subType = "2_to_5MB";
+                } else if(fileSizeInMB <= 10) {
+                    subType = "5_to_10MB";
+                } else {
+                    subType = "Above_10MB";
+                }
+            }
+
+            Metrics.countEvent(Metrics.EVENT_TYPE.EDITOR, "fileClose",
+                `${language._name.toLowerCase()}.${subType}`, 1);
+        }
+
+        file.stat(function(err, fileStat) {
+            if(!err) {
+                size = fileStat.size.valueOf()/1024;
+            }
+            _sendData(size);
+        });
+    }
 
     /**
      * Updates the title bar with new file title or dirty indicator
@@ -326,7 +417,9 @@ define(function (require, exports, module) {
         } else {
             var perfTimerName = PerfUtils.markStart("Open File:\t" + fullPath);
             result.always(function () {
-                PerfUtils.addMeasurement(perfTimerName);
+                let fileOpenTime = PerfUtils.addMeasurement(perfTimerName);
+                Metrics.valueEvent(Metrics.EVENT_TYPE.PERFORMANCE, "fileOpen",
+                    "timeMs", Number(fileOpenTime));
             });
 
             var file = FileSystem.getFileForPath(fullPath);
@@ -475,7 +568,7 @@ define(function (require, exports, module) {
 
         _doOpenWithOptionalPath(fileInfo.path, silent, paneId, commandData && commandData.options)
             .done(function (file) {
-                HealthLogger.fileOpened(file._path, false, file._encoding);
+                _fileOpened(file._path, false, file._encoding);
                 if (!commandData || !commandData.options || !commandData.options.noPaneActivate) {
                     MainViewManager.setActivePaneId(paneId);
                 }
@@ -553,7 +646,7 @@ define(function (require, exports, module) {
         return handleFileOpen(commandData).done(function (file) {
             var paneId = (commandData && commandData.paneId) || MainViewManager.ACTIVE_PANE;
             MainViewManager.addToWorkingSet(paneId, file, commandData.index, commandData.forceRedraw);
-            HealthLogger.fileOpened(file.fullPath, true);
+            _fileOpened(file.fullPath, true);
         });
     }
 
@@ -687,13 +780,11 @@ define(function (require, exports, module) {
         var doc = DocumentManager.createUntitledDocument(_nextUntitledIndexToUse++, defaultExtension);
         MainViewManager._edit(MainViewManager.ACTIVE_PANE, doc);
 
-        HealthLogger.sendAnalyticsData(
-            HealthLogger.commonStrings.USAGE +
-            HealthLogger.commonStrings.FILE_OPEN +
-            HealthLogger.commonStrings.FILE_NEW,
-            HealthLogger.commonStrings.USAGE,
-            HealthLogger.commonStrings.FILE_OPEN,
-            HealthLogger.commonStrings.FILE_NEW
+        Metrics.countEvent(
+            Metrics.EVENT_TYPE.EDITOR,
+            "newUntitledFile",
+            "create",
+            1
         );
 
         return new $.Deferred().resolve(doc).promise();
@@ -703,6 +794,12 @@ define(function (require, exports, module) {
      * Create a new file in the project tree.
      */
     function handleFileNewInProject() {
+        Metrics.countEvent(
+            Metrics.EVENT_TYPE.EDITOR,
+            "newFile",
+            "inProject",
+            1
+        );
         _handleNewItemInProject(false);
     }
 
@@ -710,6 +807,12 @@ define(function (require, exports, module) {
      * Create a new folder in the project tree.
      */
     function handleNewFolderInProject() {
+        Metrics.countEvent(
+            Metrics.EVENT_TYPE.EDITOR,
+            "newFolder",
+            "inProject",
+            1
+        );
         _handleNewItemInProject(true);
     }
 
@@ -795,7 +898,7 @@ define(function (require, exports, module) {
                 .done(function () {
                     docToSave.notifySaved();
                     result.resolve(file);
-                    HealthLogger.fileSaved(docToSave);
+                    _fileSaved(docToSave);
                 })
                 .fail(function (err) {
                     if (err === FileSystemError.CONTENTS_MODIFIED) {
@@ -975,7 +1078,7 @@ define(function (require, exports, module) {
                     } else {
                         openNewFile();
                     }
-                    HealthLogger.fileSaved(doc);
+                    _fileSaved(doc);
                 })
                 .fail(function (error) {
                     _showSaveFileError(error, path)
@@ -1195,7 +1298,7 @@ define(function (require, exports, module) {
         function doClose(file) {
             if (!promptOnly) {
                 MainViewManager._close(paneId, file);
-                HealthLogger.fileClosed(file);
+                _fileClosed(file);
             }
         }
 
