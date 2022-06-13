@@ -27,13 +27,13 @@ define(function (require, exports, module) {
     let Survey       = require("survey"),
         serverSync   = require("serverSync"),
         newProject   = require("new-project"),
-        startupProject   = require("startup-project"),
+        defaultProjects   = require("default-projects"),
         newFeature   = require("newly-added-features"),
         AppInit      = brackets.getModule("utils/AppInit"),
         Strings      = brackets.getModule("strings"),
         Dialogs     = brackets.getModule("widgets/Dialogs"),
         Mustache           = brackets.getModule("thirdparty/mustache/mustache"),
-        unSupportedBrowserTemplate     = require("text!unsupported-browser.html");
+        unSupportedBrowserTemplate     = require("text!html/unsupported-browser.html");
 
     let $icon;
 
@@ -71,7 +71,7 @@ define(function (require, exports, module) {
         _addToolbarIcon();
         Survey.init();
         serverSync.init();
-        startupProject.init();
+        defaultProjects.init();
         newProject.init();
         newFeature.init();
         _detectUnSupportedBrowser();

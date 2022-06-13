@@ -18,8 +18,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
           rel="stylesheet">
     <script src="assets/js/phoenix.js"></script>
+    <script src="assets/js/code-editor.js"></script>
 </head>
-<body id="top" onload="init()">
+<body id="top" onload="init(); initCodeEditor();">
 <div class="code-editor-card">
     <div class="editor-card-top d-flex align-items-center justify-content-between">
         <div class="editor-left d-flex align-items-center">
@@ -27,8 +28,8 @@
                 <img src="images/logo.png" alt="image"/>
             </div>
             <div class="editor-name">
-                <h4>Phoenix Code Editor</h4>
-                <span>Code the web</span>
+                <h4 class="localize">{{APP_NAME}} {{CODE_EDITOR}}</h4>
+                <span class="localize">{{BUILD_THE_WEB}}</span>
             </div>
         </div>
         <div class="editor-right">
@@ -47,637 +48,75 @@
         <div class="project-content-left">
             <div class="project-content-inner">
                 <div class="project-head d-flex align-items-center justify-content-between">
-                    <h4 class="tab-title mb-0">New Project</h4>
-                    <a href="code-editor-new-project.html" class="view-all">View More</a>
+                    <h4 class="tab-title mb-0 localize">{{CMD_PROJECT_NEW}}</h4>
+<!--                    <a href="new-project-search.html" class="view-all">View More</a>-->
                 </div>
                 <ul class="project-type-list d-flex">
                     <li>
-                        <a href="#" class="active">
+                        <a id="newHTMLBtn" href="#" class="tabable" tabindex="1" id="firstInputTabIndex">
                             <img src="images/tab-img2.png" alt="image">
                             <span>HTML5</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="">
-                            <img src="images/tab-img1.png" alt="image">
-                            <span>Javascript</span>
+                        <a id="newBootstrapBlogBtn" href="#" class="tabable" tabindex="2">
+                            <img src="images/Bootstrap_logo.svg" alt="image">
+                            <span class="localize">Bootstrap {{Blog}}</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="">
-                            <img src="images/projec-img1.png" alt="image">
-                            <span>Angular</span>
+                        <a id="exploreBtn" href="#" class="tabable" tabindex="2">
+                            <img src="images/video-game-gamepad.svg" alt="image">
+                            <span class="localize">{{EXPLORE}}</span>
                         </a>
                     </li>
+<!--                    <li>-->
+<!--                        <a href="#" class="">-->
+<!--                            <img src="images/projec-img1.png" alt="image">-->
+<!--                            <span>Angular</span>-->
+<!--                        </a>-->
+<!--                    </li>-->
                 </ul>
                 <div class="project-head d-flex align-items-center justify-content-between">
-                    <h4 class="tab-title mb-0">Import Project</h4>
-                    <a href="#" class="view-all">View More</a>
+                    <h4 class="tab-title mb-0 localize">{{IMPORT_PROJECT}}</h4>
+<!--                    <a href="#" class="view-all">View More</a>-->
                 </div>
                 <ul class="project-type-list d-flex mb-0 pb-0 border-bottom-0">
                     <li>
-                        <a href="#" class="">
+                        <a id="openFolderBtn" href="#" class="tabable" tabindex="3">
                             <img src="images/tab-img6.png" alt="image">
-                            <span>Open Folder</span>
+                            <span class="localize">{{CMD_OPEN_FOLDER}}</span>
                         </a>
                     </li>
                     <li>
-                        <a href="code-editor-new-project-github.html" class="">
+                        <a id="newGitHubProject" href="#" class="tabable" tabindex="4">
                             <img src="images/tab-img7.png" alt="image">
-                            <span>Github Project</span>
+                            <span class="localize">{{GITHUB_PROJECT}}</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="code-editor-new-project-website.html" class="">
-                            <img src="images/tab-img8.png" alt="image">
-                            <span>From Website</span>
-                        </a>
-                    </li>
+<!--                    <li>-->
+<!--                        <a href="new-project-website.html" class="">-->
+<!--                            <img src="images/tab-img8.png" alt="image">-->
+<!--                            <span>From Website</span>-->
+<!--                        </a>-->
+<!--                    </li>-->
                 </ul>
             </div>
         </div>
         <div class="project-content-right">
             <div class="recent-project-card">
                 <div class="recent-head">
-                    <h5>Recent Projects</h5>
+                    <h5 class="localize">{{CMD_TOGGLE_RECENT_PROJECTS}}</h5>
                 </div>
-                <ul class="recent-project-list">
-                    <li>
-                        <a href="#" class="d-flex align-items-center justify-content-between">
-                            <div class="project-name">
-                                Starter Project
-                            </div>
-                            <button class="remove-btn">
+                <ul id="recentProjectList" class="recent-project-list">
 
-                                <svg width="16" height="16" viewBox="0 0 14 14" fill="none"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1.75 3.5H2.91667H12.25" stroke="#D0D0D0" stroke-linecap="round"
-                                          stroke-linejoin="round"/>
-                                    <path d="M4.6665 3.50008V2.33341C4.6665 2.024 4.78942 1.72725 5.00821 1.50846C5.22701 1.28966 5.52375 1.16675 5.83317 1.16675H8.1665C8.47592 1.16675 8.77267 1.28966 8.99146 1.50846C9.21026 1.72725 9.33317 2.024 9.33317 2.33341V3.50008M11.0832 3.50008V11.6667C11.0832 11.9762 10.9603 12.2729 10.7415 12.4917C10.5227 12.7105 10.2259 12.8334 9.91651 12.8334H4.08317C3.77375 12.8334 3.47701 12.7105 3.25821 12.4917C3.03942 12.2729 2.9165 11.9762 2.9165 11.6667V3.50008H11.0832Z"
-                                          stroke="#D0D0D0" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M5.8335 6.41675V9.91675" stroke="#D0D0D0" stroke-linecap="round"
-                                          stroke-linejoin="round"/>
-                                    <path d="M8.1665 6.41675V9.91675" stroke="#D0D0D0" stroke-linecap="round"
-                                          stroke-linejoin="round"/>
-                                </svg>
-
-                            </button>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="d-flex align-items-center justify-content-between">
-                            <div class="project-name">
-                                Very Simple portfolio master
-                            </div>
-                            <button class="remove-btn">
-
-                                <svg width="16" height="16" viewBox="0 0 14 14" fill="none"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1.75 3.5H2.91667H12.25" stroke="#D0D0D0" stroke-linecap="round"
-                                          stroke-linejoin="round"/>
-                                    <path d="M4.6665 3.50008V2.33341C4.6665 2.024 4.78942 1.72725 5.00821 1.50846C5.22701 1.28966 5.52375 1.16675 5.83317 1.16675H8.1665C8.47592 1.16675 8.77267 1.28966 8.99146 1.50846C9.21026 1.72725 9.33317 2.024 9.33317 2.33341V3.50008M11.0832 3.50008V11.6667C11.0832 11.9762 10.9603 12.2729 10.7415 12.4917C10.5227 12.7105 10.2259 12.8334 9.91651 12.8334H4.08317C3.77375 12.8334 3.47701 12.7105 3.25821 12.4917C3.03942 12.2729 2.9165 11.9762 2.9165 11.6667V3.50008H11.0832Z"
-                                          stroke="#D0D0D0" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M5.8335 6.41675V9.91675" stroke="#D0D0D0" stroke-linecap="round"
-                                          stroke-linejoin="round"/>
-                                    <path d="M8.1665 6.41675V9.91675" stroke="#D0D0D0" stroke-linecap="round"
-                                          stroke-linejoin="round"/>
-                                </svg>
-
-                            </button>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="d-flex align-items-center justify-content-between">
-                            <div class="project-name">
-                                My work
-                            </div>
-                            <button class="remove-btn">
-
-                                <svg width="16" height="16" viewBox="0 0 14 14" fill="none"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1.75 3.5H2.91667H12.25" stroke="#D0D0D0" stroke-linecap="round"
-                                          stroke-linejoin="round"/>
-                                    <path d="M4.6665 3.50008V2.33341C4.6665 2.024 4.78942 1.72725 5.00821 1.50846C5.22701 1.28966 5.52375 1.16675 5.83317 1.16675H8.1665C8.47592 1.16675 8.77267 1.28966 8.99146 1.50846C9.21026 1.72725 9.33317 2.024 9.33317 2.33341V3.50008M11.0832 3.50008V11.6667C11.0832 11.9762 10.9603 12.2729 10.7415 12.4917C10.5227 12.7105 10.2259 12.8334 9.91651 12.8334H4.08317C3.77375 12.8334 3.47701 12.7105 3.25821 12.4917C3.03942 12.2729 2.9165 11.9762 2.9165 11.6667V3.50008H11.0832Z"
-                                          stroke="#D0D0D0" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M5.8335 6.41675V9.91675" stroke="#D0D0D0" stroke-linecap="round"
-                                          stroke-linejoin="round"/>
-                                    <path d="M8.1665 6.41675V9.91675" stroke="#D0D0D0" stroke-linecap="round"
-                                          stroke-linejoin="round"/>
-                                </svg>
-
-                            </button>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="d-flex align-items-center justify-content-between">
-                            <div class="project-name">
-                                College Project
-                            </div>
-                            <button class="remove-btn">
-
-                                <svg width="16" height="16" viewBox="0 0 14 14" fill="none"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1.75 3.5H2.91667H12.25" stroke="#D0D0D0" stroke-linecap="round"
-                                          stroke-linejoin="round"/>
-                                    <path d="M4.6665 3.50008V2.33341C4.6665 2.024 4.78942 1.72725 5.00821 1.50846C5.22701 1.28966 5.52375 1.16675 5.83317 1.16675H8.1665C8.47592 1.16675 8.77267 1.28966 8.99146 1.50846C9.21026 1.72725 9.33317 2.024 9.33317 2.33341V3.50008M11.0832 3.50008V11.6667C11.0832 11.9762 10.9603 12.2729 10.7415 12.4917C10.5227 12.7105 10.2259 12.8334 9.91651 12.8334H4.08317C3.77375 12.8334 3.47701 12.7105 3.25821 12.4917C3.03942 12.2729 2.9165 11.9762 2.9165 11.6667V3.50008H11.0832Z"
-                                          stroke="#D0D0D0" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M5.8335 6.41675V9.91675" stroke="#D0D0D0" stroke-linecap="round"
-                                          stroke-linejoin="round"/>
-                                    <path d="M8.1665 6.41675V9.91675" stroke="#D0D0D0" stroke-linecap="round"
-                                          stroke-linejoin="round"/>
-                                </svg>
-
-                            </button>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="d-flex align-items-center justify-content-between">
-                            <div class="project-name">
-                                Work Proj 1
-                            </div>
-                            <button class="remove-btn">
-
-                                <svg width="16" height="16" viewBox="0 0 14 14" fill="none"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1.75 3.5H2.91667H12.25" stroke="#D0D0D0" stroke-linecap="round"
-                                          stroke-linejoin="round"/>
-                                    <path d="M4.6665 3.50008V2.33341C4.6665 2.024 4.78942 1.72725 5.00821 1.50846C5.22701 1.28966 5.52375 1.16675 5.83317 1.16675H8.1665C8.47592 1.16675 8.77267 1.28966 8.99146 1.50846C9.21026 1.72725 9.33317 2.024 9.33317 2.33341V3.50008M11.0832 3.50008V11.6667C11.0832 11.9762 10.9603 12.2729 10.7415 12.4917C10.5227 12.7105 10.2259 12.8334 9.91651 12.8334H4.08317C3.77375 12.8334 3.47701 12.7105 3.25821 12.4917C3.03942 12.2729 2.9165 11.9762 2.9165 11.6667V3.50008H11.0832Z"
-                                          stroke="#D0D0D0" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M5.8335 6.41675V9.91675" stroke="#D0D0D0" stroke-linecap="round"
-                                          stroke-linejoin="round"/>
-                                    <path d="M8.1665 6.41675V9.91675" stroke="#D0D0D0" stroke-linecap="round"
-                                          stroke-linejoin="round"/>
-                                </svg>
-
-                            </button>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="d-flex align-items-center justify-content-between">
-                            <div class="project-name">
-                                College Project
-                            </div>
-                            <button class="remove-btn">
-
-                                <svg width="16" height="16" viewBox="0 0 14 14" fill="none"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1.75 3.5H2.91667H12.25" stroke="#D0D0D0" stroke-linecap="round"
-                                          stroke-linejoin="round"/>
-                                    <path d="M4.6665 3.50008V2.33341C4.6665 2.024 4.78942 1.72725 5.00821 1.50846C5.22701 1.28966 5.52375 1.16675 5.83317 1.16675H8.1665C8.47592 1.16675 8.77267 1.28966 8.99146 1.50846C9.21026 1.72725 9.33317 2.024 9.33317 2.33341V3.50008M11.0832 3.50008V11.6667C11.0832 11.9762 10.9603 12.2729 10.7415 12.4917C10.5227 12.7105 10.2259 12.8334 9.91651 12.8334H4.08317C3.77375 12.8334 3.47701 12.7105 3.25821 12.4917C3.03942 12.2729 2.9165 11.9762 2.9165 11.6667V3.50008H11.0832Z"
-                                          stroke="#D0D0D0" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M5.8335 6.41675V9.91675" stroke="#D0D0D0" stroke-linecap="round"
-                                          stroke-linejoin="round"/>
-                                    <path d="M8.1665 6.41675V9.91675" stroke="#D0D0D0" stroke-linecap="round"
-                                          stroke-linejoin="round"/>
-                                </svg>
-
-                            </button>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="d-flex align-items-center justify-content-between">
-                            <div class="project-name">
-                                Work Proj 1
-                            </div>
-                            <button class="remove-btn">
-
-                                <svg width="16" height="16" viewBox="0 0 14 14" fill="none"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1.75 3.5H2.91667H12.25" stroke="#D0D0D0" stroke-linecap="round"
-                                          stroke-linejoin="round"/>
-                                    <path d="M4.6665 3.50008V2.33341C4.6665 2.024 4.78942 1.72725 5.00821 1.50846C5.22701 1.28966 5.52375 1.16675 5.83317 1.16675H8.1665C8.47592 1.16675 8.77267 1.28966 8.99146 1.50846C9.21026 1.72725 9.33317 2.024 9.33317 2.33341V3.50008M11.0832 3.50008V11.6667C11.0832 11.9762 10.9603 12.2729 10.7415 12.4917C10.5227 12.7105 10.2259 12.8334 9.91651 12.8334H4.08317C3.77375 12.8334 3.47701 12.7105 3.25821 12.4917C3.03942 12.2729 2.9165 11.9762 2.9165 11.6667V3.50008H11.0832Z"
-                                          stroke="#D0D0D0" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M5.8335 6.41675V9.91675" stroke="#D0D0D0" stroke-linecap="round"
-                                          stroke-linejoin="round"/>
-                                    <path d="M8.1665 6.41675V9.91675" stroke="#D0D0D0" stroke-linecap="round"
-                                          stroke-linejoin="round"/>
-                                </svg>
-
-                            </button>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="d-flex align-items-center justify-content-between">
-                            <div class="project-name">
-                                Starter Project
-                            </div>
-                            <button class="remove-btn">
-
-                                <svg width="16" height="16" viewBox="0 0 14 14" fill="none"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1.75 3.5H2.91667H12.25" stroke="#D0D0D0" stroke-linecap="round"
-                                          stroke-linejoin="round"/>
-                                    <path d="M4.6665 3.50008V2.33341C4.6665 2.024 4.78942 1.72725 5.00821 1.50846C5.22701 1.28966 5.52375 1.16675 5.83317 1.16675H8.1665C8.47592 1.16675 8.77267 1.28966 8.99146 1.50846C9.21026 1.72725 9.33317 2.024 9.33317 2.33341V3.50008M11.0832 3.50008V11.6667C11.0832 11.9762 10.9603 12.2729 10.7415 12.4917C10.5227 12.7105 10.2259 12.8334 9.91651 12.8334H4.08317C3.77375 12.8334 3.47701 12.7105 3.25821 12.4917C3.03942 12.2729 2.9165 11.9762 2.9165 11.6667V3.50008H11.0832Z"
-                                          stroke="#D0D0D0" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M5.8335 6.41675V9.91675" stroke="#D0D0D0" stroke-linecap="round"
-                                          stroke-linejoin="round"/>
-                                    <path d="M8.1665 6.41675V9.91675" stroke="#D0D0D0" stroke-linecap="round"
-                                          stroke-linejoin="round"/>
-                                </svg>
-
-                            </button>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="d-flex align-items-center justify-content-between">
-                            <div class="project-name">
-                                Very Simple portfolio master
-                            </div>
-                            <button class="remove-btn">
-
-                                <svg width="16" height="16" viewBox="0 0 14 14" fill="none"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1.75 3.5H2.91667H12.25" stroke="#D0D0D0" stroke-linecap="round"
-                                          stroke-linejoin="round"/>
-                                    <path d="M4.6665 3.50008V2.33341C4.6665 2.024 4.78942 1.72725 5.00821 1.50846C5.22701 1.28966 5.52375 1.16675 5.83317 1.16675H8.1665C8.47592 1.16675 8.77267 1.28966 8.99146 1.50846C9.21026 1.72725 9.33317 2.024 9.33317 2.33341V3.50008M11.0832 3.50008V11.6667C11.0832 11.9762 10.9603 12.2729 10.7415 12.4917C10.5227 12.7105 10.2259 12.8334 9.91651 12.8334H4.08317C3.77375 12.8334 3.47701 12.7105 3.25821 12.4917C3.03942 12.2729 2.9165 11.9762 2.9165 11.6667V3.50008H11.0832Z"
-                                          stroke="#D0D0D0" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M5.8335 6.41675V9.91675" stroke="#D0D0D0" stroke-linecap="round"
-                                          stroke-linejoin="round"/>
-                                    <path d="M8.1665 6.41675V9.91675" stroke="#D0D0D0" stroke-linecap="round"
-                                          stroke-linejoin="round"/>
-                                </svg>
-
-                            </button>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="d-flex align-items-center justify-content-between">
-                            <div class="project-name">
-                                Starter Project
-                            </div>
-                            <button class="remove-btn">
-
-                                <svg width="16" height="16" viewBox="0 0 14 14" fill="none"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1.75 3.5H2.91667H12.25" stroke="#D0D0D0" stroke-linecap="round"
-                                          stroke-linejoin="round"/>
-                                    <path d="M4.6665 3.50008V2.33341C4.6665 2.024 4.78942 1.72725 5.00821 1.50846C5.22701 1.28966 5.52375 1.16675 5.83317 1.16675H8.1665C8.47592 1.16675 8.77267 1.28966 8.99146 1.50846C9.21026 1.72725 9.33317 2.024 9.33317 2.33341V3.50008M11.0832 3.50008V11.6667C11.0832 11.9762 10.9603 12.2729 10.7415 12.4917C10.5227 12.7105 10.2259 12.8334 9.91651 12.8334H4.08317C3.77375 12.8334 3.47701 12.7105 3.25821 12.4917C3.03942 12.2729 2.9165 11.9762 2.9165 11.6667V3.50008H11.0832Z"
-                                          stroke="#D0D0D0" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M5.8335 6.41675V9.91675" stroke="#D0D0D0" stroke-linecap="round"
-                                          stroke-linejoin="round"/>
-                                    <path d="M8.1665 6.41675V9.91675" stroke="#D0D0D0" stroke-linecap="round"
-                                          stroke-linejoin="round"/>
-                                </svg>
-
-                            </button>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="d-flex align-items-center justify-content-between">
-                            <div class="project-name">
-                                Very Simple portfolio master
-                            </div>
-                            <button class="remove-btn">
-
-                                <svg width="16" height="16" viewBox="0 0 14 14" fill="none"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1.75 3.5H2.91667H12.25" stroke="#D0D0D0" stroke-linecap="round"
-                                          stroke-linejoin="round"/>
-                                    <path d="M4.6665 3.50008V2.33341C4.6665 2.024 4.78942 1.72725 5.00821 1.50846C5.22701 1.28966 5.52375 1.16675 5.83317 1.16675H8.1665C8.47592 1.16675 8.77267 1.28966 8.99146 1.50846C9.21026 1.72725 9.33317 2.024 9.33317 2.33341V3.50008M11.0832 3.50008V11.6667C11.0832 11.9762 10.9603 12.2729 10.7415 12.4917C10.5227 12.7105 10.2259 12.8334 9.91651 12.8334H4.08317C3.77375 12.8334 3.47701 12.7105 3.25821 12.4917C3.03942 12.2729 2.9165 11.9762 2.9165 11.6667V3.50008H11.0832Z"
-                                          stroke="#D0D0D0" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M5.8335 6.41675V9.91675" stroke="#D0D0D0" stroke-linecap="round"
-                                          stroke-linejoin="round"/>
-                                    <path d="M8.1665 6.41675V9.91675" stroke="#D0D0D0" stroke-linecap="round"
-                                          stroke-linejoin="round"/>
-                                </svg>
-
-                            </button>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="d-flex align-items-center justify-content-between">
-                            <div class="project-name">
-                                Starter Project
-                            </div>
-                            <button class="remove-btn">
-
-                                <svg width="16" height="16" viewBox="0 0 14 14" fill="none"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1.75 3.5H2.91667H12.25" stroke="#D0D0D0" stroke-linecap="round"
-                                          stroke-linejoin="round"/>
-                                    <path d="M4.6665 3.50008V2.33341C4.6665 2.024 4.78942 1.72725 5.00821 1.50846C5.22701 1.28966 5.52375 1.16675 5.83317 1.16675H8.1665C8.47592 1.16675 8.77267 1.28966 8.99146 1.50846C9.21026 1.72725 9.33317 2.024 9.33317 2.33341V3.50008M11.0832 3.50008V11.6667C11.0832 11.9762 10.9603 12.2729 10.7415 12.4917C10.5227 12.7105 10.2259 12.8334 9.91651 12.8334H4.08317C3.77375 12.8334 3.47701 12.7105 3.25821 12.4917C3.03942 12.2729 2.9165 11.9762 2.9165 11.6667V3.50008H11.0832Z"
-                                          stroke="#D0D0D0" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M5.8335 6.41675V9.91675" stroke="#D0D0D0" stroke-linecap="round"
-                                          stroke-linejoin="round"/>
-                                    <path d="M8.1665 6.41675V9.91675" stroke="#D0D0D0" stroke-linecap="round"
-                                          stroke-linejoin="round"/>
-                                </svg>
-
-                            </button>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="d-flex align-items-center justify-content-between">
-                            <div class="project-name">
-                                College Project
-                            </div>
-                            <button class="remove-btn">
-
-                                <svg width="16" height="16" viewBox="0 0 14 14" fill="none"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1.75 3.5H2.91667H12.25" stroke="#D0D0D0" stroke-linecap="round"
-                                          stroke-linejoin="round"/>
-                                    <path d="M4.6665 3.50008V2.33341C4.6665 2.024 4.78942 1.72725 5.00821 1.50846C5.22701 1.28966 5.52375 1.16675 5.83317 1.16675H8.1665C8.47592 1.16675 8.77267 1.28966 8.99146 1.50846C9.21026 1.72725 9.33317 2.024 9.33317 2.33341V3.50008M11.0832 3.50008V11.6667C11.0832 11.9762 10.9603 12.2729 10.7415 12.4917C10.5227 12.7105 10.2259 12.8334 9.91651 12.8334H4.08317C3.77375 12.8334 3.47701 12.7105 3.25821 12.4917C3.03942 12.2729 2.9165 11.9762 2.9165 11.6667V3.50008H11.0832Z"
-                                          stroke="#D0D0D0" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M5.8335 6.41675V9.91675" stroke="#D0D0D0" stroke-linecap="round"
-                                          stroke-linejoin="round"/>
-                                    <path d="M8.1665 6.41675V9.91675" stroke="#D0D0D0" stroke-linecap="round"
-                                          stroke-linejoin="round"/>
-                                </svg>
-
-                            </button>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="d-flex align-items-center justify-content-between">
-                            <div class="project-name">
-                                Work Proj 1
-                            </div>
-                            <button class="remove-btn">
-
-                                <svg width="16" height="16" viewBox="0 0 14 14" fill="none"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1.75 3.5H2.91667H12.25" stroke="#D0D0D0" stroke-linecap="round"
-                                          stroke-linejoin="round"/>
-                                    <path d="M4.6665 3.50008V2.33341C4.6665 2.024 4.78942 1.72725 5.00821 1.50846C5.22701 1.28966 5.52375 1.16675 5.83317 1.16675H8.1665C8.47592 1.16675 8.77267 1.28966 8.99146 1.50846C9.21026 1.72725 9.33317 2.024 9.33317 2.33341V3.50008M11.0832 3.50008V11.6667C11.0832 11.9762 10.9603 12.2729 10.7415 12.4917C10.5227 12.7105 10.2259 12.8334 9.91651 12.8334H4.08317C3.77375 12.8334 3.47701 12.7105 3.25821 12.4917C3.03942 12.2729 2.9165 11.9762 2.9165 11.6667V3.50008H11.0832Z"
-                                          stroke="#D0D0D0" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M5.8335 6.41675V9.91675" stroke="#D0D0D0" stroke-linecap="round"
-                                          stroke-linejoin="round"/>
-                                    <path d="M8.1665 6.41675V9.91675" stroke="#D0D0D0" stroke-linecap="round"
-                                          stroke-linejoin="round"/>
-                                </svg>
-
-                            </button>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="d-flex align-items-center justify-content-between">
-                            <div class="project-name">
-                                Starter Project
-                            </div>
-                            <button class="remove-btn">
-
-                                <svg width="16" height="16" viewBox="0 0 14 14" fill="none"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1.75 3.5H2.91667H12.25" stroke="#D0D0D0" stroke-linecap="round"
-                                          stroke-linejoin="round"/>
-                                    <path d="M4.6665 3.50008V2.33341C4.6665 2.024 4.78942 1.72725 5.00821 1.50846C5.22701 1.28966 5.52375 1.16675 5.83317 1.16675H8.1665C8.47592 1.16675 8.77267 1.28966 8.99146 1.50846C9.21026 1.72725 9.33317 2.024 9.33317 2.33341V3.50008M11.0832 3.50008V11.6667C11.0832 11.9762 10.9603 12.2729 10.7415 12.4917C10.5227 12.7105 10.2259 12.8334 9.91651 12.8334H4.08317C3.77375 12.8334 3.47701 12.7105 3.25821 12.4917C3.03942 12.2729 2.9165 11.9762 2.9165 11.6667V3.50008H11.0832Z"
-                                          stroke="#D0D0D0" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M5.8335 6.41675V9.91675" stroke="#D0D0D0" stroke-linecap="round"
-                                          stroke-linejoin="round"/>
-                                    <path d="M8.1665 6.41675V9.91675" stroke="#D0D0D0" stroke-linecap="round"
-                                          stroke-linejoin="round"/>
-                                </svg>
-
-                            </button>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="d-flex align-items-center justify-content-between">
-                            <div class="project-name">
-                                Very Simple portfolio master
-                            </div>
-                            <button class="remove-btn">
-
-                                <svg width="16" height="16" viewBox="0 0 14 14" fill="none"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1.75 3.5H2.91667H12.25" stroke="#D0D0D0" stroke-linecap="round"
-                                          stroke-linejoin="round"/>
-                                    <path d="M4.6665 3.50008V2.33341C4.6665 2.024 4.78942 1.72725 5.00821 1.50846C5.22701 1.28966 5.52375 1.16675 5.83317 1.16675H8.1665C8.47592 1.16675 8.77267 1.28966 8.99146 1.50846C9.21026 1.72725 9.33317 2.024 9.33317 2.33341V3.50008M11.0832 3.50008V11.6667C11.0832 11.9762 10.9603 12.2729 10.7415 12.4917C10.5227 12.7105 10.2259 12.8334 9.91651 12.8334H4.08317C3.77375 12.8334 3.47701 12.7105 3.25821 12.4917C3.03942 12.2729 2.9165 11.9762 2.9165 11.6667V3.50008H11.0832Z"
-                                          stroke="#D0D0D0" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M5.8335 6.41675V9.91675" stroke="#D0D0D0" stroke-linecap="round"
-                                          stroke-linejoin="round"/>
-                                    <path d="M8.1665 6.41675V9.91675" stroke="#D0D0D0" stroke-linecap="round"
-                                          stroke-linejoin="round"/>
-                                </svg>
-
-                            </button>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="d-flex align-items-center justify-content-between">
-                            <div class="project-name">
-                                Starter Project
-                            </div>
-                            <button class="remove-btn">
-
-                                <svg width="16" height="16" viewBox="0 0 14 14" fill="none"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1.75 3.5H2.91667H12.25" stroke="#D0D0D0" stroke-linecap="round"
-                                          stroke-linejoin="round"/>
-                                    <path d="M4.6665 3.50008V2.33341C4.6665 2.024 4.78942 1.72725 5.00821 1.50846C5.22701 1.28966 5.52375 1.16675 5.83317 1.16675H8.1665C8.47592 1.16675 8.77267 1.28966 8.99146 1.50846C9.21026 1.72725 9.33317 2.024 9.33317 2.33341V3.50008M11.0832 3.50008V11.6667C11.0832 11.9762 10.9603 12.2729 10.7415 12.4917C10.5227 12.7105 10.2259 12.8334 9.91651 12.8334H4.08317C3.77375 12.8334 3.47701 12.7105 3.25821 12.4917C3.03942 12.2729 2.9165 11.9762 2.9165 11.6667V3.50008H11.0832Z"
-                                          stroke="#D0D0D0" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M5.8335 6.41675V9.91675" stroke="#D0D0D0" stroke-linecap="round"
-                                          stroke-linejoin="round"/>
-                                    <path d="M8.1665 6.41675V9.91675" stroke="#D0D0D0" stroke-linecap="round"
-                                          stroke-linejoin="round"/>
-                                </svg>
-
-                            </button>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="d-flex align-items-center justify-content-between">
-                            <div class="project-name">
-                                Very Simple portfolio master
-                            </div>
-                            <button class="remove-btn">
-
-                                <svg width="16" height="16" viewBox="0 0 14 14" fill="none"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1.75 3.5H2.91667H12.25" stroke="#D0D0D0" stroke-linecap="round"
-                                          stroke-linejoin="round"/>
-                                    <path d="M4.6665 3.50008V2.33341C4.6665 2.024 4.78942 1.72725 5.00821 1.50846C5.22701 1.28966 5.52375 1.16675 5.83317 1.16675H8.1665C8.47592 1.16675 8.77267 1.28966 8.99146 1.50846C9.21026 1.72725 9.33317 2.024 9.33317 2.33341V3.50008M11.0832 3.50008V11.6667C11.0832 11.9762 10.9603 12.2729 10.7415 12.4917C10.5227 12.7105 10.2259 12.8334 9.91651 12.8334H4.08317C3.77375 12.8334 3.47701 12.7105 3.25821 12.4917C3.03942 12.2729 2.9165 11.9762 2.9165 11.6667V3.50008H11.0832Z"
-                                          stroke="#D0D0D0" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M5.8335 6.41675V9.91675" stroke="#D0D0D0" stroke-linecap="round"
-                                          stroke-linejoin="round"/>
-                                    <path d="M8.1665 6.41675V9.91675" stroke="#D0D0D0" stroke-linecap="round"
-                                          stroke-linejoin="round"/>
-                                </svg>
-
-                            </button>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="d-flex align-items-center justify-content-between">
-                            <div class="project-name">
-                                Starter Project
-                            </div>
-                            <button class="remove-btn">
-
-                                <svg width="16" height="16" viewBox="0 0 14 14" fill="none"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1.75 3.5H2.91667H12.25" stroke="#D0D0D0" stroke-linecap="round"
-                                          stroke-linejoin="round"/>
-                                    <path d="M4.6665 3.50008V2.33341C4.6665 2.024 4.78942 1.72725 5.00821 1.50846C5.22701 1.28966 5.52375 1.16675 5.83317 1.16675H8.1665C8.47592 1.16675 8.77267 1.28966 8.99146 1.50846C9.21026 1.72725 9.33317 2.024 9.33317 2.33341V3.50008M11.0832 3.50008V11.6667C11.0832 11.9762 10.9603 12.2729 10.7415 12.4917C10.5227 12.7105 10.2259 12.8334 9.91651 12.8334H4.08317C3.77375 12.8334 3.47701 12.7105 3.25821 12.4917C3.03942 12.2729 2.9165 11.9762 2.9165 11.6667V3.50008H11.0832Z"
-                                          stroke="#D0D0D0" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M5.8335 6.41675V9.91675" stroke="#D0D0D0" stroke-linecap="round"
-                                          stroke-linejoin="round"/>
-                                    <path d="M8.1665 6.41675V9.91675" stroke="#D0D0D0" stroke-linecap="round"
-                                          stroke-linejoin="round"/>
-                                </svg>
-
-                            </button>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="d-flex align-items-center justify-content-between">
-                            <div class="project-name">
-                                College Project
-                            </div>
-                            <button class="remove-btn">
-
-                                <svg width="16" height="16" viewBox="0 0 14 14" fill="none"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1.75 3.5H2.91667H12.25" stroke="#D0D0D0" stroke-linecap="round"
-                                          stroke-linejoin="round"/>
-                                    <path d="M4.6665 3.50008V2.33341C4.6665 2.024 4.78942 1.72725 5.00821 1.50846C5.22701 1.28966 5.52375 1.16675 5.83317 1.16675H8.1665C8.47592 1.16675 8.77267 1.28966 8.99146 1.50846C9.21026 1.72725 9.33317 2.024 9.33317 2.33341V3.50008M11.0832 3.50008V11.6667C11.0832 11.9762 10.9603 12.2729 10.7415 12.4917C10.5227 12.7105 10.2259 12.8334 9.91651 12.8334H4.08317C3.77375 12.8334 3.47701 12.7105 3.25821 12.4917C3.03942 12.2729 2.9165 11.9762 2.9165 11.6667V3.50008H11.0832Z"
-                                          stroke="#D0D0D0" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M5.8335 6.41675V9.91675" stroke="#D0D0D0" stroke-linecap="round"
-                                          stroke-linejoin="round"/>
-                                    <path d="M8.1665 6.41675V9.91675" stroke="#D0D0D0" stroke-linecap="round"
-                                          stroke-linejoin="round"/>
-                                </svg>
-
-                            </button>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="d-flex align-items-center justify-content-between">
-                            <div class="project-name">
-                                Work Proj 1
-                            </div>
-                            <button class="remove-btn">
-
-                                <svg width="16" height="16" viewBox="0 0 14 14" fill="none"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1.75 3.5H2.91667H12.25" stroke="#D0D0D0" stroke-linecap="round"
-                                          stroke-linejoin="round"/>
-                                    <path d="M4.6665 3.50008V2.33341C4.6665 2.024 4.78942 1.72725 5.00821 1.50846C5.22701 1.28966 5.52375 1.16675 5.83317 1.16675H8.1665C8.47592 1.16675 8.77267 1.28966 8.99146 1.50846C9.21026 1.72725 9.33317 2.024 9.33317 2.33341V3.50008M11.0832 3.50008V11.6667C11.0832 11.9762 10.9603 12.2729 10.7415 12.4917C10.5227 12.7105 10.2259 12.8334 9.91651 12.8334H4.08317C3.77375 12.8334 3.47701 12.7105 3.25821 12.4917C3.03942 12.2729 2.9165 11.9762 2.9165 11.6667V3.50008H11.0832Z"
-                                          stroke="#D0D0D0" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M5.8335 6.41675V9.91675" stroke="#D0D0D0" stroke-linecap="round"
-                                          stroke-linejoin="round"/>
-                                    <path d="M8.1665 6.41675V9.91675" stroke="#D0D0D0" stroke-linecap="round"
-                                          stroke-linejoin="round"/>
-                                </svg>
-
-                            </button>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="d-flex align-items-center justify-content-between">
-                            <div class="project-name">
-                                Starter Project
-                            </div>
-                            <button class="remove-btn">
-
-                                <svg width="16" height="16" viewBox="0 0 14 14" fill="none"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1.75 3.5H2.91667H12.25" stroke="#D0D0D0" stroke-linecap="round"
-                                          stroke-linejoin="round"/>
-                                    <path d="M4.6665 3.50008V2.33341C4.6665 2.024 4.78942 1.72725 5.00821 1.50846C5.22701 1.28966 5.52375 1.16675 5.83317 1.16675H8.1665C8.47592 1.16675 8.77267 1.28966 8.99146 1.50846C9.21026 1.72725 9.33317 2.024 9.33317 2.33341V3.50008M11.0832 3.50008V11.6667C11.0832 11.9762 10.9603 12.2729 10.7415 12.4917C10.5227 12.7105 10.2259 12.8334 9.91651 12.8334H4.08317C3.77375 12.8334 3.47701 12.7105 3.25821 12.4917C3.03942 12.2729 2.9165 11.9762 2.9165 11.6667V3.50008H11.0832Z"
-                                          stroke="#D0D0D0" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M5.8335 6.41675V9.91675" stroke="#D0D0D0" stroke-linecap="round"
-                                          stroke-linejoin="round"/>
-                                    <path d="M8.1665 6.41675V9.91675" stroke="#D0D0D0" stroke-linecap="round"
-                                          stroke-linejoin="round"/>
-                                </svg>
-
-                            </button>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="d-flex align-items-center justify-content-between">
-                            <div class="project-name">
-                                Very Simple portfolio master
-                            </div>
-                            <button class="remove-btn">
-
-                                <svg width="16" height="16" viewBox="0 0 14 14" fill="none"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1.75 3.5H2.91667H12.25" stroke="#D0D0D0" stroke-linecap="round"
-                                          stroke-linejoin="round"/>
-                                    <path d="M4.6665 3.50008V2.33341C4.6665 2.024 4.78942 1.72725 5.00821 1.50846C5.22701 1.28966 5.52375 1.16675 5.83317 1.16675H8.1665C8.47592 1.16675 8.77267 1.28966 8.99146 1.50846C9.21026 1.72725 9.33317 2.024 9.33317 2.33341V3.50008M11.0832 3.50008V11.6667C11.0832 11.9762 10.9603 12.2729 10.7415 12.4917C10.5227 12.7105 10.2259 12.8334 9.91651 12.8334H4.08317C3.77375 12.8334 3.47701 12.7105 3.25821 12.4917C3.03942 12.2729 2.9165 11.9762 2.9165 11.6667V3.50008H11.0832Z"
-                                          stroke="#D0D0D0" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M5.8335 6.41675V9.91675" stroke="#D0D0D0" stroke-linecap="round"
-                                          stroke-linejoin="round"/>
-                                    <path d="M8.1665 6.41675V9.91675" stroke="#D0D0D0" stroke-linecap="round"
-                                          stroke-linejoin="round"/>
-                                </svg>
-
-                            </button>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="d-flex align-items-center justify-content-between">
-                            <div class="project-name">
-                                Starter Project
-                            </div>
-                            <button class="remove-btn">
-
-                                <svg width="16" height="16" viewBox="0 0 14 14" fill="none"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1.75 3.5H2.91667H12.25" stroke="#D0D0D0" stroke-linecap="round"
-                                          stroke-linejoin="round"/>
-                                    <path d="M4.6665 3.50008V2.33341C4.6665 2.024 4.78942 1.72725 5.00821 1.50846C5.22701 1.28966 5.52375 1.16675 5.83317 1.16675H8.1665C8.47592 1.16675 8.77267 1.28966 8.99146 1.50846C9.21026 1.72725 9.33317 2.024 9.33317 2.33341V3.50008M11.0832 3.50008V11.6667C11.0832 11.9762 10.9603 12.2729 10.7415 12.4917C10.5227 12.7105 10.2259 12.8334 9.91651 12.8334H4.08317C3.77375 12.8334 3.47701 12.7105 3.25821 12.4917C3.03942 12.2729 2.9165 11.9762 2.9165 11.6667V3.50008H11.0832Z"
-                                          stroke="#D0D0D0" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M5.8335 6.41675V9.91675" stroke="#D0D0D0" stroke-linecap="round"
-                                          stroke-linejoin="round"/>
-                                    <path d="M8.1665 6.41675V9.91675" stroke="#D0D0D0" stroke-linecap="round"
-                                          stroke-linejoin="round"/>
-                                </svg>
-
-                            </button>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="d-flex align-items-center justify-content-between">
-                            <div class="project-name">
-                                Very Simple portfolio master
-                            </div>
-                            <button class="remove-btn">
-
-                                <svg width="16" height="16" viewBox="0 0 14 14" fill="none"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1.75 3.5H2.91667H12.25" stroke="#D0D0D0" stroke-linecap="round"
-                                          stroke-linejoin="round"/>
-                                    <path d="M4.6665 3.50008V2.33341C4.6665 2.024 4.78942 1.72725 5.00821 1.50846C5.22701 1.28966 5.52375 1.16675 5.83317 1.16675H8.1665C8.47592 1.16675 8.77267 1.28966 8.99146 1.50846C9.21026 1.72725 9.33317 2.024 9.33317 2.33341V3.50008M11.0832 3.50008V11.6667C11.0832 11.9762 10.9603 12.2729 10.7415 12.4917C10.5227 12.7105 10.2259 12.8334 9.91651 12.8334H4.08317C3.77375 12.8334 3.47701 12.7105 3.25821 12.4917C3.03942 12.2729 2.9165 11.9762 2.9165 11.6667V3.50008H11.0832Z"
-                                          stroke="#D0D0D0" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M5.8335 6.41675V9.91675" stroke="#D0D0D0" stroke-linecap="round"
-                                          stroke-linejoin="round"/>
-                                    <path d="M8.1665 6.41675V9.91675" stroke="#D0D0D0" stroke-linecap="round"
-                                          stroke-linejoin="round"/>
-                                </svg>
-
-                            </button>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="d-flex align-items-center justify-content-between">
-                            <div class="project-name">
-                                Starter Project
-                            </div>
-                            <button class="remove-btn">
-
-                                <svg width="16" height="16" viewBox="0 0 14 14" fill="none"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1.75 3.5H2.91667H12.25" stroke="#D0D0D0" stroke-linecap="round"
-                                          stroke-linejoin="round"/>
-                                    <path d="M4.6665 3.50008V2.33341C4.6665 2.024 4.78942 1.72725 5.00821 1.50846C5.22701 1.28966 5.52375 1.16675 5.83317 1.16675H8.1665C8.47592 1.16675 8.77267 1.28966 8.99146 1.50846C9.21026 1.72725 9.33317 2.024 9.33317 2.33341V3.50008M11.0832 3.50008V11.6667C11.0832 11.9762 10.9603 12.2729 10.7415 12.4917C10.5227 12.7105 10.2259 12.8334 9.91651 12.8334H4.08317C3.77375 12.8334 3.47701 12.7105 3.25821 12.4917C3.03942 12.2729 2.9165 11.9762 2.9165 11.6667V3.50008H11.0832Z"
-                                          stroke="#D0D0D0" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M5.8335 6.41675V9.91675" stroke="#D0D0D0" stroke-linecap="round"
-                                          stroke-linejoin="round"/>
-                                    <path d="M8.1665 6.41675V9.91675" stroke="#D0D0D0" stroke-linecap="round"
-                                          stroke-linejoin="round"/>
-                                </svg>
-
-                            </button>
-                        </a>
-                    </li>
                 </ul>
             </div>
         </div>
     </div>
+    <!-- focus guard in the end of the form -->
+    <div class="focusguard" id="focusguard-2" tabindex="1000"></div>
+    <!-- Nothing underneath this comment -->
 </div>
 
 <!-- Javascript -->
@@ -687,6 +126,7 @@
 <script src="assets/thirdparty/jquery.easing.min.js"></script>
 <script src="assets/thirdparty/main.js"></script>
 <script src="assets/thirdparty/perfect-scrollbar.jquery.min.js"></script>
+<script src="assets/thirdparty/jquery.tabbable.min.js"></script>
 <!-- Appear js -->
 <script src="assets/thirdparty/appear.min.js"></script>
 </body>

@@ -19,15 +19,63 @@
  *
  */
 
-/**
- *  Utilities functions related to Health Data logging
- */
 /*global gtag, analytics*/
+
+// @INCLUDE_IN_API_DOCS
+/**
+ * The Metrics API can be used to send analytics data to track feature usage in accordance with users privacy settings.
+ *
+ *`Status: Internal - Not to be used by third party extensions.`
+ *
+ * ### Import
+ * ```js
+ * // usage within core:
+ * const Metrics = require("utils/Metrics");
+ *
+ * // usage within default extensions:
+ * const Metrics = brackets.getModule("utils/Metrics");
+ * ```
+ *
+ * @module utils/Metrics
+ */
 define(function (require, exports, module) {
     const MAX_AUDIT_ENTRIES = 3000;
     let initDone = false,
         disabled = false,
         loggedDataForAudit = new Map();
+
+    /**
+     * This section outlines the properties and methods available in this module
+     * @name API
+     */
+
+    /**
+     * The Type of events that can be specified as an `eventType` in the API calls.
+     *
+     * ### Properties
+     * `PLATFORM`, `PROJECT`, `THEMES`, `EXTENSIONS`, `EXTENSIONS`, `UI`, `UI_DIALOG`, `UI_BOTTOM_PANEL`,
+     * `UI_SIDE_PANEL`, `LIVE_PREVIEW`, `CODE_HINTS`, `EDITOR`, `SEARCH`, `SHARING`, `PERFORMANCE`, `NEW_PROJECT`
+     *
+     * @typedef EVENT_TYPE
+     * @type {Object}
+     */
+    const EVENT_TYPE = {
+        PLATFORM: "phoenix.platform",
+        PROJECT: "project",
+        THEMES: "themes",
+        EXTENSIONS: "extensions",
+        UI: "phoenix.UI",
+        UI_DIALOG: "ui-dialog",
+        UI_BOTTOM_PANEL: "ui-bottomPanel",
+        UI_SIDE_PANEL: "ui-sidePanel",
+        LIVE_PREVIEW: "live-preview",
+        CODE_HINTS: "code-hints",
+        EDITOR: "editor",
+        SEARCH: "search",
+        SHARING: "sharing",
+        PERFORMANCE: "performance",
+        NEW_PROJECT: "new-project"
+    };
 
     /**
      * This is so that phoenix can starting as soon as the shims are inited. The events logged before init() will be
@@ -112,7 +160,7 @@ define(function (require, exports, module) {
         if(!count){
             count = 1;
         }
-        let eventAct = `${action}.${category}.${label}`;
+        let eventAct = `${category}.${action}.${label}`;
         gtag('event', eventAct, {
             'event_category': category,
             'event_label': label,
@@ -158,27 +206,38 @@ define(function (require, exports, module) {
 
     /**
      * log a numeric count >=0
-     * @param {string} eventType The kind of Event Type that needs to be logged- should be a js var compatible string
+     * @example <caption>To log that user clicked searchButton 5 times:</caption>
+     * Metrics.countEvent(Metrics.EVENT_TYPE.UI, "searchButton", "click");
+     * Metrics.countEvent(Metrics.EVENT_TYPE.UI, "searchButton", "click", 5);
+     *
+     * @param {EVENT_TYPE|string} eventType The kind of Event Type that needs to be logged- should be a js var compatible string.
+     * Some standard event types are available as `EVENT_TYPE`.
      * @param {string} eventCategory The kind of Event Category that
      * needs to be logged- should be a js var compatible string
      * @param {string} eventSubCategory The kind of Event Sub Category that
      * needs to be logged- should be a js var compatible string
-     * @param {number} count >=0
+     * @param {number} [count=1] >=0 , optional, if not set defaults to 1
+     * @type {function}
      */
-    function countEvent(eventType, eventCategory, eventSubCategory, count) {
+    function countEvent(eventType, eventCategory, eventSubCategory, count= 1) {
         _logEventForAudit(eventType, eventCategory, eventSubCategory, count, AUDIT_TYPE_COUNT);
         _sendToGoogleAnalytics(eventType, eventCategory, eventSubCategory, count);
         _sendToCoreAnalytics(eventType, eventCategory, eventSubCategory, count);
     }
 
     /**
-     * log a numeric count >=0
-     * @param {string} eventType The kind of Event Type that needs to be logged- should be a js var compatible string
+     * log a numeric value (number).
+     * @example <caption>To log that startup time is 200ms:</caption>
+     * Metrics.valueEvent(Metrics.EVENT_TYPE.PERFORMANCE, "startupTime", "ms", 200);
+     *
+     * @param {EVENT_TYPE|string} eventType The kind of Event Type that needs to be logged- should be a js var compatible string.
+     * some standard event types are available as `EVENT_TYPE`.
      * @param {string} eventCategory The kind of Event Category that
      * needs to be logged- should be a js var compatible string
      * @param {string} eventSubCategory The kind of Event Sub Category that
      * needs to be logged- should be a js var compatible string
      * @param {number} value
+     * @type {function}
      */
     function valueEvent(eventType, eventCategory, eventSubCategory, value) {
         _logEventForAudit(eventType, eventCategory, eventSubCategory, value, AUDIT_TYPE_VALUE);
@@ -205,22 +264,7 @@ define(function (require, exports, module) {
     exports.clearAuditData     = clearAuditData;
     exports.countEvent         = countEvent;
     exports.valueEvent         = valueEvent;
-    exports.EVENT_TYPE         = {
-        PLATFORM: "platform",
-        PROJECT: "project",
-        THEMES: "themes",
-        EXTENSIONS: "extensions",
-        UI: "UI",
-        UI_DIALOG: "ui-dialog",
-        UI_BOTTOM_PANEL: "ui-bottomPanel",
-        UI_SIDE_PANEL: "ui-sidePanel",
-        LIVE_PREVIEW: "live-preview",
-        CODE_HINTS: "code-hints",
-        EDITOR: "editor",
-        SEARCH: "search",
-        SHARING: "sharing",
-        PERFORMANCE: "performance"
-    };
+    exports.EVENT_TYPE = EVENT_TYPE;
     exports.AUDIT_TYPE_COUNT = AUDIT_TYPE_COUNT;
     exports.AUDIT_TYPE_VALUE = AUDIT_TYPE_VALUE;
 });
