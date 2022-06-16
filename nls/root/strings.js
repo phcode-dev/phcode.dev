@@ -474,7 +474,7 @@ define({
     "CLOSE": "Close",
     "ABOUT_TEXT_LINE1": "Release {VERSION_MAJOR}.{VERSION_MINOR} {BUILD_TYPE} {VERSION}",
     "ABOUT_TEXT_BUILD_TIMESTAMP": "build timestamp: ",
-    "ABOUT_TEXT_LINE3": "Based on the Brackets Open source software by Adobe: <a href='https://github.com/adobe/brackets/'>https://github.com/adobe/brackets</a> . ",
+    "ABOUT_TEXT_LINE3": "Third Party Libraries that we use - <a href='https://github.com/phcode-dev/phoenix/tree/main/src/thirdparty/licences'> Licences and Attributions</a> . ",
     "ABOUT_TEXT_LINE4": "Documentation and source at <a href='https://github.com/phcode-dev/phoenix/'>https://github.com/phcode-dev/phoenix/</a>",
     "ABOUT_TEXT_LINE5": "Made with \u2764 and JavaScript by:",
     "ABOUT_TEXT_LINE6": "Lots of people (but we're having trouble loading that data right now).",
@@ -948,6 +948,9 @@ define({
     "NEW_HTML": "New HTML Project",
     "LICENSE": "License:",
     "CREDITS": "Credits:",
-    "NEW_PROJECT_NOTIFICATION": "Click this icon to show<br/>the new project dialog.",
-    "DIRECTORY_REPLACE_MESSAGE": "The selected folder <span class='dialog-filename'>{0}</span> is not empty. Are you sure you want to replace the folder contents with the project?"
+    "NEW_PROJECT_NOTIFICATION": "Click this icon to<br/>create a new project. </br> <a href='#' style='float:right;'>ok</a>",
+    "DIRECTORY_REPLACE_MESSAGE": "The selected folder <span class='dialog-filename'>{0}</span> is not empty. Are you sure you want to replace the folder contents with the project?",
+    // Guided tour
+    "GUIDED_FILES_SIDEBAR": "Select an HTML file </br> <a href='#' style='float:right;'>ok</a>",
+    "GUIDED_LIVE_PREVIEW": "Make some code changes and save file to see preview. </br> <a href='#' style='float:right;'>ok</a>"
 });
