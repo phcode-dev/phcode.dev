@@ -269,14 +269,23 @@ define({
      * Keyboard modifiers and special key names
      */
     "KEYBOARD_CTRL": "Ctrl",
+    "KEYBOARD_CTRL_DO_NOT_TRANSLATE": "true",
     "KEYBOARD_SHIFT": "Shift",
+    "KEYBOARD_SHIFT_DO_NOT_TRANSLATE": "true",
     "KEYBOARD_SPACE": "Space",
+    "KEYBOARD_SPACE_DO_NOT_TRANSLATE": "true",
     "KEYBOARD_PAGE_UP": "Page Up",
+    "KEYBOARD_PAGE_UP_DO_NOT_TRANSLATE": "true",
     "KEYBOARD_PAGE_DOWN": "Page Down",
+    "KEYBOARD_PAGE_DOWN_DO_NOT_TRANSLATE": "true",
     "KEYBOARD_HOME": "Home",
+    "KEYBOARD_HOME_DO_NOT_TRANSLATE": "true",
     "KEYBOARD_END": "End",
+    "KEYBOARD_END_DO_NOT_TRANSLATE": "true",
     "KEYBOARD_INSERT": "Insert",
+    "KEYBOARD_INSERT_DO_NOT_TRANSLATE": "true",
     "KEYBOARD_DELETE": "Delete",
+    "KEYBOARD_DELETE_DO_NOT_TRANSLATE": "true",
 
     /**
      * StatusBar strings
@@ -455,7 +464,7 @@ define({
     "CMD_GET_INVOLVED": "Get Involved",
     "CMD_SHOW_EXTENSIONS_FOLDER": "Show Extensions Folder",
     "CMD_HEALTH_DATA_STATISTICS": "Health Report",
-    "CMD_HOMEPAGE": "{APP_TITLE} Homepage",
+    "CMD_HOMEPAGE": "{APP_NAME} Homepage",
     "CMD_TWITTER": "{TWITTER_NAME} on Twitter",
     "CMD_ABOUT": "About {APP_TITLE}",
     "CMD_OPEN_PREFERENCES": "Open Preferences File",
@@ -917,7 +926,7 @@ define({
     "ASSOCIATE_GRAPHICS_FILE_TO_DEFAULT_APP_CNF_MSG": "Following file types have been successfully associated with default applications.<br/>{0} You have the option to change your preference on whether you delete/add new file type associations in brackets.json by going to “Debug->Open Preferences File” menu.",
 
     // Phoenix extension
-    "UNSUPPORTED_BROWSER": "Browser Is Unsupported",
+    "UNSUPPORTED_BROWSER": "Browser Is Not Supported",
     "UNSUPPORTED_BROWSER_OPEN_FOLDER": "Browser does not support Open folder",
     "UNSUPPORTED_BROWSER_MESSAGE_LINE1": "Please use one of the supported browsers below.",
     "UNSUPPORTED_BROWSER_MESSAGE_LINE2": " We are working hard to make Phoenix available in more browsers. You may close this dialogue, but some features in Phoenix won't work in this browser.",
@@ -952,5 +961,6 @@ define({
     "DIRECTORY_REPLACE_MESSAGE": "The selected folder <span class='dialog-filename'>{0}</span> is not empty. Are you sure you want to replace the folder contents with the project?",
     // Guided tour
     "GUIDED_FILES_SIDEBAR": "Select an HTML file </br> <a href='#' style='float:right;'>ok</a>",
-    "GUIDED_LIVE_PREVIEW": "Make some code changes and save file to see preview. </br> <a href='#' style='float:right;'>ok</a>"
+    "GUIDED_LIVE_PREVIEW": "Make some code changes and save file to see preview. </br> <a href='#' style='float:right;'>ok</a>",
+    "TEST_TRANSLATE": "test"
 });
