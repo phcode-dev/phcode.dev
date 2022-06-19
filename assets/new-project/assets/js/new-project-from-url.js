@@ -35,6 +35,8 @@ const LICENSE = params.license;
 const LICENSE_URL = params.licenseURL;
 const CREDITS = params.credits;
 const CREDITS_URL = params.creditsURL;
+const PREVIEW_URL = params.previewURL;
+const BACK_URL = params.backURL;
 
 function _validateProjectLocation() {
     if(!window.showDirectoryPicker){ // fs access apis not present
@@ -74,7 +76,7 @@ function _createProjectClicked() {
             PARAM_SUGGESTED_URL,
             locationInput.fullPath, PARAM_SUGGESTED_NAME, FLATTEN_ZIP_FIRST_LEVEL_DIR)
             .then(()=>{
-                Metrics.countEvent(Metrics.EVENT_TYPE.NEW_PROJECT, "fromURL.Click", "create.success");
+                Metrics.countEvent(Metrics.EVENT_TYPE.NEW_PROJECT, "createProject.Click", "create.success");
                 newProjectExtension.closeDialogue();
             });
     } else {
@@ -82,7 +84,7 @@ function _createProjectClicked() {
             Strings.MISSING_FIELDS,
             Strings.PLEASE_FILL_ALL_REQUIRED);
     }
-    Metrics.countEvent(Metrics.EVENT_TYPE.NEW_PROJECT, "fromURL.btnClick", "create");
+    Metrics.countEvent(Metrics.EVENT_TYPE.NEW_PROJECT, "createProject.Click", "create");
 }
 
 function _showLicensingInfo() {
@@ -108,7 +110,23 @@ function _showLicensingInfo() {
     }
 }
 
+function _showPreview() {
+    if(!PREVIEW_URL){
+        return;
+    }
+    $(document.getElementById("previewBox")).removeClass("forced-hidden");
+    document.getElementById("bigFrame").src = PREVIEW_URL;
+    document.getElementById("littleFrame").src = PREVIEW_URL;
+}
+
+function _setupNavigation() {
+    if(BACK_URL){
+        document.getElementById("backButton").href = BACK_URL;
+    }
+}
+
 function initNewProjectFromURL() {
+    _setupNavigation();
     if(!window.showDirectoryPicker){ // fs access apis not present
         $(document.getElementById("projectLocation")).addClass("forced-hidden");
     } else {
@@ -125,7 +143,9 @@ function initNewProjectFromURL() {
     locationInput.value = Strings.PLEASE_SELECT_A_FOLDER;
     projectNameInput.value = PARAM_SUGGESTED_NAME;
     locationInput.onclick = _selectFolder;
+    Metrics.countEvent(Metrics.EVENT_TYPE.NEW_PROJECT, "ofType", PARAM_SUGGESTED_NAME || 'default');
     _showLicensingInfo();
+    _showPreview();
     _validateProjectLocation();
     _validateSuggestedName();
 }

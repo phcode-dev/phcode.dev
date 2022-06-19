@@ -18,7 +18,7 @@
  *
  */
 
-/*global path, newProjectExtension, recentProjectExtension, Strings, Metrics*/
+/*global path, newProjectExtension, recentProjectExtension, Strings, Metrics,newProjectFromURLScreen, getPhoenixAbsURL*/
 /*eslint no-console: 0*/
 /*eslint strict: ["error", "global"]*/
 /* jshint ignore:start */
@@ -106,51 +106,36 @@ function removeProject(fullPath) {
     event.stopPropagation();
 }
 
-function getPhoenixAbsURL(relativePath) {
-    return `${window.parent.Phoenix.baseURL}${relativePath}`;
-}
-
-function newProject(url, suggestedProjectName, title, license, licenseURL, credits, creditsURL) {
-    let href = `new-project-from-url.html?url=${url}&suggestedName=${suggestedProjectName}&title=${title}`;
-    if(license){
-        href=`${href}&license=${license}`;
-    }
-    if(licenseURL){
-        href=`${href}&licenseURL=${licenseURL}`;
-    }
-    if(credits){
-        href=`${href}&credits=${credits}`;
-    }
-    if(creditsURL){
-        href=`${href}&creditsURL=${creditsURL}`;
-    }
-    window.location.href = href;
-}
-
 function initCodeEditor() {
     document.getElementById("openFolderBtn").onclick = function() {
-        newProjectExtension.openFolder();
         Metrics.countEvent(Metrics.EVENT_TYPE.NEW_PROJECT, "main.Click", "open-folder");
+        newProjectExtension.openFolder();
+    };
+    document.getElementById("viewMore").onclick = function() {
+        Metrics.countEvent(Metrics.EVENT_TYPE.NEW_PROJECT, "main.Click", "viewMore");
+        window.location.href = 'new-project-more.html';
     };
     document.getElementById("newGitHubProject").onclick = function() {
-        window.location.href = 'new-project-github.html';
         Metrics.countEvent(Metrics.EVENT_TYPE.NEW_PROJECT, "main.Click", "github-project");
+        window.location.href = 'new-project-github.html';
     };
     document.getElementById("exploreBtn").onclick = function() {
-        openProject(newProjectExtension.getExploreProjectPath());
         Metrics.countEvent(Metrics.EVENT_TYPE.NEW_PROJECT, "main.Click", "explore");
+        openProject(newProjectExtension.getExploreProjectPath());
     };
     document.getElementById("newBootstrapBlogBtn").onclick = function() {
-        newProject(getPhoenixAbsURL("assets/sample-projects/bootstrap-blog.zip"),
-            "bootstrap-blog", Strings.NEW_BOOTSTRAP_BLOG,
-            "MIT", "https://github.com/twbs/bootstrap/blob/main/LICENSE",
-            "https://getbootstrap.com", "https://getbootstrap.com");
         Metrics.countEvent(Metrics.EVENT_TYPE.NEW_PROJECT, "main.Click", "bootstrap-blog");
+        newProjectFromURLScreen(getPhoenixAbsURL("assets/sample-projects/bootstrap-blog.zip"),
+            "bootstrap-blog", Strings.NEW_BOOTSTRAP_BLOG, {
+                license: "MIT", licenseURL: "https://github.com/twbs/bootstrap/blob/main/LICENSE",
+                credits: "https://getbootstrap.com", creditsURL: "https://getbootstrap.com",
+                previewURL: `${getPhoenixAbsURL("assets/sample-projects/bootstrap-blog/index.html")}`});
     };
     document.getElementById("newHTMLBtn").onclick = function() {
-        newProject(getPhoenixAbsURL("assets/sample-projects/HTML5.zip"),
-            "html project", Strings.NEW_HTML);
         Metrics.countEvent(Metrics.EVENT_TYPE.NEW_PROJECT, "main.Click", "html5");
+        newProjectFromURLScreen(getPhoenixAbsURL("assets/sample-projects/HTML5.zip"),
+            "html project", Strings.NEW_HTML,{
+            previewURL: `${getPhoenixAbsURL("assets/sample-projects/HTML5/index.html")}`});
     };
     _updateProjectCards();
 }
