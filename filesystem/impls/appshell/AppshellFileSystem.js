@@ -100,7 +100,7 @@ define(function (require, exports, module) {
         case "created":
         case "deleted":
             // file/directory was created/deleted; fire change on parent to reload contents
-            _enqueueChange(parentDirPath, null);
+            _enqueueChange(`${parentDirPath}/`, null);
             break;
         default:
             console.error("Unexpected 'change' event:", event);
@@ -207,12 +207,13 @@ define(function (require, exports, module) {
         appshell.fs.showSaveDialog(title, initialPath, proposedNewFilename, _wrap(callback));
     }
 
-    function _createStatObject(isFile, mtime, size, realPath, hash) {
+    function _createStatObject(stats, realPath) {
+        const hash = stats.mtime? stats.mtime.getTime() : null;
         var options = {
-            isFile: isFile,
-            mtime: mtime,
-            size: size,
-            realPath: realPath,
+            isFile: stats.isFile(),
+            mtime: stats.mtime,
+            size: stats.size,
+            realPath: stats.realPath || realPath,
             hash: hash
         };
         return  new FileSystemStats(options);
@@ -233,8 +234,7 @@ define(function (require, exports, module) {
             if (err) {
                 callback(_mapError(err));
             } else {
-                const hash = stats.mtime? stats.mtime.getTime() : null;
-                var fsStats = _createStatObject(stats.isFile(), stats.mtime, stats.size, stats.realPath, hash);
+                var fsStats = _createStatObject(stats, path);
                 callback(null, fsStats);
             }
         });
@@ -264,6 +264,29 @@ define(function (require, exports, module) {
             }
 
             callback(null, true);
+        });
+    }
+
+    /**
+     * Determine whether a file or directory exists at the given path by calling
+     * back asynchronously with either a FileSystemError string or a boolean,
+     * which is true if the file exists and false otherwise. The error will never
+     * be FileSystemError.NOT_FOUND; in that case, there will be no error and the
+     * boolean parameter will be false.
+     *
+     * @param {string} path
+     * @param {function(?string, boolean)} callback
+     */
+    function existsAsync(path) {
+        console.log('exists: ', path);
+        return new Promise(function (resolve, reject) {
+            exists(path, function (err, existStatus) {
+                if (err) {
+                    reject(err);
+                    return;
+                }
+                resolve(existStatus);
+            });
         });
     }
 
@@ -298,9 +321,8 @@ define(function (require, exports, module) {
 
             stats.forEach(function (entryStat) {
                 contents.push(entryStat.name);
-                const hash = entryStat.mtime? entryStat.mtime.getTime() : null;
-                statsObject.push(_createStatObject(entryStat.isFile(), entryStat.mtime, entryStat.size,
-                    entryStat.realPath, hash));
+                let entryPath = `${path}/${entryStat.name}`;
+                statsObject.push(_createStatObject(entryStat, entryPath));
             });
             callback(null, contents, statsObject);
         });
@@ -328,6 +350,31 @@ define(function (require, exports, module) {
                 callback(_mapError(err));
             } else {
                 stat(path, function (err, stat) {
+                    callback(err, stat);
+                });
+            }
+        });
+    }
+
+    /**
+     * copies a file/folder path from src to destination recursively. follows unix copy semantics mostly.
+     * As with unix copy, the destination path may not be exactly the `dst` path provided.
+     * Eg. copy("/a/b", "/a/x") -> will copy to `/a/x/b` if folder `/a/x` exists. If dst `/a/x` not exists,
+     * then copy will honor the given destination `/a/x`
+     *
+     * @param {string} src Absolute path of file or directory to copy
+     * @param {string} dst Absolute path of file or directory destination
+     * @param {function(err, string)} callback Callback with err or stat of copied destination.
+     */
+    function copy(src, dst, callback) {
+        console.log('copy: ', src);
+        src = _normalise_path(src);
+        dst = _normalise_path(dst);
+        appshell.fs.copy(src, dst, function (err, copiedPath) {
+            if (err) {
+                callback(_mapError(err));
+            } else {
+                stat(copiedPath, function (err, stat) {
                     callback(err, stat);
                 });
             }
@@ -575,9 +622,11 @@ define(function (require, exports, module) {
     exports.showOpenDialog  = showOpenDialog;
     exports.showSaveDialog  = showSaveDialog;
     exports.exists          = exists;
+    exports.existsAsync     = existsAsync;
     exports.readdir         = readdir;
     exports.mkdir           = mkdir;
     exports.rename          = rename;
+    exports.copy            = copy;
     exports.stat            = stat;
     exports.readFile        = readFile;
     exports.writeFile       = writeFile;
@@ -587,6 +636,7 @@ define(function (require, exports, module) {
     exports.watchPath       = watchPath;
     exports.unwatchPath     = unwatchPath;
     exports.unwatchAll      = unwatchAll;
+    exports.pathLib         = window.Phoenix.VFS.path;
 
     /**
      * Indicates whether or not recursive watching notifications are supported
