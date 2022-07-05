@@ -1414,15 +1414,6 @@ define(function (require, exports, module) {
     };
 
     /**
-     * paneDestroy event handler
-     */
-    MainViewManager.on("paneDestroy", function (e, paneId) {
-        var view = _views[paneId];
-        delete _views[view.paneId];
-        view.destroy();
-    });
-
-    /**
      * Creates a new WorkingSetView object for the specified pane
      * @param {!jQuery} $container - the WorkingSetView's DOM parent node
      * @param {!string} paneId - the id of the pane the view is being created for
@@ -1438,11 +1429,11 @@ define(function (require, exports, module) {
 
     /**
      * Adds an icon provider. The callback is invoked before each working set item is created, and can
-     * return content to prepend to the item.
+     * return content to prepend to the item if it supports the icon.
      *
      * @param {!function(!{name:string, fullPath:string, isFile:boolean}):?string|jQuery|DOMNode} callback
      * Return a string representing the HTML, a jQuery object or DOM node, or undefined. If undefined,
-     * nothing is prepended to the list item.
+     * nothing is prepended to the list item and the default or an available icon will be used.
      * @param {number} [priority] optional priority. 0 being lowest. The icons with the highest priority wins if there
      * are multiple callback providers attached. icon providers of the same priority first valid response wins.
      */
@@ -1485,6 +1476,11 @@ define(function (require, exports, module) {
 
     AppInit.htmlReady(function () {
         $workingFilesContainer =  $("#working-set-list-container");
+        MainViewManager.on("paneDestroy", function (e, paneId) {
+            var view = _views[paneId];
+            delete _views[view.paneId];
+            view.destroy();
+        });
     });
 
     /*

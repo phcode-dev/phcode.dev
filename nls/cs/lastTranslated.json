@@ -261,6 +261,7 @@
   "CMD_INSTALL_EXTENSION": "Install Extension…",
   "CMD_EXTENSION_MANAGER": "Extension Manager…",
   "CMD_FILE_REFRESH": "Refresh File Tree",
+  "CMD_FILE_SHOW_FOLDERS_FIRST": "Sort Folders First",
   "CMD_QUIT": "Quit",
   "CMD_EXIT": "Exit",
   "EDIT_MENU": "Edit",
@@ -800,5 +801,6 @@
   "WEBPAGE_BOOTSTRAP_EXAMPLES": "Bootstrap Examples",
   "GUIDED_FILES_SIDEBAR": "Select an HTML file </br> <a href='#' style='float:right;'>ok</a>",
   "GUIDED_LIVE_PREVIEW": "Make some code changes and save file to see preview. </br> <a href='#' style='float:right;'>ok</a>",
+  "GUIDED_LIVE_PREVIEW_POPOUT": "Click this button to popout live preview to a new tab. </br> <a href='#' style='float:right;'>ok</a>",
   "TEST_TRANSLATE": "use this to test translations"
 }

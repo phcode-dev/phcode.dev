@@ -282,6 +282,7 @@ define({
   "CMD_INSTALL_EXTENSION": "安裝擴充功能…",
   "CMD_EXTENSION_MANAGER": "擴充功能管理員…",
   "CMD_FILE_REFRESH": "重新整理檔案樹",
+  "CMD_FILE_SHOW_FOLDERS_FIRST": "先排序資料夾",
   "CMD_QUIT": "結束",
   "CMD_EXIT": "結束",
   "EDIT_MENU": "編輯",
@@ -821,5 +822,6 @@ define({
   "WEBPAGE_BOOTSTRAP_EXAMPLES": "引導示例",
   "GUIDED_FILES_SIDEBAR": "選擇一個 HTML 文件</br> <a href='#' style='float:right;'> 確定</a>",
   "GUIDED_LIVE_PREVIEW": "進行一些代碼更改並保存文件以查看預覽。</br><a href='#' style='float:right;'>好</a>",
+  "GUIDED_LIVE_PREVIEW_POPOUT": "按一下此按鈕可將即時預覽快顯至新分頁。</br><a href='#' style='float:right;'>好</a>",
   "TEST_TRANSLATE": "用這個來測試翻譯"
 });

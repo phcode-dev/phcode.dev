@@ -282,6 +282,7 @@ define({
   "CMD_INSTALL_EXTENSION": "Instal Ekstensi…",
   "CMD_EXTENSION_MANAGER": "Pengelola Ekstensi…",
   "CMD_FILE_REFRESH": "Muat Ulang Daftar File",
+  "CMD_FILE_SHOW_FOLDERS_FIRST": "Urutkan Folder Pertama",
   "CMD_QUIT": "Keluar",
   "CMD_EXIT": "Keluar",
   "EDIT_MENU": "Edit",
@@ -821,5 +822,6 @@ define({
   "WEBPAGE_BOOTSTRAP_EXAMPLES": "Bootstrap Contoh",
   "GUIDED_FILES_SIDEBAR": "Pilih file HTML </br> <a href='#' style='float:right;'>ok</a>",
   "GUIDED_LIVE_PREVIEW": "Buat beberapa perubahan kode dan simpan file untuk melihat pratinjau. </br> <a href='#' style='float:right;'>ok</a>",
+  "GUIDED_LIVE_PREVIEW_POPOUT": "Klik tombol ini untuk popout live preview ke tab baru. </br> <a href='#' style='float:right;'>ok</a>",
   "TEST_TRANSLATE": "gunakan ini untuk menguji terjemahan"
 });

@@ -282,6 +282,7 @@ define({
   "CMD_INSTALL_EXTENSION": "Инсталиране на разширение…",
   "CMD_EXTENSION_MANAGER": "Управител на разширения…",
   "CMD_FILE_REFRESH": "Опресняване на дървото от файлове",
+  "CMD_FILE_SHOW_FOLDERS_FIRST": "Първо сортиране на папки",
   "CMD_QUIT": "Изход",
   "CMD_EXIT": "Изход",
   "EDIT_MENU": "Редактиране",
@@ -821,5 +822,6 @@ define({
   "WEBPAGE_BOOTSTRAP_EXAMPLES": "Примери за първоначално зареждане",
   "GUIDED_FILES_SIDEBAR": "Изберете HTML файл </br> <a href='#' style='float:right;'>ОК</a>",
   "GUIDED_LIVE_PREVIEW": "Направете някои промени в кода и запазете файла, за да видите визуализация. </br> <a href='#' style='float:right;'>ОК</a>",
+  "GUIDED_LIVE_PREVIEW_POPOUT": "Щракнете върху този бутон, за да изскачаш визуализация на живо в нов раздел. </br> <a href='#' style='float:right;'>ОК</a>",
   "TEST_TRANSLATE": "използвайте това, за да тествате преводите"
 });

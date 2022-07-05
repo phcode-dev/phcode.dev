@@ -282,6 +282,7 @@ define({
   "CMD_INSTALL_EXTENSION": "Uzantıyı Yükle...",
   "CMD_EXTENSION_MANAGER": "Eklenti Yöneticisi…",
   "CMD_FILE_REFRESH": "Dosya Ağacını Yenile",
+  "CMD_FILE_SHOW_FOLDERS_FIRST": "Önce Klasörleri Sırala",
   "CMD_QUIT": "Çık",
   "CMD_EXIT": "Çıkış",
   "EDIT_MENU": "Düzenle",
@@ -821,5 +822,6 @@ define({
   "WEBPAGE_BOOTSTRAP_EXAMPLES": "Bootstrap Örnekleri",
   "GUIDED_FILES_SIDEBAR": "Bir HTML dosyası seçin </br> <a href='#' style='float:right;'>tamam</a>",
   "GUIDED_LIVE_PREVIEW": "Önizlemeyi görmek için bazı kod değişiklikleri yapın ve dosyayı kaydedin. </br> <a href='#' style='float:right;'>tamam</a>",
+  "GUIDED_LIVE_PREVIEW_POPOUT": "Canlı önizlemeyi yeni bir sekmeye açmak için bu düğmeyi tıklayın. </br> <a href='#' style='float:right;'>tamam</a>",
   "TEST_TRANSLATE": "çevirileri test etmek için bunu kullanın"
 });

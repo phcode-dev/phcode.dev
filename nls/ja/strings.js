@@ -282,6 +282,7 @@ define({
   "CMD_INSTALL_EXTENSION": "拡張機能をインストール…",
   "CMD_EXTENSION_MANAGER": "拡張機能マネージャー…",
   "CMD_FILE_REFRESH": "ファイルツリーを更新",
+  "CMD_FILE_SHOW_FOLDERS_FIRST": "フォルダを最初にソート",
   "CMD_QUIT": "終了する",
   "CMD_EXIT": "終了",
   "EDIT_MENU": "編集",
@@ -821,5 +822,6 @@ define({
   "WEBPAGE_BOOTSTRAP_EXAMPLES": "ブートストラップの例",
   "GUIDED_FILES_SIDEBAR": "HTML ファイルを選択してください</br> <a href='#' style='float:right;'>OK</a>",
   "GUIDED_LIVE_PREVIEW": "コードを変更し、ファイルを保存してプレビューを表示します。</br><a href='#' style='float:right;'>わかった</a>",
+  "GUIDED_LIVE_PREVIEW_POPOUT": "このボタンをクリックすると、新しいタブにライブプレビューが表示されます。</br><a href='#' style='float:right;'>わかりました</a>",
   "TEST_TRANSLATE": "これを使って翻訳をテストする"
 });

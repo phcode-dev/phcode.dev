@@ -282,6 +282,7 @@ define({
   "CMD_INSTALL_EXTENSION": "Встановити розширення…",
   "CMD_EXTENSION_MANAGER": "Менеджер розширень…",
   "CMD_FILE_REFRESH": "Оновити дерево файлів",
+  "CMD_FILE_SHOW_FOLDERS_FIRST": "Спочатку сортувати теки",
   "CMD_QUIT": "Покинути програму",
   "CMD_EXIT": "Вийти",
   "EDIT_MENU": "Змінити",
@@ -821,5 +822,6 @@ define({
   "WEBPAGE_BOOTSTRAP_EXAMPLES": "Приклади початкового завантаження",
   "GUIDED_FILES_SIDEBAR": "Виберіть HTML-файл </br> <a href='#' style='float:right;'>ok</a>",
   "GUIDED_LIVE_PREVIEW": "Зробіть деякі зміни в коді і збережіть файл, щоб побачити попередній перегляд. </br> <a href='#' style='float:right;'>ОК</a>",
+  "GUIDED_LIVE_PREVIEW_POPOUT": "Натисніть цю кнопку, щоб випливати попередній перегляд на новій вкладці. </br> <a href='#' style='float:right;'>гаразд</a>",
   "TEST_TRANSLATE": "використовуйте це для перевірки перекладів"
 });

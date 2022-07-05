@@ -282,6 +282,7 @@ define({
   "CMD_INSTALL_EXTENSION": "Erweiterung installieren…",
   "CMD_EXTENSION_MANAGER": "Erweiterungs-Verwaltung…",
   "CMD_FILE_REFRESH": "Dateibaum neu laden",
+  "CMD_FILE_SHOW_FOLDERS_FIRST": "Ordner zuerst sortieren",
   "CMD_QUIT": "Beenden",
   "CMD_EXIT": "Beenden",
   "EDIT_MENU": "Bearbeiten",
@@ -821,5 +822,6 @@ define({
   "WEBPAGE_BOOTSTRAP_EXAMPLES": "Bootstrap-Beispiele",
   "GUIDED_FILES_SIDEBAR": "Wählen Sie eine HTML-Datei</br> aus <a href='#' style='float:right;'>ok</a>",
   "GUIDED_LIVE_PREVIEW": "Nehmen Sie einige Codeänderungen vor und speichern Sie die Datei, um die Vorschau anzuzeigen </br><a href='#' style='float:right;'>in Ordnung</a>",
+  "GUIDED_LIVE_PREVIEW_POPOUT": "Klicken Sie auf diese Schaltfläche, um die Live-Vorschau auf einer neuen Registerkarte anzuzeigen. </br><a href='#' style='float:right;'>ok</a>",
   "TEST_TRANSLATE": "benutze dies, um Übersetzungen zu testen"
 });

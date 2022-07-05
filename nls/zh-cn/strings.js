@@ -282,6 +282,7 @@ define({
   "CMD_INSTALL_EXTENSION": "安装扩展…",
   "CMD_EXTENSION_MANAGER": "扩展管理器…",
   "CMD_FILE_REFRESH": "刷新文件列表",
+  "CMD_FILE_SHOW_FOLDERS_FIRST": "先对文件夹进行排序",
   "CMD_QUIT": "退出",
   "CMD_EXIT": "退出",
   "EDIT_MENU": "编辑",
@@ -821,5 +822,6 @@ define({
   "WEBPAGE_BOOTSTRAP_EXAMPLES": "引导程序示例",
   "GUIDED_FILES_SIDEBAR": "选择一个 HTML 文件</br><a href='#' style='float:right;'>好的</a>",
   "GUIDED_LIVE_PREVIEW": "进行一些代码更改并保存文件以查看预览。</br><a href='#' style='float:right;'>好的</a>",
+  "GUIDED_LIVE_PREVIEW_POPOUT": "单击此按钮可将实时预览弹出到新选项卡。</br><a href='#' style='float:right;'>好的</a>",
   "TEST_TRANSLATE": "用它来测试翻译"
 });

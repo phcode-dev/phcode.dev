@@ -282,6 +282,7 @@ define({
   "CMD_INSTALL_EXTENSION": "വിപുലീകരണം ഇൻസ്റ്റാൾ ചെയ്യുക...",
   "CMD_EXTENSION_MANAGER": "എക്സ്റ്റൻഷൻ മാനേജർ...",
   "CMD_FILE_REFRESH": "ഫയൽ ട്രീ പുതുക്കുക",
+  "CMD_FILE_SHOW_FOLDERS_FIRST": "ആദ്യം ഫോൾഡറുകൾ അടുക്കുക",
   "CMD_QUIT": "ക്വിറ്റ്",
   "CMD_EXIT": "എക്സിറ്റ്",
   "EDIT_MENU": "എഡിറ്റ്",
@@ -821,5 +822,6 @@ define({
   "WEBPAGE_BOOTSTRAP_EXAMPLES": "ബൂട്ട്സ്ട്രാപ്പ് ഉദാഹരണങ്ങൾ",
   "GUIDED_FILES_SIDEBAR": "<a href='#' style='float:right;'>ശരി</a>ഒരു HTML ഫയൽ തിരഞ്ഞെടുക്കുക </br>",
   "GUIDED_LIVE_PREVIEW": "പ്രിവ്യൂ കാണുന്നതിന് ചില കോഡ് മാറ്റങ്ങൾ വരുത്തി ഫയൽ സംരക്ഷിക്കുക. </br> <a href='#' style='float:right;'>ശരി</a>",
+  "GUIDED_LIVE_PREVIEW_POPOUT": "ഒരു പുതിയ ടാബിലേക്ക് തത്സമയ പ്രിവ്യൂ പോപ്പ് out ട്ട് ചെയ്യുന്നതിന് ഈ ബട്ടൺ ക്ലിക്കുചെയ്യുക. </br> <a href='#' style='float:right;'>ശരി</a>",
   "TEST_TRANSLATE": "വിവർത്തനങ്ങൾ പരീക്ഷിക്കാൻ ഇത് ഉപയോഗിക്കുക"
 });

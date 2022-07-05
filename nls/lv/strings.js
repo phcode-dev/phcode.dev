@@ -282,6 +282,7 @@ define({
   "CMD_INSTALL_EXTENSION": "Instalēt paplašinājumu…",
   "CMD_EXTENSION_MANAGER": "Paplašinājumu pārvaldnieks…",
   "CMD_FILE_REFRESH": "Atsvaidzināt datņu koku",
+  "CMD_FILE_SHOW_FOLDERS_FIRST": "Vispirms kārtot mapes",
   "CMD_QUIT": "Beigt",
   "CMD_EXIT": "Iziet",
   "EDIT_MENU": "Rediģēt",
@@ -821,5 +822,6 @@ define({
   "WEBPAGE_BOOTSTRAP_EXAMPLES": "Sāknēšanas piemēri",
   "GUIDED_FILES_SIDEBAR": "Atlasiet HTML failu </br> <a href='#' style='float:right;'>labi</a>",
   "GUIDED_LIVE_PREVIEW": "Veiciet dažas koda izmaiņas un saglabājiet failu, lai skatītu priekšskatījumu. </br> <a href='#' style='float:right;'>labi</a>",
+  "GUIDED_LIVE_PREVIEW_POPOUT": "Noklikšķiniet uz šīs pogas, lai iznirstošo tiešo priekšskatījumu uz jaunu cilni. </br> <a href='#' style='float:right;'>labi</a>",
   "TEST_TRANSLATE": "izmantot šo, lai pārbaudītu tulkojumus"
 });

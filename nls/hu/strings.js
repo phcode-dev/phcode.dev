@@ -282,6 +282,7 @@ define({
   "CMD_INSTALL_EXTENSION": "Bővítmény Telepítése…",
   "CMD_EXTENSION_MANAGER": "Bővítménykezelő…",
   "CMD_FILE_REFRESH": "Újratöltés",
+  "CMD_FILE_SHOW_FOLDERS_FIRST": "Először rendezze a mappákat",
   "CMD_QUIT": "Bezár",
   "CMD_EXIT": "Kilépés",
   "EDIT_MENU": "Szerkesztés",
@@ -821,5 +822,6 @@ define({
   "WEBPAGE_BOOTSTRAP_EXAMPLES": "Bootstrap példák",
   "GUIDED_FILES_SIDEBAR": "Válasszon egy HTML fájlt </br> <a href='#' style='float:right;'>ok</a>",
   "GUIDED_LIVE_PREVIEW": "Végezzen el néhány kódmódosítást, és mentse a fájlt az előnézet megtekintéséhez. </br> <a href='#' style='float:right;'>rendben</a>",
+  "GUIDED_LIVE_PREVIEW_POPOUT": "Kattintson erre a gombra az élő előnézet új lapra történő megjelenítéséhez. </br> <a href='#' style='float:right;'>rendben</a>",
   "TEST_TRANSLATE": "használja ezt a fordítások teszteléséhez"
 });

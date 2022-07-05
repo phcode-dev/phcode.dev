@@ -282,6 +282,7 @@ define({
   "CMD_INSTALL_EXTENSION": "Instalează extensia…",
   "CMD_EXTENSION_MANAGER": "Managerul de extensii…",
   "CMD_FILE_REFRESH": "Actualizează arborele de fișiere",
+  "CMD_FILE_SHOW_FOLDERS_FIRST": "Sortează folderele",
   "CMD_QUIT": "Ieșire",
   "CMD_EXIT": "Ieșire",
   "EDIT_MENU": "Editare",
@@ -821,5 +822,6 @@ define({
   "WEBPAGE_BOOTSTRAP_EXAMPLES": "Exemple de bootstrap",
   "GUIDED_FILES_SIDEBAR": "Selectați un fișier HTML </br> <a href='#' style='float:right;'>ok</a>",
   "GUIDED_LIVE_PREVIEW": "Efectuați unele modificări de cod și salvați fișierul pentru a vedea previzualizarea. </br> <a href='#' style='float:right;'>O.K</a>",
+  "GUIDED_LIVE_PREVIEW_POPOUT": "Faceți clic pe acest buton pentru a popuut previzualizare live la o filă nouă. </br> <a href='#' style='float:right;'>O.K</a>",
   "TEST_TRANSLATE": "utilizați acest lucru pentru a testa traducerile"
 });

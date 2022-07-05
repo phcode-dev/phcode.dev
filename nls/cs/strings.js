@@ -282,6 +282,7 @@ define({
   "CMD_INSTALL_EXTENSION": "Instalovat doplňky…",
   "CMD_EXTENSION_MANAGER": "Správce doplňků…",
   "CMD_FILE_REFRESH": "Obnovit",
+  "CMD_FILE_SHOW_FOLDERS_FIRST": "Nejprve seřadit složky",
   "CMD_QUIT": "Konec",
   "CMD_EXIT": "Konec",
   "EDIT_MENU": "Úpravy",
@@ -821,5 +822,6 @@ define({
   "WEBPAGE_BOOTSTRAP_EXAMPLES": "Příklady bootstrapu",
   "GUIDED_FILES_SIDEBAR": "Vyberte soubor HTML </br> <a href='#' style='float:right;'>ok</a>",
   "GUIDED_LIVE_PREVIEW": "Proveďte některé změny kódu a uložte soubor, abyste viděli náhled. </br> <a href='#' style='float:right;'>ok</a>",
+  "GUIDED_LIVE_PREVIEW_POPOUT": "Kliknutím na toto tlačítko zobrazíte živý náhled na novou kartu. </br> <a href='#' style='float:right;'>ok</a>",
   "TEST_TRANSLATE": "použijte k testování překladů"
 });

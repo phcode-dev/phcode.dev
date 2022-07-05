@@ -71,6 +71,7 @@ define(function (require, exports, module) {
         FileSyncManager     = require("project/FileSyncManager"),
         ProjectModel        = require("project/ProjectModel"),
         FileTreeView        = require("project/FileTreeView"),
+        WorkingSetView      = require("project/WorkingSetView"),
         ViewUtils           = require("utils/ViewUtils"),
         Metrics             = require("utils/Metrics");
 
@@ -1095,6 +1096,11 @@ define(function (require, exports, module) {
         return new $.Deferred().resolve().promise();
     };
 
+    function _showFolderFirst() {
+        const newPref = !PreferencesManager.get(SORT_DIRECTORIES_FIRST);
+        PreferencesManager.set(SORT_DIRECTORIES_FIRST, newPref);
+    }
+
     refreshFileTree = _.debounce(refreshFileTree, _refreshDelay);
 
     /**
@@ -1574,12 +1580,16 @@ define(function (require, exports, module) {
     CommandManager.register(Strings.CMD_FILE_DUPLICATE, Commands.FILE_DUPLICATE, _duplicateFileCMD);
 
     // Define the preference to decide how to sort the Project Tree files
-    PreferencesManager.definePreference(SORT_DIRECTORIES_FIRST, "boolean", brackets.platform !== "mac", {
+    PreferencesManager.definePreference(SORT_DIRECTORIES_FIRST, "boolean", true, {
         description: Strings.DESCRIPTION_SORT_DIRECTORIES_FIRST
     })
         .on("change", function () {
-            actionCreator.setSortDirectoriesFirst(PreferencesManager.get(SORT_DIRECTORIES_FIRST));
+            let sortPref = PreferencesManager.get(SORT_DIRECTORIES_FIRST);
+            actionCreator.setSortDirectoriesFirst(sortPref);
+            CommandManager.get(Commands.FILE_SHOW_FOLDERS_FIRST).setChecked(sortPref);
         });
+    CommandManager.register(Strings.CMD_FILE_SHOW_FOLDERS_FIRST, Commands.FILE_SHOW_FOLDERS_FIRST, _showFolderFirst);
+    CommandManager.get(Commands.FILE_SHOW_FOLDERS_FIRST).setChecked(PreferencesManager.get(SORT_DIRECTORIES_FIRST));
 
     actionCreator.setSortDirectoriesFirst(PreferencesManager.get(SORT_DIRECTORIES_FIRST));
 
@@ -1689,33 +1699,32 @@ define(function (require, exports, module) {
     }
 
     /**
-     * Adds an icon provider. The callback is invoked before each tree item is rendered, and can
-     * return content to prepend to the item.
+     * Adds an icon provider. The callback is invoked before each working set item is created, and can
+     * return content to prepend to the item if it supports the icon.
      *
-     * @param {!function(!{name:string, fullPath:string, isFile:boolean}):?string|jQuery|DOMNode|Preact.DOM.ins} callback
-     * * `name`: the file or directory name
-     * * `fullPath`: full path to the file or directory
-     * * `isFile`: true if it's a file, false if it's a directory
-     * Return a string of HTML text, a Preact.DOM.ins instance, a jQuery object, or a DOM node; or undefined
-     * to prepend nothing.
-     * @param {number} [priority] optional priority. 0 being lowest. The class with the highest priority wins if there
-     * are multiple callback responses. class providers of the same priority will be appended.
+     * @param {!function(!{name:string, fullPath:string, isFile:boolean}):?string|jQuery|DOMNode} callback
+     * Return a string representing the HTML, a jQuery object or DOM node, or undefined. If undefined,
+     * nothing is prepended to the list item and the default or an available icon will be used.
+     * @param {number} [priority] optional priority. 0 being lowest. The icons with the highest priority wins if there
+     * are multiple callback providers attached. icon providers of the same priority first valid response wins.
      */
     function addIconProvider(callback, priority= 0) {
+        WorkingSetView.addIconProvider(callback, priority);
         return FileTreeView.addIconProvider(callback, priority);
     }
 
     /**
-     * Adds a CSS class provider, invoked before each tree item is rendered.
+     * Adds a CSS class provider, invoked before each working set item is created or updated. When called
+     * to update an existing item, all previously applied classes have been cleared.
      *
      * @param {!function(!{name:string, fullPath:string, isFile:boolean}):?string} callback
-     * * `name`: the file or directory name
-     * * `fullPath`: full path to the file or directory
-     * * `isFile`: true if it's a file, false if it's a directory
      * Return a string containing space-separated CSS class(es) to add, or undefined to leave CSS unchanged.
+     * @param {number} [priority] optional priority. 0 being lowest. The class with the highest priority wins if there
+     * are multiple callback classes attached. class providers of the same priority will be appended.
      */
-    function addClassesProvider(callback) {
-        return FileTreeView.addClassesProvider(callback);
+    function addClassesProvider(callback, priority) {
+        WorkingSetView.addClassProvider(callback, priority);
+        return FileTreeView.addClassesProvider(callback, priority);
     }
 
     /**

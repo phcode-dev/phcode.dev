@@ -282,6 +282,7 @@ define({
   "CMD_INSTALL_EXTENSION": "Asenna laajennus…",
   "CMD_EXTENSION_MANAGER": "Laajennusten hallinta…",
   "CMD_FILE_REFRESH": "Päivitä tiedostopuu",
+  "CMD_FILE_SHOW_FOLDERS_FIRST": "Lajittele kansiot ensin",
   "CMD_QUIT": "Lopeta",
   "CMD_EXIT": "Lopeta",
   "EDIT_MENU": "Muokkaa",
@@ -821,5 +822,6 @@ define({
   "WEBPAGE_BOOTSTRAP_EXAMPLES": "Bootstrap-esimerkkejä",
   "GUIDED_FILES_SIDEBAR": "Valitse HTML-tiedosto </br> <a href='#' style='float:right;'>ok</a>",
   "GUIDED_LIVE_PREVIEW": "Tee joitain koodimuutoksia ja tallenna tiedosto nähdäksesi esikatselun. </br> <a href='#' style='float:right;'>ok</a>",
+  "GUIDED_LIVE_PREVIEW_POPOUT": "Napsauta tätä painiketta ponnahtaaksesi live-esikatselun uuteen välilehteen. </br> <a href='#' style='float:right;'>ok</a>",
   "TEST_TRANSLATE": "Käytä tätä käännösten testaamiseen"
 });

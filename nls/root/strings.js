@@ -369,6 +369,7 @@ define({
     "CMD_INSTALL_EXTENSION": "Install Extension\u2026",
     "CMD_EXTENSION_MANAGER": "Extension Manager\u2026",
     "CMD_FILE_REFRESH": "Refresh File Tree",
+    "CMD_FILE_SHOW_FOLDERS_FIRST": "Sort Folders First",
     "CMD_QUIT": "Quit",
     // Used in native File menu on Windows
     "CMD_EXIT": "Exit",
@@ -990,5 +991,6 @@ define({
     // Guided tour
     "GUIDED_FILES_SIDEBAR": "Select an HTML file </br> <a href='#' style='float:right;'>ok</a>",
     "GUIDED_LIVE_PREVIEW": "Make some code changes and save file to see preview. </br> <a href='#' style='float:right;'>ok</a>",
+    "GUIDED_LIVE_PREVIEW_POPOUT": "Click this button to popout live preview to a new tab. </br> <a href='#' style='float:right;'>ok</a>",
     "TEST_TRANSLATE": "use this to test translations"
 });

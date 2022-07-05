@@ -282,6 +282,7 @@ define({
   "CMD_INSTALL_EXTENSION": "Zainstaluj rozszerzenie…",
   "CMD_EXTENSION_MANAGER": "Menedżer rozszerzeń…",
   "CMD_FILE_REFRESH": "Odśwież",
+  "CMD_FILE_SHOW_FOLDERS_FIRST": "Najpierw sortuj foldery",
   "CMD_QUIT": "Wyjdź",
   "CMD_EXIT": "Wyjdź",
   "EDIT_MENU": "Edytuj",
@@ -821,5 +822,6 @@ define({
   "WEBPAGE_BOOTSTRAP_EXAMPLES": "Przykłady Bootstrap",
   "GUIDED_FILES_SIDEBAR": "Wybierz plik HTML </br> <a href='#' style='float:right;'>ok</a>",
   "GUIDED_LIVE_PREVIEW": "Wprowadź pewne zmiany kodu i zapisz plik, aby zobaczyć podgląd. </br> <a href='#' style='float:right;'>ok</a>",
+  "GUIDED_LIVE_PREVIEW_POPOUT": "Kliknij ten przycisk, aby wyświetlić podgląd na żywo do nowej karty. </br> <a href='#' style='float:right;'>ok</a>",
   "TEST_TRANSLATE": "użyj tego do testowania tłumaczeń"
 });
