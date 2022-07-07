@@ -24,12 +24,16 @@ jobs:
         run: |
           npm install
           npm run release:prod
+          npm run test
+          cp -r dist distToDeploy/
+          cp -r dist distToDeploy/src/
+          cp -r test distToDeploy/test/
         shell: bash
 
       - name: Copying release artifacts to public folder
         run: |
           mkdir -p ./public
-          cp -r ./phoenix/dist/. ./public
+          cp -r ./phoenix/distToDeploy/. ./public
         shell: bash
       - name: Deploy Github Pages
         uses: peaceiris/actions-gh-pages@v3
