@@ -38,6 +38,13 @@
 /* Define some variables used in multiple places */
 @background: #1d1f21;
 @foreground: #ddd;
+@accent-property: #ddd;
+@accent-def: #b77fdb;
+@accent-variable: #CC62AC; // global var
+@accent-variable-2: #b77fdb; // scoped var
+@accent-variable-3: #535353; // type
+@accent-string-2: #ffc641;
+@accent-meta: #B39C1D;
 
 /* Code Styling */
 
@@ -59,10 +66,19 @@
     }
 }
 
-.cm-atom, .cm-string, .cm-string-2, .cm-hr {color: #d89333;}
+.cm-atom, .cm-string, .cm-hr {color: #d89333;}
+.cm-string-2, .cm-hr {color: @accent-string-2;}
 .cm-number, .cm-attribute, .cm-plus {color: #85a300;}
-.cm-def, .cm-property {color: #b77fdb;}
-.cm-variable, .cm-variable-2, .cm-variable-3, .cm-operator, .cm-meta, .cm-bracket {color: @foreground;}
+.cm-def {color: @accent-def;}
+.cm-property {color: @accent-property;}
+.cm-variable {
+    color: @accent-variable;
+    font-weight: bolder;
+}
+.cm-variable-2 {color: @accent-variable-2;}
+.cm-variable-3 {color: @accent-variable-3;}
+.cm-operator, .cm-bracket {color: @foreground;}
+.cm-meta {color: @accent-meta;}
 .cm-comment {color: #767676;}
 .cm-minus {color: #dc322f;}
 .cm-header {color: #d85896;}
