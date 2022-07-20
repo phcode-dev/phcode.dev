@@ -162,6 +162,9 @@ define(function (require, exports, module) {
         // to avoid logic issues later with comparing values.
         resultInfo.collapsed = !!resultInfo.collapsed;
 
+        if(!this.results[fullpath] && this.numFiles >= 0){
+            this.numFiles++;
+        }
         this.results[fullpath] = resultInfo;
         this.numMatches += resultInfo.matches.length;
         if (this.numMatches >= SearchModel.MAX_TOTAL_RESULTS) {
@@ -183,6 +186,9 @@ define(function (require, exports, module) {
     SearchModel.prototype.removeResults = function (fullpath) {
         if (this.results[fullpath]) {
             this.numMatches -= this.results[fullpath].matches.length;
+            if(this.numFiles){
+                this.numFiles--;
+            }
             delete this.results[fullpath];
         }
     };
@@ -216,17 +222,6 @@ define(function (require, exports, module) {
             startingWorkingFileSet = [],
             propertyName = "",
             i = 0;
-
-        if (FindUtils.isWorkerSearchDisabled()) {
-            return Object.keys(this.results).sort(function (key1, key2) {
-                if (firstFile === key1) {
-                    return -1;
-                } else if (firstFile === key2) {
-                    return 1;
-                }
-                return FileUtils.comparePaths(key1, key2);
-            });
-        }
 
         firstFile = firstFile || "";
 

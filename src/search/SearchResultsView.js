@@ -29,6 +29,7 @@ define(function (require, exports, module) {
         EventDispatcher       = require("utils/EventDispatcher"),
         Commands              = require("command/Commands"),
         DocumentManager       = require("document/DocumentManager"),
+        Editor                = require("editor/Editor"),
         EditorManager         = require("editor/EditorManager"),
         ProjectManager        = require("project/ProjectManager"),
         FileViewController    = require("project/FileViewController"),
@@ -73,13 +74,22 @@ define(function (require, exports, module) {
      * @param {string} type type to identify if it is reference search or string match serach
      */
     function SearchResultsView(model, panelID, panelName, type) {
-        var panelHtml  = Mustache.render(searchPanelTemplate, {panelID: panelID});
+        const self = this;
+        let panelHtml  = Mustache.render(searchPanelTemplate, {panelID: panelID});
 
         this._panel    = WorkspaceManager.createBottomPanel(panelName, $(panelHtml), 100);
         this._$summary = this._panel.$panel.find(".title");
         this._$table   = this._panel.$panel.find(".table-container");
+        this._$previewEditor   = this._panel.$panel.find(".search-editor-preview");
         this._model    = model;
         this._searchResultsType = type;
+        this._hasPreviousPage = false;
+        this._hasNextPage = false;
+        new ResizeObserver(()=>{
+            if(self._$previewEditor.editor){
+                self._$previewEditor.editor.updateLayout();
+            }
+        }).observe(this._panel.$panel[0]);
     }
     EventDispatcher.makeEventDispatcher(SearchResultsView.prototype);
 
@@ -146,6 +156,117 @@ define(function (require, exports, module) {
         }
     };
 
+    SearchResultsView.prototype.OpenSelectedFile = function () {
+        const self = this;
+        if (self._$selectedRow) {
+            let searchItem = self._searchList[self._$selectedRow.data("file-index")];
+            let item = searchItem.items[self._$selectedRow.data("item-index")];
+            CommandManager.execute(Commands.FILE_OPEN, {fullPath: searchItem.fullPath})
+                .done(function () {
+                    // Opened document is now the current main editor
+                    EditorManager.getCurrentFullEditor().setSelection(item.start, item.end, true);
+                });
+        }
+    };
+
+    SearchResultsView.prototype._previewSelectedFile = function () {
+        const self = this;
+        if (self._$selectedRow) {
+            let searchItem = self._searchList[self._$selectedRow.data("file-index")];
+            let item = searchItem.items[self._$selectedRow.data("item-index")];
+            self._showPreviewEditor(searchItem.fullPath, item.start, item.end);
+        }
+    };
+
+    SearchResultsView.prototype.selectNextResult = function () {
+        const self = this;
+        if (self._$selectedRow) {
+            const selectedElement = self._$selectedRow[0];
+            let nextElement = selectedElement.nextElementSibling;
+            let searchItem = self._searchList[self._$selectedRow.data("file-index")];
+            let collapsed = self._model.results[searchItem.fullPath].collapsed;
+            while(nextElement && (collapsed || !$(nextElement).hasClass('file-search-item'))){
+                // skip collapsed elements too
+                nextElement = nextElement.nextElementSibling;
+                if(!nextElement){
+                    break;
+                }
+                searchItem = self._searchList[$(nextElement).data("file-index")];
+                collapsed = self._model.results[searchItem.fullPath].collapsed;
+            }
+            if(nextElement){
+                self._$selectedRow.removeClass("selected");
+                self._$selectedRow = $(nextElement);
+                self._$selectedRow.addClass("selected");
+                nextElement.scrollIntoView({block: "nearest"});
+                self._previewSelectedFile();
+            } else if(self._hasNextPage){
+                self.trigger('getNextPage');
+            }
+        }
+    };
+
+    SearchResultsView.prototype.selectNextPage = function () {
+        const self = this;
+        if(self._hasNextPage){
+            self.trigger('getNextPage');
+        }
+    };
+
+    SearchResultsView.prototype.selectLastResultInPage = function () {
+        const self = this;
+        if (self._$selectedRow) {
+            let selectedElement = self._$selectedRow[0];
+            let lastElement = selectedElement.parentNode.lastChild;
+            while(lastElement && !$(lastElement).hasClass('file-search-item')){
+                lastElement = lastElement.previousElementSibling;
+            }
+            if(lastElement){
+                self._$selectedRow.removeClass("selected");
+                self._$selectedRow = $(lastElement);
+                self._$selectedRow.addClass("selected");
+                lastElement.scrollIntoView({block: "nearest"});
+                self._previewSelectedFile();
+            }
+        }
+    };
+
+    SearchResultsView.prototype.selectPrevResult = function () {
+        const self = this;
+        if (self._$selectedRow) {
+            let selectedElement = self._$selectedRow[0];
+            let prevElement = selectedElement.previousElementSibling;
+            let searchItem = self._searchList[self._$selectedRow.data("file-index")];
+            let collapsed = self._model.results[searchItem.fullPath].collapsed;
+            while(prevElement && (collapsed || !$(prevElement).hasClass('file-search-item'))){
+                // skip collapsed elements too
+                prevElement = prevElement.previousElementSibling;
+                if(!prevElement){
+                    break;
+                }
+                searchItem = self._searchList[$(prevElement).data("file-index")];
+                collapsed = self._model.results[searchItem.fullPath].collapsed;
+            }
+            if(prevElement){
+                self._$selectedRow.removeClass("selected");
+                self._$selectedRow = $(prevElement);
+                self._$selectedRow.addClass("selected");
+                prevElement.scrollIntoView({block: "nearest"});
+                self._previewSelectedFile();
+            } else if(self._hasPreviousPage){
+                self.showPreviousPage();
+                self.selectLastResultInPage();
+            }
+        }
+    };
+
+    SearchResultsView.prototype.selectPrevPage = function () {
+        const self = this;
+        if(self._hasPreviousPage){
+            self.showPreviousPage();
+        }
+    };
+
     /**
      * @private
      * Adds the listeners for close, prev, next, first, last and check all
@@ -185,13 +306,19 @@ define(function (require, exports, module) {
 
             // Add the file to the working set on double click
             .on("dblclick.searchResults", ".table-container tr:not(.file-section)", function (e) {
-                var item = self._searchList[$(this).data("file-index")];
-                FileViewController.openFileAndAddToWorkingSet(item.fullPath);
+                let $row = $(e.target).closest("tr");
+                let searchFile = self._searchList[$row.data("file-index")];
+                let item = searchFile.items[$row.data("item-index")];
+                FileViewController.openFileAndAddToWorkingSet(searchFile.fullPath).done(function () {
+                    // Opened document is now the current main editor
+                    EditorManager.getCurrentFullEditor().setSelection(item.start, item.end, true);
+                });
             })
 
             // Add the click event listener directly on the table parent
             .on("click.searchResults .table-container", function (e) {
-                var $row = $(e.target).closest("tr");
+                let $row = $(e.target).closest("tr");
+                let isLineNumberClick = $row.context && $($row.context).hasClass("line-number");
 
                 if ($row.length) {
                     if (self._$selectedRow) {
@@ -237,13 +364,15 @@ define(function (require, exports, module) {
                     // This is a file row, show the result on click
                     } else {
                         // Grab the required item data
-                        var item = searchItem.items[$row.data("item-index")];
-
-                        CommandManager.execute(Commands.FILE_OPEN, {fullPath: fullPath})
-                            .done(function (doc) {
-                                // Opened document is now the current main editor
-                                EditorManager.getCurrentFullEditor().setSelection(item.start, item.end, true);
-                            });
+                        let item = searchItem.items[$row.data("item-index")];
+                        self._showPreviewEditor(fullPath, item.start, item.end);
+                        if(isLineNumberClick){
+                            CommandManager.execute(Commands.FILE_OPEN, {fullPath: fullPath})
+                                .done(function () {
+                                    // Opened document is now the current main editor
+                                    EditorManager.getCurrentFullEditor().setSelection(item.start, item.end, true);
+                                });
+                        }
                     }
                 }
             });
@@ -345,8 +474,9 @@ define(function (require, exports, module) {
      * Shows the Results Summary
      */
     SearchResultsView.prototype._showSummary = function () {
-        var count     = this._model.countFilesMatches(),
-            lastIndex = this._getLastIndex(count.matches),
+        let self = this;
+        let count     = self._model.countFilesMatches(),
+            lastIndex = self._getLastIndex(count.matches),
             typeStr = (count.matches > 1) ? Strings.FIND_IN_FILES_MATCHES : Strings.FIND_IN_FILES_MATCH,
             filesStr,
             summary;
@@ -364,24 +494,26 @@ define(function (require, exports, module) {
         // This text contains some formatting, so all the strings are assumed to be already escaped
         summary = StringUtils.format(
             Strings.FIND_TITLE_SUMMARY,
-            this._model.exceedsMaximum ? Strings.FIND_IN_FILES_MORE_THAN : "",
+            self._model.exceedsMaximum ? Strings.FIND_IN_FILES_MORE_THAN : "",
             String(count.matches),
             typeStr,
             filesStr
         );
 
-        this._$summary.html(Mustache.render(searchSummaryTemplate, {
-            query: (this._model.queryInfo && this._model.queryInfo.query && this._model.queryInfo.query.toString()) || "",
-            replaceWith: this._model.replaceText,
-            titleLabel: this._model.isReplace ? Strings.FIND_REPLACE_TITLE_LABEL : Strings.FIND_TITLE_LABEL,
-            scope: this._model.scope ? "&nbsp;" + FindUtils.labelForScope(this._model.scope) + "&nbsp;" : "",
+        self._hasPreviousPage = self._currentStart > 0;
+        self._hasNextPage = lastIndex < count.matches;
+        self._$summary.html(Mustache.render(searchSummaryTemplate, {
+            query: (self._model.queryInfo && self._model.queryInfo.query && self._model.queryInfo.query.toString()) || "",
+            replaceWith: self._model.replaceText,
+            titleLabel: self._model.isReplace ? Strings.FIND_REPLACE_TITLE_LABEL : Strings.FIND_TITLE_LABEL,
+            scope: self._model.scope ? "&nbsp;" + FindUtils.labelForScope(self._model.scope) + "&nbsp;" : "",
             summary: summary,
-            allChecked: this._allChecked,
+            allChecked: self._allChecked,
             hasPages: count.matches > RESULTS_PER_PAGE,
-            results: StringUtils.format(Strings.FIND_IN_FILES_PAGING, this._currentStart + 1, lastIndex),
-            hasPrev: this._currentStart > 0,
-            hasNext: lastIndex < count.matches,
-            replace: this._model.isReplace,
+            results: StringUtils.format(Strings.FIND_IN_FILES_PAGING, self._currentStart + 1, lastIndex),
+            hasPrev: self._hasPreviousPage,
+            hasNext: self._hasNextPage,
+            replace: self._model.isReplace,
             Strings: Strings
         }));
     };
@@ -391,14 +523,15 @@ define(function (require, exports, module) {
      * Shows the current set of results.
      */
     SearchResultsView.prototype._render = function () {
-        var searchItems, match, i, item, multiLine,
+        let searchItems, match, i, item, multiLine,
             count            = this._model.countFilesMatches(),
             searchFiles      = this._model.prioritizeOpenFile(this._initialFilePath),
             lastIndex        = this._getLastIndex(count.matches),
             matchesCounter   = 0,
             showMatches      = false,
             allInFileChecked = true,
-            self             = this;
+            self             = this,
+            previewFileSelected = false;
 
         this._showSummary();
         this._searchList = [];
@@ -441,6 +574,10 @@ define(function (require, exports, module) {
                 while (i < item.matches.length && matchesCounter < lastIndex) {
                     match     = item.matches[i];
                     multiLine = match.start.line !== match.end.line;
+                    if(!previewFileSelected){
+                        previewFileSelected = true;
+                        self._showPreviewEditor(fullPath, match.start, match.end);
+                    }
 
                     searchItems.push({
                         fileIndex: self._searchList.length,
@@ -463,7 +600,7 @@ define(function (require, exports, module) {
                 }
 
                 // Add a row for each file
-                var relativePath    = FileUtils.getDirectoryPath(ProjectManager.makeProjectRelativeIfPossible(fullPath)),
+                let relativePath    = FileUtils.getDirectoryPath(ProjectManager.makeProjectRelativeIfPossible(fullPath)),
                     directoryPath   = FileUtils.getDirectoryPath(relativePath),
                     displayFileName = StringUtils.format(
                         Strings.FIND_IN_FILES_FILE_PATH,
@@ -495,11 +632,47 @@ define(function (require, exports, module) {
 
         if (this._$selectedRow) {
             this._$selectedRow.removeClass("selected");
-            this._$selectedRow = null;
+        }
+        let searchResults = this._$table.find(".file-search-item");
+        if(searchResults.length > 0){
+            this._$selectedRow = $(searchResults[0]);
+            this._$selectedRow.addClass("selected");
         }
 
         this._panel.show();
         this._$table.scrollTop(0); // Otherwise scroll pos from previous contents is remembered
+    };
+
+    SearchResultsView.prototype._showPreviewEditor = function (fullPath, selectStart, selectEnd) {
+        let self = this;
+        if(self._$previewEditor.editor
+            && self._$previewEditor.editor.document.file.fullPath === fullPath){
+            self._$previewEditor.editor.setSelection(selectStart, selectEnd, true, Editor.BOUNDARY_BULLSEYE);
+            return;
+        }
+        DocumentManager.getDocumentForPath(fullPath).done(function (doc) {
+            if(self._$previewEditor.editor){
+                self._closePreviewEditor();
+            }
+
+            let editorOptions = {
+                isReadOnly: true
+            };
+            self._$previewEditor.editor =
+                new Editor.Editor(doc, false, self._$previewEditor, null, editorOptions);
+            exports._previewEditorForTests = self._$previewEditor.editor;
+            self._$previewEditor.editor.updateLayout();
+            self._$previewEditor.editor.setSelection(selectStart, selectEnd, true, Editor.BOUNDARY_BULLSEYE);
+        });
+    };
+
+    SearchResultsView.prototype._closePreviewEditor = function () {
+        let self = this;
+        if(self._$previewEditor.editor){
+            exports._previewEditorForTests = null;
+            self._$previewEditor.editor.destroy();
+            self._$previewEditor.editor = null;
+        }
     };
 
     /**
@@ -542,6 +715,17 @@ define(function (require, exports, module) {
      */
     SearchResultsView.prototype.showNextPage = function () {
         this._currentStart += RESULTS_PER_PAGE;
+        this._render();
+    };
+
+    /**
+     * Shows the next page of the resultrs view if possible
+     */
+    SearchResultsView.prototype.showPreviousPage = function () {
+        this._currentStart -= RESULTS_PER_PAGE;
+        if(this._currentStart < 0){
+            this._currentStart = 0;
+        }
         this._render();
     };
 

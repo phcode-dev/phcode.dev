@@ -51,33 +51,40 @@
       math: 'always'
     };
   </script>
+  <link rel="stylesheet/less" type="text/css" href="../src/styles/brackets.less">
   <script src="../src/thirdparty/less.min.js"></script>
   <script src="thirdparty/bootstrap2/js/bootstrap.min.js"></script>
 
   <script src="thirdparty/jasmine-core/jasmine.js"></script>
+  <script src="thirdparty/jasmine-core/jasmine-html.js"></script>
+  <script src="thirdparty/jasmine-core/boot0.js"></script>
+
   <script type="text/javascript" src="../src/thirdparty/jszip-utils-phoenix.js"></script>
 
 </head>
 
-<body>
+<body style="user-select: text !important; display: flex">
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
-        <div class="container">
+        <div class="container" style="width: 100%;">
           <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="#">Brackets Tests</a>
+
           <div class="nav-collapse">
+            <span class="brand" href="#">Brackets Tests</span>
             <ul class="nav">
-              <li><a id="all" href="?suite=all">All</a></li>
-              <li><a id="unit" href="?suite=unit">Unit</a></li>
-              <li><a id="integration" href="?suite=integration">Integration</a></li>
-              <li><a id="livepreview" href="?suite=livepreview">Live&nbsp;Preview</a></li>
-              <li><a id="mainview"    href="?suite=mainview">Main&nbsp;View</a></li>
-              <li><a id="performance" href="?suite=performance">Performance</a></li>
-              <li><a id="extension" href="?suite=extension">Extensions</a></li>
+              <li><a id="all" href="?category=all">All</a></li>
+              <li><a id="unit" href="?category=unit">Unit</a></li>
+              <li><a id="integration" href="?category=integration">Integration</a></li>
+              <li><a id="search" href="?category=search">Find Replace</a></li>
+              <li><a id="livepreview" href="?category=livepreview">Live&nbsp;Preview</a></li>
+              <li><a id="mainview"    href="?category=mainview">Main&nbsp;View</a></li>
+              <li><a id="performance" href="?category=performance">Performance</a></li>
+              <li><a id="extension" href="?category=extension">Extensions</a></li>
+              <li><a id="individualrun" href="?category=individualrun">Individual Run</a></li>
               <li><a id="reload" href="#">Reset and Reload Tests</a></li>
               <li><a id="show-dev-tools" href="#">Show&nbsp;Developer&nbsp;Tools</a></li>
             </ul>
@@ -85,9 +92,9 @@
         </div>
       </div>
     </div>
-    <div id="loading" style="display: none;">
+    <div id="loading" style="display: none; margin-top: 100px;">
       Please run <code>npm run test</code> before starting tests at least once or if you are facing issues.
-      </p>Extracting test files .... <img src="../src/styles/images/throbber.gif" alt=".......">
+      </p>Extracting test files <span id="loadProgressMessage"></span>.... <img src="../src/styles/images/throbber.gif" alt=".......">
     </div>
     <div id="mock-main-view" style="position:absolute; height:1000px; width:1000px; left:-10000px; top:-10000px;"></div>
     <!-- All other scripts are loaded through require. -->

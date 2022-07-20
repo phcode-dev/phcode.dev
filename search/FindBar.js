@@ -25,7 +25,7 @@
 define(function (require, exports, module) {
 
 
-    var _                  = require("thirdparty/lodash"),
+    const _                  = require("thirdparty/lodash"),
         Mustache           = require("thirdparty/mustache/mustache"),
         EventDispatcher    = require("utils/EventDispatcher"),
         Commands           = require("command/Commands"),
@@ -45,15 +45,14 @@ define(function (require, exports, module) {
      * The template we use for all Find bars.
      * @type {string}
      */
-    var _searchBarTemplate = require("text!htmlContent/findreplace-bar.html");
+    const _searchBarTemplate = require("text!htmlContent/findreplace-bar.html");
 
-    var lastTypedTime = 0,
-        currentTime = 0,
-        intervalId = 0,
+    let intervalId = 0,
         lastQueriedText = "",
         lastTypedText = "",
-        lastTypedTextWasRegexp = false,
-        lastKeyCode;
+        lastTypedTextWasRegexp = false;
+
+    const INSTANT_SEARCH_INTERVAL_MS = 50;
 
     /**
      * @constructor
@@ -92,9 +91,6 @@ define(function (require, exports, module) {
         this._options = _.extend(defaults, options);
         this._closed = false;
         this._enabled = true;
-        this.lastQueriedText = "";
-        this.lastTypedText = "";
-        this.lastTypedTextWasRegexp = false;
     }
     EventDispatcher.makeEventDispatcher(FindBar.prototype);
 
@@ -304,7 +300,6 @@ define(function (require, exports, module) {
             self._closed = true;
             window.clearInterval(intervalId);
             intervalId = 0;
-            lastTypedTime = 0;
             FindBar._removeFindBar(self);
             MainViewManager.focusActivePane();
             self.trigger("close");
@@ -314,6 +309,28 @@ define(function (require, exports, module) {
         });
 
         FindBar._addFindBar(this);
+
+        let executeSearchIfNeeded = function () {
+            // We only do instant search via worker.
+            if (FindUtils.isInstantSearchDisabled()) {
+                return;
+            }
+            if (self._closed) {
+                return;
+            }
+            if ( self.getQueryInfo().query !== lastQueriedText && !FindUtils.isWorkerSearchInProgress()) {
+                // init Search
+                if (self._options.multifile) {
+                    self.trigger("doFind");
+                    lastQueriedText = self.getQueryInfo().query;
+                }
+            }
+        };
+        if (intervalId === 0) {
+            // we do this so that is the search query changes by any means - by keypress, or programmatically
+            // we do an instant search if the search term changes.
+            intervalId = window.setInterval(executeSearchIfNeeded, INSTANT_SEARCH_INTERVAL_MS);
+        }
 
         var $root = this._modalBar.getRoot();
         var historyIndex = 0;
@@ -345,42 +362,10 @@ define(function (require, exports, module) {
                 self.$("#find-what").focus();
             })
             .on("keydown", "#find-what, #replace-with", function (e) {
-                lastTypedTime = new Date().getTime();
-                lastKeyCode = e.keyCode;
-                var executeSearchIfNeeded = function () {
-                    // We only do instant search via node.
-                    if (FindUtils.isWorkerSearchDisabled() || FindUtils.isInstantSearchDisabled()) {
-                        // we still keep the interval timer up as instant search could get enabled/disabled based on node busy state
-                        return;
-                    }
-                    if (self._closed) {
-                        return;
-                    }
-                    currentTime = new Date().getTime();
-
-                    if (lastTypedTime && (currentTime - lastTypedTime >= 100) &&
-                            self.getQueryInfo().query !== lastQueriedText &&
-                            !FindUtils.isWorkerSearchInProgress()) {
-
-                        // init Search
-                        if (self._options.multifile) {
-                            if ($(e.target).is("#find-what")) {
-                                if (!self._options.replace) {
-                                    self.trigger("doFind");
-                                    lastQueriedText = self.getQueryInfo().query;
-                                }
-                            }
-                        }
-                    }
-                };
-                if (intervalId === 0) {
-                    intervalId = window.setInterval(executeSearchIfNeeded, 50);
-                }
                 if (e.keyCode === KeyEvent.DOM_VK_RETURN) {
                     e.preventDefault();
                     e.stopPropagation();
                     self._addElementToSearchHistory(self.$("#find-what").val());
-                    lastQueriedText = self.getQueryInfo().query;
                     if (self._options.multifile) {
                         if ($(e.target).is("#find-what")) {
                             if (self._options.replace) {
@@ -390,7 +375,7 @@ define(function (require, exports, module) {
                                 Metrics.countEvent(Metrics.EVENT_TYPE.SEARCH, "findInFiles.bar",
                                     "returnKey");
                                 // Trigger a Find (which really means "Find All" in this context).
-                                self.trigger("doFind");
+                                self.trigger("openSelectedFile");
                             }
                         } else {
                             Metrics.countEvent(Metrics.EVENT_TYPE.SEARCH, "replaceBatchInFiles.bar",
@@ -403,13 +388,22 @@ define(function (require, exports, module) {
                         self.trigger("doFind", e.shiftKey);
                     }
                     historyIndex = 0;
-                } else if (e.keyCode === KeyEvent.DOM_VK_DOWN || e.keyCode === KeyEvent.DOM_VK_UP) {
-                    var quickSearchContainer = $(".quick-search-container");
-                    if (!self.searchField) {
-                        self.showSearchHints();
-                    } else if (!quickSearchContainer.is(':visible')) {
-                        quickSearchContainer.show();
-                    }
+                } else if (e.keyCode === KeyEvent.DOM_VK_DOWN) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    self.trigger("selectNextResult");
+                } else if (e.keyCode === KeyEvent.DOM_VK_UP) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    self.trigger("selectPrevResult");
+                } else if (e.keyCode === KeyEvent.DOM_VK_PAGE_DOWN) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    self.trigger("selectNextPage");
+                } else if (e.keyCode === KeyEvent.DOM_VK_PAGE_UP) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    self.trigger("selectPrevPage");
                 }
             })
             .on("click", ".close", function () {
@@ -504,6 +498,7 @@ define(function (require, exports, module) {
      * @param {boolean} suppressAnimation If true, don't do the standard closing animation. Default false.
      */
     FindBar.prototype.close = function (suppressAnimation) {
+        lastQueriedText = "";
         if (this._modalBar) {
             // 1st arg = restore scroll pos; 2nd arg = no animation, since getting replaced immediately
             this._modalBar.close(true, !suppressAnimation);

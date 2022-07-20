@@ -184,7 +184,7 @@ a, img {
     font-family: @sansFontFamily;
     font-size: 11px;
     line-height: 25px;
-    height: 26px;
+    height: @bc-bg-status-bar-height;
     overflow: hidden;
     .dark & {
         background: @dark-bc-bg-status-bar;
@@ -999,6 +999,8 @@ a, img {
 }
 
 #project-files-header {
+    display: flex;
+    align-items: center;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
     padding: 8px 0 9px 12px;
     font-size: 15px;
@@ -1012,6 +1014,10 @@ a, img {
         position: relative;
         z-index: 9;
     }
+}
+
+#project-operations-spinner{
+    margin-right: 7px;
 }
 
 .open-files-container {
