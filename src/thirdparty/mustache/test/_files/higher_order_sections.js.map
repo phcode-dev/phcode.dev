@@ -1,0 +1,1 @@
+{"version":3,"sources":["thirdparty/mustache/test/_files/higher_order_sections.js"],"names":[],"mappings":"","sourcesContent":["({\n  name: \"Tater\",\n  helper: \"To tinker?\",\n  bolder: function () {\n    return function (text, render) {\n      return text + ' => <b>' + render(text) + '</b> ' + this.helper;\n    }\n  }\n})\n"],"file":"higher_order_sections.js"}

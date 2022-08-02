@@ -1,5 +1,2 @@
-({
-  title: function () {
-    return "A Comedy of Errors";
-  }
-})
+
+//# sourceMappingURL=comments.js.map

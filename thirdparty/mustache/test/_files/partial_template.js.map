@@ -1,0 +1,1 @@
+{"version":3,"sources":["thirdparty/mustache/test/_files/partial_template.js"],"names":[],"mappings":"","sourcesContent":["({\n  title: function () {\n    return \"Welcome\";\n  },\n  again: \"Goodbye\"\n})\n"],"file":"partial_template.js"}

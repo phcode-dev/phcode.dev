@@ -1,8 +1,2 @@
-({
-  items: [
-    {
-      name: 'name',
-      items: [1, 2, 3, 4]
-    }
-  ]
-})
+
+//# sourceMappingURL=nesting_same_name.js.map

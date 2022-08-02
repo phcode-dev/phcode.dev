@@ -1,0 +1,1 @@
+{"version":3,"sources":["thirdparty/mustache/test/_files/reuse_of_enumerables.js"],"names":[],"mappings":"","sourcesContent":["({\n  terms: [\n    {name: 't1', index: 0},\n    {name: 't2', index: 1}\n  ]\n})\n"],"file":"reuse_of_enumerables.js"}

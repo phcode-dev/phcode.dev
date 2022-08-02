@@ -1,0 +1,1 @@
+{"version":3,"sources":["thirdparty/mustache/test/_files/bug_11_eating_whitespace.js"],"names":[],"mappings":"","sourcesContent":["({\n  tag: \"yo\"\n})\n"],"file":"bug_11_eating_whitespace.js"}

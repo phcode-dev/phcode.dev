@@ -1,4 +1,2 @@
-({
-  tag1: "Hello",
-  tag2: "World"
-})
+
+//# sourceMappingURL=whitespace.js.map

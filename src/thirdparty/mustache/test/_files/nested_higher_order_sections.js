@@ -1,8 +1,2 @@
-({
-  bold: function () {
-    return function (text, render) {
-      return '<b>' + render(text) + '</b>';
-    };
-  },
-  person: { name: 'Jonas' }
-});
+
+//# sourceMappingURL=nested_higher_order_sections.js.map

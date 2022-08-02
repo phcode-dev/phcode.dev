@@ -1,8 +1,2 @@
-({
-  "emptyString": "",
-  "emptyArray": [],
-  "zero": 0,
-  "null": null,
-  "undefined": undefined,
-  "NaN": 0/0
-})
+
+//# sourceMappingURL=falsy.js.map

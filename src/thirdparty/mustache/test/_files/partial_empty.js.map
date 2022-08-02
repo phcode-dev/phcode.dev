@@ -1,0 +1,1 @@
+{"version":3,"sources":["thirdparty/mustache/test/_files/partial_empty.js"],"names":[],"mappings":"","sourcesContent":["({\n  foo: 1\n})\n"],"file":"partial_empty.js"}

@@ -1,0 +1,1 @@
+{"version":3,"sources":["thirdparty/mustache/test/_files/nested_iterating.js"],"names":[],"mappings":"","sourcesContent":["({\n  inner: [{\n    foo: 'foo',\n    inner: [{\n      bar: 'bar'\n    }]\n  }]\n})\n"],"file":"nested_iterating.js"}

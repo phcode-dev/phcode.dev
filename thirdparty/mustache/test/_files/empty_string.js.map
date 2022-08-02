@@ -1,0 +1,1 @@
+{"version":3,"sources":["thirdparty/mustache/test/_files/empty_string.js"],"names":[],"mappings":"","sourcesContent":["({\n  description: \"That is all!\",\n  child: {\n    description: \"\"\n  }\n})\n"],"file":"empty_string.js"}

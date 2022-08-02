@@ -1,4 +1,2 @@
-({
-  name: 'Joe',
-  friends: null
-})
+
+//# sourceMappingURL=null_view.js.map

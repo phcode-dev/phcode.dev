@@ -1,6 +1,2 @@
-({
-  terms: [
-    {name: 't1', index: 0},
-    {name: 't2', index: 1}
-  ]
-})
+
+//# sourceMappingURL=reuse_of_enumerables.js.map

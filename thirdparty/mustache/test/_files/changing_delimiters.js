@@ -1,4 +1,2 @@
-({
-  "foo": "foooooooooooooo",
-  "bar": "<b>bar!</b>"
-})
+
+//# sourceMappingURL=changing_delimiters.js.map

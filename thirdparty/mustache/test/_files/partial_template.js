@@ -1,6 +1,2 @@
-({
-  title: function () {
-    return "Welcome";
-  },
-  again: "Goodbye"
-})
+
+//# sourceMappingURL=partial_template.js.map

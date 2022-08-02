@@ -1,3 +1,2 @@
-({
-  html: "I like {{mustache}}"
-})
+
+//# sourceMappingURL=included_tag.js.map

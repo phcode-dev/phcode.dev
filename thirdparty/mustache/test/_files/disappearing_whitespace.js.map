@@ -1,0 +1,1 @@
+{"version":3,"sources":["thirdparty/mustache/test/_files/disappearing_whitespace.js"],"names":[],"mappings":"","sourcesContent":["({\n  bedrooms: true,\n  total: 1\n})\n"],"file":"disappearing_whitespace.js"}

@@ -1,3 +1,2 @@
-({
-  bar: 2
-})
+
+//# sourceMappingURL=error_not_found.js.map

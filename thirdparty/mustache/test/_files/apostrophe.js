@@ -1,4 +1,2 @@
-({
-  'apos': "'",
-  'control': 'X'
-})
+
+//# sourceMappingURL=apostrophe.js.map

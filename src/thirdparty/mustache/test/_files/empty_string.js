@@ -1,6 +1,2 @@
-({
-  description: "That is all!",
-  child: {
-    description: ""
-  }
-})
+
+//# sourceMappingURL=empty_string.js.map

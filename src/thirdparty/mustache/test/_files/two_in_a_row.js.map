@@ -1,0 +1,1 @@
+{"version":3,"sources":["thirdparty/mustache/test/_files/two_in_a_row.js"],"names":[],"mappings":"","sourcesContent":["({\n  name: \"Joe\",\n  greeting: \"Welcome\"\n})\n"],"file":"two_in_a_row.js"}

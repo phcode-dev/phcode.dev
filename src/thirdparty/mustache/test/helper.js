@@ -1,2 +1,2 @@
-assert = require('assert');
-Mustache = require('../mustache');
+assert=require("assert"),Mustache=require("../mustache");
+//# sourceMappingURL=helper.js.map

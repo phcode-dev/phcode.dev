@@ -1,0 +1,1 @@
+{"version":3,"sources":["thirdparty/mustache/test/_files/section_as_context.js"],"names":[],"mappings":"","sourcesContent":["({\n  a_object: {\n    title: 'this is an object',\n    description: 'one of its attributes is a list',\n    a_list: [\n      {label: 'listitem1'},\n      {label: 'listitem2'}\n    ]\n  }\n})\n"],"file":"section_as_context.js"}

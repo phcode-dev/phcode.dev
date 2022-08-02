@@ -1,0 +1,1 @@
+{"version":3,"sources":["thirdparty/mustache/test/_files/partial_array.js"],"names":[],"mappings":"","sourcesContent":["({\n  array: ['1', '2', '3', '4']\n})\n"],"file":"partial_array.js"}

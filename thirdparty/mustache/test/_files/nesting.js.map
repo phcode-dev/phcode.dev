@@ -1,0 +1,1 @@
+{"version":3,"sources":["thirdparty/mustache/test/_files/nesting.js"],"names":[],"mappings":"","sourcesContent":["({\n  foo: [\n    {a: {b: 1}},\n    {a: {b: 2}},\n    {a: {b: 3}}\n  ]\n})\n"],"file":"nesting.js"}

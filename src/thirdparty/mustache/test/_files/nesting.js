@@ -1,7 +1,2 @@
-({
-  foo: [
-    {a: {b: 1}},
-    {a: {b: 2}},
-    {a: {b: 3}}
-  ]
-})
+
+//# sourceMappingURL=nesting.js.map

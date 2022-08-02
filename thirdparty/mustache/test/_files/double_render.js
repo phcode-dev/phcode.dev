@@ -1,5 +1,2 @@
-({
-  foo: true,
-  bar: "{{win}}",
-  win: "FAIL"
-})
+
+//# sourceMappingURL=double_render.js.map

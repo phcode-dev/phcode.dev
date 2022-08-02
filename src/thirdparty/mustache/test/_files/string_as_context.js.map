@@ -1,0 +1,1 @@
+{"version":3,"sources":["thirdparty/mustache/test/_files/string_as_context.js"],"names":[],"mappings":"","sourcesContent":["({\n  a_string: 'aa',\n  a_list: ['a','b','c']\n})\n"],"file":"string_as_context.js"}

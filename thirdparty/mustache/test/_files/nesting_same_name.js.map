@@ -1,0 +1,1 @@
+{"version":3,"sources":["thirdparty/mustache/test/_files/nesting_same_name.js"],"names":[],"mappings":"","sourcesContent":["({\n  items: [\n    {\n      name: 'name',\n      items: [1, 2, 3, 4]\n    }\n  ]\n})\n"],"file":"nesting_same_name.js"}

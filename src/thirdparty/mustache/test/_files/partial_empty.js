@@ -1,3 +1,2 @@
-({
-  foo: 1
-})
+
+//# sourceMappingURL=partial_empty.js.map

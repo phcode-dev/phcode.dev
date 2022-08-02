@@ -1,0 +1,1 @@
+{"version":3,"sources":["thirdparty/mustache/test/_files/changing_delimiters.js"],"names":[],"mappings":"","sourcesContent":["({\n  \"foo\": \"foooooooooooooo\",\n  \"bar\": \"<b>bar!</b>\"\n})\n"],"file":"changing_delimiters.js"}

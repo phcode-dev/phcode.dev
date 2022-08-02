@@ -1,0 +1,1 @@
+{"version":3,"sources":["thirdparty/mustache/test/_files/context_lookup.js"],"names":[],"mappings":"","sourcesContent":["({\n  \"outer\": {\n    \"id\": 1,\n    \"second\": {\n      \"nothing\": 2\n    }\n  }\n})\n"],"file":"context_lookup.js"}

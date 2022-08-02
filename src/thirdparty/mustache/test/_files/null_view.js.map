@@ -1,0 +1,1 @@
+{"version":3,"sources":["thirdparty/mustache/test/_files/null_view.js"],"names":[],"mappings":"","sourcesContent":["({\n  name: 'Joe',\n  friends: null\n})\n"],"file":"null_view.js"}

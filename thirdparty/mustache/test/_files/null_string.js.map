@@ -1,0 +1,1 @@
+{"version":3,"sources":["thirdparty/mustache/test/_files/null_string.js"],"names":[],"mappings":"","sourcesContent":["({\n  name: \"Elise\",\n  glytch: true,\n  binary: false,\n  value: null,\n  undef: undefined,\n  numeric: function() {\n    return NaN;\n  }\n})\n"],"file":"null_string.js"}

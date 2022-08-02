@@ -1,0 +1,1 @@
+{"version":3,"sources":["thirdparty/mustache/test/helper.js"],"names":["assert","require","Mustache"],"mappings":"AAAAA,OAASC,QAAQ,UACjBC,SAAWD,QAAQ","sourcesContent":["assert = require('assert');\nMustache = require('../mustache');\n"],"file":"helper.js"}

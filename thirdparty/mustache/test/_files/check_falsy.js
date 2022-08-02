@@ -1,7 +1,2 @@
-({
-  number: function(text, render) {
-    return function(text, render) {
-      return +render(text);
-    }
-  }
-})
+
+//# sourceMappingURL=check_falsy.js.map

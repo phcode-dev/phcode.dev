@@ -1,0 +1,1 @@
+{"version":3,"sources":["thirdparty/mustache/test/_files/nested_higher_order_sections.js"],"names":[],"mappings":"","sourcesContent":["({\n  bold: function () {\n    return function (text, render) {\n      return '<b>' + render(text) + '</b>';\n    };\n  },\n  person: { name: 'Jonas' }\n});\n"],"file":"nested_higher_order_sections.js"}

@@ -1,4 +1,2 @@
-({
-  a_string: 'aa',
-  a_list: ['a','b','c']
-})
+
+//# sourceMappingURL=string_as_context.js.map

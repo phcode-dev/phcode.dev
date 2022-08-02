@@ -1,5 +1,2 @@
-({
-  title: function () {
-    return "Bear > Shark";
-  }
-})
+
+//# sourceMappingURL=unescaped.js.map

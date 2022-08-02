@@ -1,3 +1,2 @@
-({
-  array: ['1', '2', '3', '4']
-})
+
+//# sourceMappingURL=partial_array.js.map

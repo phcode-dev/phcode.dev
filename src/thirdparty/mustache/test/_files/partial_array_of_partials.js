@@ -1,8 +1,2 @@
-({
-  numbers: [
-    {i: '1'},
-    {i: '2'},
-    {i: '3'},
-    {i: '4'}
-  ]
-})
+
+//# sourceMappingURL=partial_array_of_partials.js.map

@@ -1,0 +1,1 @@
+{"version":3,"sources":["thirdparty/mustache/test/_files/check_falsy.js"],"names":[],"mappings":"","sourcesContent":["({\n  number: function(text, render) {\n    return function(text, render) {\n      return +render(text);\n    }\n  }\n})\n"],"file":"check_falsy.js"}

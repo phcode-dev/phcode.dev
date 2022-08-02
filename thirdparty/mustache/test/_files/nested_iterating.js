@@ -1,8 +1,2 @@
-({
-  inner: [{
-    foo: 'foo',
-    inner: [{
-      bar: 'bar'
-    }]
-  }]
-})
+
+//# sourceMappingURL=nested_iterating.js.map

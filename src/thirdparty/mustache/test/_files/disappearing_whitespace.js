@@ -1,4 +1,2 @@
-({
-  bedrooms: true,
-  total: 1
-})
+
+//# sourceMappingURL=disappearing_whitespace.js.map

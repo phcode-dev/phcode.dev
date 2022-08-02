@@ -1,0 +1,1 @@
+{"version":3,"sources":["thirdparty/mustache/test/_files/delimiters.js"],"names":[],"mappings":"","sourcesContent":["({\n  first: \"It worked the first time.\",\n  second: \"And it worked the second time.\",\n  third: \"Then, surprisingly, it worked the third time.\",\n  fourth: \"Fourth time also fine!.\"\n})\n"],"file":"delimiters.js"}

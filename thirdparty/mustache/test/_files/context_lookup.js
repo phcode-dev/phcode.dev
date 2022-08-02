@@ -1,8 +1,2 @@
-({
-  "outer": {
-    "id": 1,
-    "second": {
-      "nothing": 2
-    }
-  }
-})
+
+//# sourceMappingURL=context_lookup.js.map

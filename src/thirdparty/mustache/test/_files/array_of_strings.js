@@ -1,3 +1,2 @@
-({
-  array_of_strings: ['hello', 'world']
-})
+
+//# sourceMappingURL=array_of_strings.js.map

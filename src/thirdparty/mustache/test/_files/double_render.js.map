@@ -1,0 +1,1 @@
+{"version":3,"sources":["thirdparty/mustache/test/_files/double_render.js"],"names":[],"mappings":"","sourcesContent":["({\n  foo: true,\n  bar: \"{{win}}\",\n  win: \"FAIL\"\n})\n"],"file":"double_render.js"}
