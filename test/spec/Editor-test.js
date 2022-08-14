@@ -2069,7 +2069,8 @@ define(function (require, exports, module) {
         describe("Gutter APIs", function () {
             var leftGutter = "left",
                 rightGutter = "right",
-                lineNumberGutter = "CodeMirror-linenumbers";
+                lineNumberGutter = "CodeMirror-linenumbers",
+                debugGutter = Editor.DEBUG_INFO_GUTTER;
 
             beforeEach(function () {
                 createTestEditor(defaultContent, "javascript");
@@ -2089,7 +2090,7 @@ define(function (require, exports, module) {
             });
 
             it("should register multiple gutters in the correct order", function () {
-                var expectedGutters = [leftGutter, lineNumberGutter, rightGutter];
+                var expectedGutters = [leftGutter, lineNumberGutter,  rightGutter, debugGutter];
                 var gutters  = myEditor._codeMirror.getOption("gutters");
                 var registeredGutters = Editor.getRegisteredGutters().map(function (gutter) {
                     return gutter.name;
@@ -2101,7 +2102,7 @@ define(function (require, exports, module) {
             it("should return gutters registered with the same priority in insertion order", function () {
                 var secondRightGutter = "second-right";
                 Editor.registerGutter(secondRightGutter, 101);
-                var expectedGutters = [leftGutter, lineNumberGutter, rightGutter, secondRightGutter];
+                var expectedGutters = [leftGutter, lineNumberGutter, rightGutter, secondRightGutter, debugGutter];
                 var gutters  = myEditor._codeMirror.getOption("gutters");
                 var registeredGutters = Editor.getRegisteredGutters().map(function (gutter) {
                     return gutter.name;
@@ -2113,8 +2114,8 @@ define(function (require, exports, module) {
             it("should have only gutters registered with the intended languageIds ", function () {
                 var lessOnlyGutter = "less-only-gutter";
                 Editor.registerGutter(lessOnlyGutter, 101, ["less"]);
-                var expectedGutters = [leftGutter, lineNumberGutter, rightGutter];
-                var expectedRegisteredGutters = [leftGutter, lineNumberGutter, rightGutter, lessOnlyGutter];
+                var expectedGutters = [leftGutter, lineNumberGutter, rightGutter, debugGutter];
+                var expectedRegisteredGutters = [leftGutter, lineNumberGutter, rightGutter, lessOnlyGutter, debugGutter];
                 var gutters  = myEditor._codeMirror.getOption("gutters");
                 var registeredGutters = Editor.getRegisteredGutters().map(function (gutter) {
                     return gutter.name;
@@ -2127,7 +2128,7 @@ define(function (require, exports, module) {
                 Editor.unregisterGutter(leftGutter);
                 Editor.unregisterGutter(rightGutter);
                 Editor.registerGutter(leftGutter, 1);
-                var expectedGutters = [leftGutter, lineNumberGutter];
+                var expectedGutters = [leftGutter, lineNumberGutter, debugGutter];
                 var gutters  = myEditor._codeMirror.getOption("gutters");
                 var registeredGutters = Editor.getRegisteredGutters().map(function (gutter) {
                     return gutter.name;
@@ -2141,6 +2142,218 @@ define(function (require, exports, module) {
                 myEditor.setGutterMarker(1, leftGutter, marker);
                 var lineInfo = myEditor._codeMirror.lineInfo(1);
                 expect(lineInfo.gutterMarkers[leftGutter], marker);
+            });
+        });
+
+        describe("Tokens", function () {
+            function _expectTokenToBe(token, start, end, string, type) {
+                expect(token.start).toBe(start);
+                expect(token.end).toBe(end);
+                expect(token.string).toBe(string);
+                expect(token.type).toBe(type);
+            }
+
+            beforeEach(function () {
+                let jsContent = "const x=10;\n" +
+                    "function print(val){\n" +
+                    " console.log(val);\n" +
+                    "}\n" +
+                    "print(x);\n" +
+                    "let str=`multi\n" +
+                    "line`;";
+                createTestEditor(jsContent, langNames.javascript.mode);
+            });
+
+            it("should get tokens if cursor position not specified", function () {
+                myEditor.setCursorPos(0, 1);    // first char in text
+
+                _expectTokenToBe(myEditor.getToken(), 0, 5, 'const', 'keyword');
+            });
+
+            it("should get tokens at specified cursor", function () {
+                _expectTokenToBe(myEditor.getToken({line: 1, ch: 1}), 0, 8, 'function', 'keyword');
+                _expectTokenToBe(myEditor.getToken({line: 1, ch: 1}), 0, 8, 'function', 'keyword');
+                // multi line
+                _expectTokenToBe(myEditor.getToken({line: 5, ch: 10}), 8, 14, '`multi', 'string-2');
+            });
+
+            it("should get next token", function () {
+                myEditor.setCursorPos(0, 0);    // first char in text
+                _expectTokenToBe(myEditor.getNextToken(), 0, 5, 'const', 'keyword');
+                _expectTokenToBe(myEditor.getNextToken({line: 0, ch: 1}), 6, 7, 'x', 'def');
+                // whitespace test
+                _expectTokenToBe(myEditor.getNextToken({line: 0, ch: 1}, false), 5, 6, ' ', null);
+                // next line
+                _expectTokenToBe(myEditor.getNextToken({line: 0, ch: 11}), 0, 8, 'function', 'keyword');
+                _expectTokenToBe(myEditor.getNextToken({line: 5, ch: 10}), 0, 5, 'line`', 'string-2');
+            });
+
+            it("should get previous token", function () {
+                myEditor.setCursorPos(5, 10);    // first char in text
+                _expectTokenToBe(myEditor.getPreviousToken(), 7, 8, '=', 'operator');
+                _expectTokenToBe(myEditor.getPreviousToken({line: 0, ch: 1}), 0, 0, '', null);
+                _expectTokenToBe(myEditor.getPreviousToken({line: 0, ch: 7}), 0, 5, 'const', 'keyword');
+                // whitespace test
+                _expectTokenToBe(myEditor.getPreviousToken({line: 0, ch: 7}, false), 5, 6, ' ', null);
+                // prev line
+                _expectTokenToBe(myEditor.getPreviousToken({line: 1, ch: 1}), 10, 11, ';', null);
+                _expectTokenToBe(myEditor.getPreviousToken({line: 1, ch: 0}), 10, 11, ';', null);
+            });
+        });
+
+        describe("Markers", function () {
+
+            beforeEach(function () {
+                let jsContent = "const x=10;\n" +
+                    "function print(val){\n" +
+                    " console.log(val);\n" +
+                    "}\n" +
+                    "print(x);\n" +
+                    "let str=`multi\n" +
+                    "line`;";
+                createTestEditor(jsContent, langNames.javascript.mode);
+            });
+
+            it("should markText without options", function () {
+                let markType = "mark1";
+                let mark = myEditor.markText(markType, {line: 0, ch: 0}, {line: 0, ch: 1});
+                expect(mark.markType).toBe(markType);
+                expect(mark.type).toBe("range");
+                expect(mark.className).toBeFalsy();
+            });
+
+            it("should markText with options", function () {
+                let markType = "mark2";
+                let mark = myEditor.markText(markType, {line: 0, ch: 0}, {line: 0, ch: 1}, {
+                    className: "cssClassName"
+                });
+                expect(mark.markType).toBe(markType);
+                expect(mark.type).toBe("range");
+                expect(mark.className).toBe("cssClassName");
+            });
+
+            it("should markToken and findMarksAt position", function () {
+                let markType = "mark3";
+                myEditor.markToken(markType, {line: 0, ch: 1});
+                let mark = myEditor.findMarksAt({line: 0, ch: 3}, markType);
+                expect(mark.length).toBe(1);
+                expect(mark[0].markType).toBe(markType);
+                expect(mark[0].type).toBe("range");
+            });
+
+            it("should findMarksAt position return all without markType", function () {
+                let markType = "mark4";
+                myEditor.markToken(markType, {line: 0, ch: 1});
+                myEditor.markToken("someMark", {line: 0, ch: 2});
+                let mark = myEditor.findMarksAt({line: 0, ch: 3});
+                expect(mark.length).toBe(2);
+            });
+
+            it("should setBookmark without options", function () {
+                let markType = "mark5";
+                myEditor.setBookmark(markType, {line: 0, ch: 3});
+                let mark = myEditor.findMarksAt({line: 0, ch: 3});
+                expect(mark.length).toBe(1);
+                expect(mark[0].markType).toBe(markType);
+                expect(mark[0].type).toBe("bookmark");
+
+                mark = myEditor.findMarksAt({line: 0, ch: 1});
+                expect(mark.length).toBe(0);
+            });
+
+            it("should findMarksAt get bookmarks and range marks", function () {
+                let markType = "mark6";
+                myEditor.setBookmark(markType, {line: 0, ch: 3});
+                myEditor.markToken(markType, {line: 0, ch: 1});
+                let mark = myEditor.findMarksAt({line: 0, ch: 3});
+                expect(mark.length).toBe(2);
+                expect([mark[0].type, mark[1].type].includes("bookmark")).toBeTrue();
+                expect([mark[0].type, mark[1].type].includes("range")).toBeTrue();
+            });
+
+            it("should findMarks get bookmarks and range marks without markType", function () {
+                let markType = "mark7";
+                myEditor.setBookmark(markType, {line: 0, ch: 3});
+                myEditor.markToken(markType, {line: 0, ch: 1});
+
+                let mark = myEditor.findMarks({line: 0, ch: 0}, {line: 0, ch: 5});
+                expect(mark.length).toBe(2);
+                expect([mark[0].type, mark[1].type].includes("bookmark")).toBeTrue();
+                expect([mark[0].type, mark[1].type].includes("range")).toBeTrue();
+
+                mark = myEditor.findMarks({line: 1, ch: 0}, {line: 1, ch: 1});
+                expect(mark.length).toBe(0);
+                mark = myEditor.findMarks({line: 0, ch: 6}, {line: 0, ch: 7});
+                expect(mark.length).toBe(0);
+
+                mark = myEditor.findMarks({line: 0, ch: 4}, {line: 0, ch: 7});
+                expect(mark.length).toBe(1);
+            });
+
+            it("should findMarks get bookmarks and range marks with markType", function () {
+                myEditor.setBookmark("book", {line: 0, ch: 3});
+                myEditor.markToken("token", {line: 0, ch: 1});
+
+                let mark = myEditor.findMarks({line: 0, ch: 0}, {line: 0, ch: 5}, "book");
+                expect(mark.length).toBe(1);
+                expect(mark[0].type).toBe("bookmark");
+                mark = myEditor.findMarks({line: 0, ch: 0}, {line: 0, ch: 5}, "token");
+                expect(mark.length).toBe(1);
+                expect(mark[0].type).toBe("range");
+            });
+
+            it("should getAllMarks get bookmarks and range marks without markType", function () {
+                myEditor.setBookmark("book", {line: 0, ch: 3});
+                myEditor.markToken("token", {line: 0, ch: 1});
+
+                let mark = myEditor.getAllMarks();
+                expect(mark.length).toBe(2);
+                expect([mark[0].type, mark[1].type].includes("bookmark")).toBeTrue();
+                expect([mark[0].type, mark[1].type].includes("range")).toBeTrue();
+            });
+
+            it("should getAllMarks get bookmarks and range marks with markType", function () {
+                myEditor.setBookmark("book", {line: 0, ch: 3});
+                myEditor.markToken("token", {line: 0, ch: 1});
+
+                let mark = myEditor.getAllMarks("book");
+                expect(mark.length).toBe(1);
+                expect(mark[0].type).toBe("bookmark");
+                mark = myEditor.getAllMarks("token");
+                expect(mark.length).toBe(1);
+                expect(mark[0].type).toBe("range");
+            });
+
+            it("should clearAllMarks clear bookmarks and range marks without markType", function () {
+                myEditor.setBookmark("book", {line: 0, ch: 3});
+                myEditor.markToken("token", {line: 0, ch: 1});
+
+                let mark = myEditor.getAllMarks();
+                expect(mark.length).toBe(2);
+                expect([mark[0].type, mark[1].type].includes("bookmark")).toBeTrue();
+                expect([mark[0].type, mark[1].type].includes("range")).toBeTrue();
+
+                myEditor.clearAllMarks();
+                mark = myEditor.getAllMarks();
+                expect(mark.length).toBe(0);
+            });
+
+            it("should clearAllMarks clear bookmarks and range marks with markType", function () {
+                myEditor.setBookmark("book", {line: 0, ch: 3});
+                myEditor.markToken("token", {line: 0, ch: 1});
+
+                let mark = myEditor.getAllMarks();
+                expect(mark.length).toBe(2);
+                expect([mark[0].type, mark[1].type].includes("bookmark")).toBeTrue();
+                expect([mark[0].type, mark[1].type].includes("range")).toBeTrue();
+
+                myEditor.clearAllMarks("book");
+                mark = myEditor.getAllMarks();
+                expect(mark.length).toBe(1);
+                expect(mark[0].type).toBe("range");
+                myEditor.clearAllMarks("token");
+                mark = myEditor.getAllMarks();
+                expect(mark.length).toBe(0);
             });
         });
     });
