@@ -63,11 +63,7 @@
     ],
     "edit.splitSelIntoLines": [
         {
-           "key": "Ctrl-Alt-L"
-        },
-        {
-           "key":"Ctrl-Shift-L",
-           "platform": "linux"
+           "key": "Ctrl-Shift-L"
         }
     ],
     "edit.addCursorToPrevLine": [
@@ -304,7 +300,7 @@
         "Ctrl-E"
     ],
     "navigate.toggleQuickDocs":  [
-        "Ctrl-Shift-E"
+        "F1"
     ],
     "navigate.previousMatch":  [
         {
@@ -325,6 +321,6 @@
         "Shift-F2"
     ],
     "help.support": [
-        "F1"
+        "Shift-F1"
     ]
 }
