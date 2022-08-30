@@ -406,6 +406,13 @@ define(function (require, exports, module) {
                 createTestEditor(makeDummyLines(10).join("\n"), "unknown");
             });
 
+            describe("getEndingCursorPos", function () {
+                it("should return ending cursor", function () {
+                    expect(myEditor.getEndingCursorPos().line).toBe(9);
+                    expect(myEditor.getEndingCursorPos().ch).toBe(14);
+                });
+            });
+
             describe("hasSelection", function () {
                 it("should return false for a single cursor", function () {
                     myEditor._codeMirror.setCursor(0, 2);
@@ -2306,6 +2313,19 @@ define(function (require, exports, module) {
             it("should setBookmark without options", function () {
                 let markType = "mark5";
                 myEditor.setBookmark(markType, {line: 0, ch: 3});
+                let mark = myEditor.findMarksAt({line: 0, ch: 3});
+                expect(mark.length).toBe(1);
+                expect(mark[0].markType).toBe(markType);
+                expect(mark[0].type).toBe("bookmark");
+
+                mark = myEditor.findMarksAt({line: 0, ch: 1});
+                expect(mark.length).toBe(0);
+            });
+
+            it("should setBookmark without options and cursor", function () {
+                let markType = "mark5";
+                myEditor.setCursorPos(0, 3);
+                myEditor.setBookmark(markType);
                 let mark = myEditor.findMarksAt({line: 0, ch: 3});
                 expect(mark.length).toBe(1);
                 expect(mark[0].markType).toBe(markType);
