@@ -1,2 +1,0 @@
-var open=require("opn"),_domainManager;function _cmdLaunch(url){open(url)}function init(domainManager){_domainManager=domainManager,domainManager.hasDomain("launcher")||domainManager.registerDomain("launcher",{major:0,minor:1}),domainManager.registerCommand("launcher","launch",_cmdLaunch,!1,"Launches a given HTML file in the browser for live development",[{name:"url",type:"string",description:"file:// url to the HTML file"},{name:"browser",type:"string",description:"browser name"}],[])}exports.init=init;
-//# sourceMappingURL=LauncherDomain.js.map

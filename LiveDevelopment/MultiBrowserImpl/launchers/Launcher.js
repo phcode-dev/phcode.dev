@@ -1,2 +1,0 @@
-define(function(require,exports,module){var FileUtils=require("file/FileUtils"),NodeDomain,_bracketsPath,_modulePath,_nodePath,_domainPath,_nodeDomain=new(require("utils/NodeDomain"))("launcher",[FileUtils.getNativeBracketsDirectoryPath(),FileUtils.getNativeModuleDirectoryPath(module),"node/LauncherDomain"].join("/"));function launch(url){_nodeDomain.exec("launch",url)}exports.launch=launch});
-//# sourceMappingURL=Launcher.js.map
