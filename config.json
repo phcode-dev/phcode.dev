@@ -19,7 +19,7 @@
     "extension_url": "https://s3.amazonaws.com/extend.brackets/{0}/{0}-{1}.zip",
     "extension_store_url": "https://store.core.ai/src/",
     "linting.enabled_by_default": true,
-    "build_timestamp": "2022-12-21T13:40:23.381Z",
+    "build_timestamp": "2022-12-22T14:10:11.815Z",
     "googleAnalyticsID": "G-FBK9RP5YK2",
     "mixPanelID": "8cb6814f733e37c05cc59b4adad26407",
     "coreAnalyticsID": "phoenix",
@@ -28,8 +28,8 @@
     "buildtype": "production"
   },
   "name": "Phoenix",
-  "version": "2.0.0-0",
-  "apiVersion": "2.0.0",
+  "version": "3.0.0-18991",
+  "apiVersion": "3.0.0",
   "homepage": "https://core.ai",
   "issues": {
     "url": "https://github.com/phcode-dev/phoenix/issues"
