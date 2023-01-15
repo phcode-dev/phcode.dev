@@ -198,6 +198,7 @@ a, img {
         padding: 0;
         left: @sidebar-width;  // changed dynamically via Resizer
         right: @main-toolbar-width;
+        z-index: @z-index-brackets-main-content;
     }
 
     .force-right-zero {
@@ -2653,4 +2654,73 @@ label input {
 
 #status-language button, #status-encoding button {
     width: auto;
+}
+
+// notification popup
+
+#toast-notification-container {
+    position: absolute;
+    max-width: 250px;
+    top: 0;
+    right: 39px;
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+    height: 100%;
+}
+
+.notification-popup-container {
+    border-radius: 3px;
+    background: #005f8f;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.24);
+    padding: 9px 12px 9px 12px;
+    font-family: "SourceSansPro", serif;
+    color: #eee;
+    line-height: 1.5;
+    margin-top: 7px;
+
+    /* animated properties */
+    opacity: 0;
+    transform: translateY(-50px);
+}
+
+.notification-popup-container.animateOpen {
+    opacity: 1;
+    transition: transform 500ms, opacity 500ms;
+    transition-delay: 2s;
+    transform: translateY(0);
+}
+
+.notification-popup-container.animateClose {
+    transition: transform 500ms, opacity 500ms;
+}
+
+.notification-popup-container p {
+    margin-bottom: 5px;
+}
+
+.notification-popup-close-button {
+    font-size: 16px;
+    font-weight: 900;
+    position: absolute;
+    top: 0;
+    right: 8px;
+    cursor: pointer;
+}
+.notification-popup-close-button:hover {
+    color: white;
+}
+
+.notification-dialog-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #ddd;
+}
+
+.notification-dialog-content strong {
+    color: white;
+}
+
+.notification-dialog-content a {
+    color: #00ccff;
 }

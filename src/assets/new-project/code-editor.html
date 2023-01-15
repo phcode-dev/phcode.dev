@@ -24,6 +24,7 @@
             </div>
             <div class="editor-name">
                 <h4 class="localize">{{APP_NAME}} {{CODE_EDITOR}}</h4>
+                <!-- Place this tag where you want the button to render. -->
                 <div style="display: flex; justify-content: space-between;">
                     <span class="localize">{{BUILD_THE_WEB}}</span>
                     <span class="icon-listing" style="display: flex; align-items: center">
@@ -35,6 +36,16 @@
                         style="display: flex; align-items: center">
                             <img src="images/youtube.svg" alt="" style="width: 1.7em;"></a>
                     </span>
+                </div>
+                <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+                    <a class="github-button"
+                       href="https://github.com/phcode-dev/phoenix"
+                       data-color-scheme="no-preference: dark; light: light; dark: dark;"
+                       data-icon="octicon-star"
+                       data-size="large"
+                       data-show-count="true"
+                       title="Star phcode.dev on GitHub"
+                       aria-label="Star phcode-dev/phoenix on GitHub">Star</a>
                 </div>
             </div>
         </div>
@@ -51,14 +62,20 @@
         </div>
     </div>
     <div class="editor-project-content d-flex justify-content-between">
-        <div id="recentProjectsContainer" class="project-content-left">
-            <div class="recent-project-card">
+        <div class="project-content-left">
+            <div id="recentProjectsContainer" class="recent-project-card">
                 <div class="recent-head">
                     <h5 class="localize">{{CMD_TOGGLE_RECENT_PROJECTS}}</h5>
                 </div>
                 <ul id="recentProjectList" class="recent-project-list">
 
                 </ul>
+            </div>
+            <div id="noProjectContainer" class="no-project-card forced-hidden" style="overflow: hidden;">
+                <!-- Do not load any heavy youtube assets here-->
+                <h5 class="localize">{{PROJECTS_AT_A_GLANCE}}</h5>
+                <div id="YTVideoFrame" style="display: flex; justify-content: center"></div>
+                <span class="localize">{{PROJECT_AT_GLANCE_DESCRIPTION}}</span>
             </div>
         </div>
         <div class="project-content-right">
