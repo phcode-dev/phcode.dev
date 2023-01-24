@@ -15,6 +15,9 @@
     <td class="ext-desc">
         {{#showInstallButton}}
             <!-- Warnings when trying to install extension where latest/all versions not compatible -->
+            {{#defaultFeature}}
+                <div class="alert warning">{{Strings.EXTENSION_DEFAULT_FEATURE_PRESENT}}</div>
+            {{/defaultFeature}}
             {{^isCompatible}}
                 <div class="alert warning">
                     {{#requiresNewer}}{{Strings.EXTENSION_INCOMPATIBLE_NEWER}}{{/requiresNewer}}
@@ -56,7 +59,7 @@
     <td class="ext-action">
         <div>
         {{#showInstallButton}}
-            <button class="btn btn-mini install" data-extension-id="{{metadata.name}}" {{^allowInstall}}disabled{{/allowInstall}}>
+            <button class="btn btn-mini install {{^allowInstall}}forced-hidden{{/allowInstall}}" data-extension-id="{{metadata.name}}">
                 {{^isInstalled}}{{Strings.INSTALL}}{{/isInstalled}}
                 {{#isInstalled}}{{Strings.EXTENSION_INSTALLED}}{{/isInstalled}}
             </button>
@@ -67,8 +70,9 @@
                     {{Strings.UPDATE}}
                 </button>
             {{/showUpdateButton}}
+            <div class="currentThemeText {{^isCurrentTheme}}forced-hidden{{/isCurrentTheme}}" data-extension-id="{{metadata.name}}">{{Strings.CURRENT_THEME}}</div>
             {{#showApplyButton}}
-            <button class="btn btn-mini apply primary" data-extension-id="{{metadata.name}}">
+            <button class="btn btn-mini apply primary {{#isCurrentTheme}} current-theme-apply-hide {{/isCurrentTheme}}" data-extension-id="{{metadata.name}}">
                 {{Strings.APPLY}}
             </button>
             {{/showApplyButton}}
@@ -86,7 +90,7 @@
                 </button>
             {{/enablingAllowed}}
             {{#removalAllowed}}
-                <button class="btn btn-mini remove" data-extension-id="{{metadata.name}}" {{^allowRemove}}disabled title="{{Strings.CANT_REMOVE_DEV}}"{{/allowRemove}}>
+                <button class="btn btn-mini remove danger {{^allowRemove}}forced-hidden{{/allowRemove}}" data-extension-id="{{metadata.name}}">
                     {{Strings.REMOVE}}
                 </button>
             {{/removalAllowed}}
