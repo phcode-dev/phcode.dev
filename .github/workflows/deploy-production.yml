@@ -23,7 +23,7 @@ jobs:
       - name: Building phoenix release artifacts
         working-directory: ./phoenix
         run: |
-          npm install
+          npm ci
           npm run release:prod
           npm run zipTestFiles
           cp -r dist distToDeploy/
