@@ -219,7 +219,7 @@
             "platform": "mac"
         }
     ],
-    "view.increaseFontSize":  [
+    "view.zoomIn":  [
         {
             "key": "Ctrl-=",
             "displayKey": "Ctrl-+"
@@ -228,14 +228,29 @@
             "key": "Ctrl-+"
         }
     ],
-    "view.decreaseFontSize":  [
+    "view.zoomOut":  [
         {
             "key": "Ctrl--",
             "displayKey": "Ctrl-−"
         }
     ],
+    "view.increaseFontSize":  [
+        {
+            "key": "Ctrl-Shift-=",
+            "displayKey": "Ctrl-Shift-+"
+        },
+        {
+            "key": "Ctrl-Shift-+"
+        }
+    ],
+    "view.decreaseFontSize":  [
+        {
+            "key": "Ctrl-Shift--",
+            "displayKey": "Ctrl-Shift-−"
+        }
+    ],
     "view.restoreFontSize":  [
-        "Ctrl-0"
+        "Ctrl-Shift-9"
     ],
     "view.scrollLineUp":  [
         {
@@ -291,12 +306,12 @@
     ],
     "navigate.nextDocListOrder":  [
         {
-            "key": "Ctrl-PageDown"
+            "key": "Alt-PageDown"
         }
     ],
     "navigate.prevDocListOrder":  [
         {
-            "key": "Ctrl-PageUp"
+            "key": "Alt-PageUp"
         }
     ],
     "navigate.toggleQuickEdit":  [
