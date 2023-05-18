@@ -19,7 +19,7 @@
  *
  */
 
-/*global describe, it, expect, beforeEach, afterEach, awaits, awaitsFor, awaitsForDone, jasmine, spyOn */
+/*global describe, it, expect, beforeEach, afterEach, awaits, awaitsFor, awaitsForDone, jasmine, spyOn, jsPromise */
 
 define(function (require, exports, module) {
 
@@ -27,6 +27,7 @@ define(function (require, exports, module) {
     var Directory           = require("filesystem/Directory"),
         File                = require("filesystem/File"),
         FileSystem          = require("filesystem/FileSystem"),
+        FileUtils           = require("file/FileUtils"),
         FileSystemStats     = require("filesystem/FileSystemStats"),
         FileSystemError     = require("filesystem/FileSystemError"),
         MockFileSystemImpl  = require("./MockFileSystemImpl"),
@@ -423,6 +424,26 @@ define(function (require, exports, module) {
                 expect(cb.contents[0].fullPath).toBe("/subdir/file3.txt");
             });
 
+            it("should read a Directory Async", async function () {
+                let directory = fileSystem.getDirectoryForPath("/subdir/");
+                const {entries, contentStats, contentsStatsErrors} = await directory.getContentsAsync();
+                expect(entries.length).toBe(3);
+                expect(entries[0].fullPath).toBe("/subdir/file3.txt");
+                expect(contentStats[0].isFile).toBe(true);
+                expect(contentsStatsErrors).toBe(undefined);
+            });
+
+            it("should check if directory is empty Async", async function () {
+                let directory = fileSystem.getDirectoryForPath("/subdir/");
+                let isEmpty = await directory.isEmptyAsync();
+                expect(isEmpty).toBe(false);
+                // now create an empty dir
+                let newDirectory = fileSystem.getDirectoryForPath("/subdir/newDir/");
+                await newDirectory.createAsync();
+                isEmpty = await newDirectory.isEmptyAsync();
+                expect(isEmpty).toBe(true);
+            });
+
             it("should return an error if the Directory can't be found", async function () {
                 var directory = fileSystem.getDirectoryForPath("/doesnt-exist/"),
                     cb = getContentsCallback();
@@ -487,6 +508,143 @@ define(function (require, exports, module) {
                     expect(err).toBeFalsy();
                     expect(exists).toBe(true);
                 });
+            });
+            it("should create a Directory Async", async function () {
+                let directory = fileSystem.getDirectoryForPath("/subdir2/");
+
+                let isExists = await directory.existsAsync();
+                expect(isExists).toBeFalse();
+                await directory.createAsync();
+                isExists = await directory.existsAsync();
+                expect(isExists).toBeTrue();
+            });
+        });
+
+        describe("should get stats", function () {
+            it("should get Directory statsAsync", async function () {
+                let directory = fileSystem.getDirectoryForPath("/subdir2/");
+                await directory.createAsync();
+                let stat = await directory.statAsync();
+                expect(stat.isDirectory).toBeTrue();
+            });
+
+            it("should get reject statsAsync is directory doesnt exist", async function () {
+                let directory = fileSystem.getDirectoryForPath("/subdir2/");
+                let isExists = await directory.existsAsync();
+                expect(isExists).toBeFalse();
+
+                let err;
+                try{
+                    await directory.statAsync();
+                } catch (e) {
+                    err = e;
+                }
+                expect(err).toBe(FileSystemError.NOT_FOUND);
+            });
+        });
+
+        describe("should unlinkAsync work as expectes", function () {
+            it("should delete Directory", async function () {
+                let directory = fileSystem.getDirectoryForPath("/subdir2/");
+                await directory.createAsync();
+                let stat = await directory.statAsync();
+                expect(stat.isDirectory).toBeTrue();
+
+                await directory.unlinkAsync();
+                let isExists = await directory.existsAsync();
+                expect(isExists).toBeFalse();
+            });
+
+            it("should unlinkAsync reject if directory doesnt exist", async function () {
+                let directory = fileSystem.getDirectoryForPath("/subdir2/");
+                let isExists = await directory.existsAsync();
+                expect(isExists).toBeFalse();
+
+                let err;
+                try{
+                    await directory.unlinkAsync();
+                } catch (e) {
+                    err = e;
+                }
+                expect(err).toBe(FileSystemError.NOT_FOUND);
+            });
+        });
+
+        describe("unlinkEmptyDirectoryAsync tests", function () {
+            it("should unlinkEmptyDirectoryAsync delete self if empty", async function () {
+                let directory = fileSystem.getDirectoryForPath("/subdir2/");
+                await directory.createAsync();
+                let stat = await directory.statAsync();
+                expect(stat.isDirectory).toBeTrue();
+
+                await directory.unlinkEmptyDirectoryAsync();
+                let isExists = await directory.existsAsync();
+                expect(isExists).toBeFalse();
+            });
+
+            it("should unlinkEmptyDirectoryAsync reject if directory doesnt exist", async function () {
+                let directory = fileSystem.getDirectoryForPath("/subdir2/");
+                let isExists = await directory.existsAsync();
+                expect(isExists).toBeFalse();
+
+                let err;
+                try{
+                    await directory.unlinkEmptyDirectoryAsync();
+                } catch (e) {
+                    err = e;
+                }
+                expect(err).toBe(FileSystemError.NOT_FOUND);
+            });
+
+            async function createDirTree(dirList, fileList) {
+                for(let dir of dirList){
+                    let directory = fileSystem.getDirectoryForPath(dir);
+                    await directory.createAsync();
+                }
+                for(let file of fileList){
+                    let fileEntry = fileSystem.getFileForPath(file);
+                    await jsPromise(FileUtils.writeText(fileEntry, "hello", true));
+                }
+            }
+            async function verifyExists(deletedPaths, shouldExist, isFile = false) {
+                for(let deletedPath of deletedPaths){
+                    let entry = isFile ? fileSystem.getFileForPath(deletedPath)
+                        :fileSystem.getDirectoryForPath(deletedPath);
+                    let isExists = await entry.existsAsync();
+                    expect(deletedPath + ":" + isExists).toBe(deletedPath + ":" + shouldExist);
+                }
+            }
+            it("should unlinkEmptyDirectoryAsync delete subtree with no files", async function () {
+                await createDirTree(["/subdir2/", "/subdir2/s3/", "/subdir2/s4/", "/subdir2/s3/s33/"], []);
+
+                let directory = fileSystem.getDirectoryForPath("/subdir2/");
+                await directory.unlinkEmptyDirectoryAsync();
+                let isExists = await directory.existsAsync();
+                expect(isExists).toBeFalse();
+            });
+
+            it("should unlinkEmptyDirectoryAsync retain subtree with files", async function () {
+                await createDirTree(["/subdir2/", "/subdir2/s3/", "/subdir2/s4/", "/subdir2/s3/s33/"],
+                    ["/subdir2/1.txt"]);
+
+                let directory = fileSystem.getDirectoryForPath("/subdir2/");
+                await directory.unlinkEmptyDirectoryAsync();
+
+                await verifyExists(["/subdir2/s3/", "/subdir2/s4/", "/subdir2/s3/s33/"], false);
+                await verifyExists(["/subdir2/"], true);
+                await verifyExists(["/subdir2/1.txt"], true, true);
+            });
+
+            it("should unlinkEmptyDirectoryAsync retain subtree with files 2", async function () {
+                await createDirTree(["/subdir2/", "/subdir2/s3/", "/subdir2/s3/s33/", "/subdir2/s3/s33/s333/"],
+                    ["/subdir2/s3/s33/1.txt"]);
+
+                let directory = fileSystem.getDirectoryForPath("/subdir2/s3/");
+                await directory.unlinkEmptyDirectoryAsync();
+
+                await verifyExists(["/subdir2/s3/s33/s333/"], false);
+                await verifyExists(["/subdir2/", "/subdir2/s3/", "/subdir2/s3/s33/"], true);
+                await verifyExists(["/subdir2/s3/s33/1.txt"], true, true);
             });
         });
 
