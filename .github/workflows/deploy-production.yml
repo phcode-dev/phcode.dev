@@ -27,8 +27,6 @@ jobs:
           npm run release:prod
           npm run zipTestFiles
           cp -r dist distToDeploy/
-          cp -r dist distToDeploy/src/
-          cp -r test distToDeploy/test/
         shell: bash
 
       - name: Copying release artifacts to public folder
