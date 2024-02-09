@@ -5,8 +5,8 @@
     <title>Desktop Metrics logger with Google Analytics</title>
     <script>
         let gaReady = false;
-        function installGoogleAnalytics(analyticsID, customUserID) {
-            if(!analyticsID || !customUserID || gaReady){
+        function installGoogleAnalytics(analyticsID) {
+            if(!analyticsID || gaReady){
                 return ;
             }
             // ga primer scripts
@@ -31,7 +31,7 @@
         async function processRequest(event) {
             const payload = event.payload;
             if(!gaReady) {
-                installGoogleAnalytics(payload.analyticsID, payload.customUserID);
+                installGoogleAnalytics(payload.analyticsID);
             }
 
             for(let eventPayload of payload.events) {
