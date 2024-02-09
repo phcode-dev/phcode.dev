@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="robots" content="noindex, nofollow">
     <title>Desktop Metrics logger with Google Analytics</title>
     <script>
         let gaReady = false;
@@ -24,7 +25,7 @@
             document.head.appendChild(gaScript);
 
             gtag('js', new Date());
-            gtag('config', analyticsID, { 'user_id': customUserID });
+            gtag('config', analyticsID);
             gaReady = true;
         }
 
