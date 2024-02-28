@@ -25,6 +25,7 @@ jobs:
         run: |
           npm ci
           npm run release:prod
+          npm run _releaseWebCache
           npm run zipTestFiles
           cp -r dist distToDeploy/
         shell: bash
