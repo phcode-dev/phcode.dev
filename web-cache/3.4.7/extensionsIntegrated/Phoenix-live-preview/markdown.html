@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Markdown- Phoenix</title>
+
+
+    <style>
+        {{{BOOTSTRAP_LIB_CSS}}}
+    </style>
+    <style>
+        {{{HIGHLIGHT_JS_CSS}}}
+    </style>
+    <script>
+        {{{HIGHLIGHT_JS}}}
+    </script>
+    <style>
+        {{{GFM_CSS}}}
+    </style>
+    <script type="text/javascript">
+        function inIframe () {
+            try {
+                return window.self !== window.top;
+            } catch (e) {
+                return true;
+            }
+        }
+
+        if(inIframe()) {
+            // inside iframes, we disable ctrl-s browser save page workflow as it may be inside the phoenix window
+            // It will confuse the use seeing the browser save dialog inside phoenix.
+            document.savePageCtrlSDisabledByPhoenix = true;
+            document.addEventListener("keydown", function(e) {
+                if (e.key === 's' && (navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)) {
+                    e.preventDefault();
+                }
+            }, false);
+            function getAbsoluteUrl(url) {
+                // Check if the URL is already absolute
+                if (/^(?:[a-z]+:)?\/\//i.test(url)) {
+                    return url; // The URL is already absolute
+                }
+
+                // If not, create an absolute URL using the current page's location as the base
+                const absoluteUrl = new URL(url, window.location.href);
+                return absoluteUrl.href;
+            }
+            document.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A' && (event.target.target === '_blank')) {
+                    const href = getAbsoluteUrl(event.target.getAttribute('href'));
+                    window.parent.postMessage({
+                        handlerName: "ph-liveServer",
+                        eventName: 'embeddedIframeHrefClick',
+                        href: href
+                    }, "{{{PARENT_ORIGIN}}}");
+                }
+            });
+        }
+
+        window.addEventListener('scroll', function () {
+            // save scroll position
+            sessionStorage.setItem("saved-scroll-" + location.href, JSON.stringify({
+                scrollX: window.scrollX,
+                scrollY: window.scrollY
+            }));
+        });
+        function scrollToLastPosition() {
+            let saved = JSON.parse(sessionStorage.getItem("saved-scroll-" + location.href));
+            if(saved){
+                window.scrollTo({
+                    left: saved.scrollX,
+                    top: saved.scrollY,
+                    behavior: "instant"
+                });
+            }
+        }
+
+    </script>
+    <style>
+
+        *{
+            margin:0;
+            padding: 0;
+        }
+        html{height:100%;}
+
+        body{
+            height:100%;
+        }
+        .header{
+            height:6%;
+            width:100%;
+            background-color:#444444;
+        }
+        .contain{
+            width:100%;
+            height:99%;
+        }
+        .input{
+            width:50%;
+            height:93%;
+            float:left;
+            background-color: #F9F9F5;
+        }
+
+        #text-input{
+            height:100%;
+            width:90%;
+            border:0px;
+            font-size:15px;
+            background-color: #F9F9F5;
+            resize:none;
+            outline:none;
+        }
+        #preview{
+            width:50%;
+            height: 93%;
+            float: right;
+            font-size:16px;
+            background-color: #F9F9F5;
+            overflow:scroll;
+            overflow-x: hidden;
+        }
+        table { border-collapse: collapse; }
+        tr { border-bottom: solid 1px black; }
+        tr:nth-child(even) {background-color: #f2f2f2;}
+        /* srcollbar */
+        ::-webkit-scrollbar{
+            width:12px;
+        }
+        ::-webkit-scrollbar-thumb{
+            /* border-radius:10px; */
+            background-color:#DEE4E4;
+        }
+        ::-webkit-scrollbar-track{
+            /* border-radius:10px; */
+            background-color:#EBEEEC;
+        }
+
+    </style>
+</head>
+<body onload="scrollToLastPosition();hljs.highlightAll();">
+{{{markdownContent}}}
+</body>
+</html>
+
+

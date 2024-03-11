@@ -1,2 +1,0 @@
-define(function(require,exports,module){function WatchedRoot(entry,filter,filterGlobs){this.entry=entry,this.filter=filter,this.filterGlobs=filterGlobs}WatchedRoot.INACTIVE=0,WatchedRoot.STARTING=1,WatchedRoot.ACTIVE=2,WatchedRoot.prototype.entry=null,WatchedRoot.prototype.filter=null,WatchedRoot.prototype.filterGlobs=null,WatchedRoot.prototype.status=WatchedRoot.INACTIVE,module.exports=WatchedRoot});
-//# sourceMappingURL=WatchedRoot.js.map

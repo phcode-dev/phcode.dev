@@ -1,1 +1,0 @@
-{"version":3,"sources":["assets/default-project/en/script.js"],"names":["onPageLoaded","console","log"],"mappings":"AAAA,SAASA,eAELC,QAAQC,IAAI","sourcesContent":["function onPageLoaded() {\n    // Write your javascript code here\n    console.log(\"page loaded\");\n}\n"],"file":"script.js"}
