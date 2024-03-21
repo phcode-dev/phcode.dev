@@ -1,2 +1,0 @@
-const urlParams=new URLSearchParams(location.search),debugMode="true"===urlParams.get("debug"),Phoenix={baseURL:"../"};importScripts("../phoenix/virtualfs.js"),importScripts("../utils/EventDispatcher.js"),importScripts("./WorkerComm.js"),virtualfs.debugMode=debugMode,console.log("Extensions worker loaded in debug mode: ",debugMode),debugMode||(console.log=console.info=function(){});
-//# sourceMappingURL=extensions-worker-thread.js.map
