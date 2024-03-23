@@ -1,0 +1,11 @@
+{
+    "extractToVariable":  [
+        "Ctrl-Alt-V"
+    ],
+    "extractToFunction":  [
+        "Ctrl-Alt-M"
+    ],
+    "renameIdentifier": [
+        "F2"
+    ]
+}

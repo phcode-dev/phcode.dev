@@ -1,0 +1,24 @@
+/* Dialog in the Help menu */
+
+.health-data-preview .modal-body {
+    max-height: none;
+}
+
+.health-data-preview .preview-content-container {
+    max-height: 300px;
+    overflow: auto;
+    background-color: #f0f0f0;
+    color: #0f0f0f;
+    border-radius: 3px;
+    padding: 8px;
+    margin-bottom: 0;
+}
+
+.health-data-preview input[type="checkbox"] {
+    vertical-align: bottom;
+}
+
+.health-data-preview .preview-content {
+    -webkit-user-select: text;
+    cursor: text;
+}

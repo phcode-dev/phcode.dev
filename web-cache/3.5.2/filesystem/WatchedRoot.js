@@ -1,0 +1,2 @@
+define(function(require,exports,module){function WatchedRoot(entry,filter,filterGitIgnore){this.entry=entry,this.filter=filter,this.filterGitIgnore=filterGitIgnore}WatchedRoot.INACTIVE=0,WatchedRoot.STARTING=1,WatchedRoot.ACTIVE=2,WatchedRoot.prototype.entry=null,WatchedRoot.prototype.filter=null,WatchedRoot.prototype.filterGitIgnore=null,WatchedRoot.prototype.status=WatchedRoot.INACTIVE,module.exports=WatchedRoot});
+//# sourceMappingURL=WatchedRoot.js.map
