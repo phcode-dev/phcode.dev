@@ -19,7 +19,7 @@
  *
  */
 
- /* Temporary fix for issue#10150 for weird project tree scrollbar behaviour on mac. Scrollbar not appearing on hover. Forcing the project tree div to render displays the scrollbar. So setting transparent background color of div on hover.
+/* Temporary fix for issue#10150 for weird project tree scrollbar behaviour on mac. Scrollbar not appearing on hover. Forcing the project tree div to render displays the scrollbar. So setting transparent background color of div on hover.
 */
 
 .platform-mac
@@ -122,7 +122,11 @@
     ::-webkit-scrollbar {
         width: 12px;
         height: 12px;
-        background-color: @win-scrollbar-track;
+        background-color: transparent;
+    }
+
+    ::-webkit-scrollbar:hover {
+        background-color:  @win-scrollbar-track;
     }
 
     ::-webkit-scrollbar-thumb {
@@ -156,15 +160,22 @@
 .dark {
     /* Custom scrollbar colors */
     &.platform-win {
-        .CodeMirror-scrollbar-filler,
+        .CodeMirror-scrollbar-filler {
+            background-color:  rgb(30, 30, 30);
+        }
+
         .CodeMirror-gutter-filler {
-            background-color: rgb(15, 15, 15);
+            background-color: transparent;
         }
 
         // Note: when changing padding/margins, may need to adjust metrics in ScrollTrackMarkers.js
 
         ::-webkit-scrollbar {
-            background-color: rgb(15, 15, 15);
+            background-color: transparent;
+        }
+
+        ::-webkit-scrollbar:hover {
+            background-color: rgba(15, 15, 15, .5);
         }
 
         ::-webkit-scrollbar-thumb {
@@ -182,7 +193,7 @@
     &.platform-linux, &.platform-mac {
         .CodeMirror-scrollbar-filler,
         .CodeMirror-gutter-filler {
-            background-color: #1d1f21;
+            background-color: transparent;
         }
 
         ::-webkit-scrollbar-thumb {

@@ -1,0 +1,2 @@
+define(function(require,exports,module){const NotificationUI=brackets.getModule("widgets/NotificationUI"),Strings=brackets.getModule("strings");function showFirstLaunchTooltip(){const deferred=new $.Deferred;return NotificationUI.createToastFromTemplate(Strings.HEALTH_FIRST_POPUP_TITLE,`<div id="healthdata-firstlaunch-popup">${Strings.HEALTH_DATA_NOTIFICATION_MESSAGE}</div>`).done(deferred.resolve),deferred.promise()}exports.showFirstLaunchTooltip=showFirstLaunchTooltip});
+//# sourceMappingURL=HealthDataPopup.js.map

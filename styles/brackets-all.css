@@ -8499,26 +8499,26 @@ div.CodeMirror-cursors .CodeMirror-cursor {
   background-color: #f8f8f8;
   border-right: none;
 }
-.platform-mac .CodeMirror-scrollbar-filler {
-  background-image: url(images/scrollbar-mac-corner.png);
+.platform-win .CodeMirror-scrollbar-filler {
+  background-color: white;
+  height: 12px !important;
 }
-.platform-mac .CodeMirror-gutter-filler {
-  background-image: url(images/scrollbar-mac-bg.png);
-}
-.platform-win .CodeMirror-scrollbar-filler,
 .platform-win .CodeMirror-gutter-filler {
-  background-color: #f0f0f0;
+  background-color: transparent;
   height: 12px !important;
 }
 .platform-win .CodeMirror-scrollbar-filler {
   width: 12px !important;
 }
 .platform-linux .CodeMirror-scrollbar-filler,
-.platform-linux .CodeMirror-gutter-filler {
-  background-color: #f8f8f8;
+.platform-mac .CodeMirror-scrollbar-filler,
+.platform-linux .CodeMirror-gutter-filler,
+.platform-mac .CodeMirror-gutter-filler {
+  background-color: transparent;
   height: 12px !important;
 }
-.platform-linux .CodeMirror-scrollbar-filler {
+.platform-linux .CodeMirror-scrollbar-filler,
+.platform-mac .CodeMirror-scrollbar-filler {
   width: 12px !important;
 }
 .CodeMirror-linenumber {
@@ -9074,6 +9074,9 @@ ins.jstree-icon {
 .platform-win ::-webkit-scrollbar {
   width: 12px;
   height: 12px;
+  background-color: transparent;
+}
+.platform-win ::-webkit-scrollbar:hover {
   background-color: #f0f0f0;
 }
 .platform-win ::-webkit-scrollbar-thumb {
@@ -9099,12 +9102,17 @@ ins.jstree-icon {
 .dark {
   /* Custom scrollbar colors */
 }
-.dark.platform-win .CodeMirror-scrollbar-filler,
+.dark.platform-win .CodeMirror-scrollbar-filler {
+  background-color: #1e1e1e;
+}
 .dark.platform-win .CodeMirror-gutter-filler {
-  background-color: #0f0f0f;
+  background-color: transparent;
 }
 .dark.platform-win ::-webkit-scrollbar {
-  background-color: #0f0f0f;
+  background-color: transparent;
+}
+.dark.platform-win ::-webkit-scrollbar:hover {
+  background-color: rgba(15, 15, 15, 0.5);
 }
 .dark.platform-win ::-webkit-scrollbar-thumb {
   box-shadow: 0 0 0 12px #313131 inset;
@@ -9120,7 +9128,7 @@ ins.jstree-icon {
 .dark.platform-mac .CodeMirror-scrollbar-filler,
 .dark.platform-linux .CodeMirror-gutter-filler,
 .dark.platform-mac .CodeMirror-gutter-filler {
-  background-color: #1d1f21;
+  background-color: transparent;
 }
 .dark.platform-linux ::-webkit-scrollbar-thumb,
 .dark.platform-mac ::-webkit-scrollbar-thumb {
