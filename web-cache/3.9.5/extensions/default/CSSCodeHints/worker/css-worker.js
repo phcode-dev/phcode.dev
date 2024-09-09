@@ -1,0 +1,2 @@
+!function(){function cssLint(params){const cssMode=CSSLanguageService.CSS_MODES[params.cssMode];if(!cssMode)throw new Error("Language mode not supported "+params.cssMode);return CSSLanguageService.validateCSS(params.text,cssMode,params.filePath,{duplicateProperties:"warning",zeroUnits:"warning",emptyRules:"warning",unknownProperties:"warning",ieHack:"warning",propertyIgnoredDueToDisplay:"warning",fontFaceProperties:"warning",unknownVendorSpecificProperties:"warning"})}WorkerComm.setExecHandler("cssLint",cssLint)}();
+//# sourceMappingURL=css-worker.js.map

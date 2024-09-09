@@ -1,0 +1,13 @@
+{
+    "googleAnalyticsID"          : "G-FP5S9BKDSJ",
+    "googleAnalyticsIDDesktop"   : "G-D5R1Y6PTS8",
+    "mixPanelID"                 : "a7e08ffd43c37767c29b13df1d2e6c62",
+    "coreAnalyticsID"            : "phoenix",
+    "coreAnalyticsAppName"       : "phoenix-stage",
+    "coreAnalyticsAppNameDesktop"       : "desktop-stage",
+    "environment"                : "stage",
+    "buildtype"                  : "staging",
+    "bugsnagEnv"                 : "staging",
+    "app_notification_url"       : "https://updates.phcode.io/appNotifications/staging/",
+    "app_update_url"             : "https://updates.phcode.io/tauri/update-latest-pre-release.json"
+}

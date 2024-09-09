@@ -1,0 +1,2 @@
+define(function(require,exports,module){const EventDispatcher=require("utils/EventDispatcher"),WorkerComm=require("worker/WorkerComm"),_ExtensionsWorker=new Worker(`${Phoenix.baseURL}worker/extensions-worker-thread.js?debug=${"true"===window.logger.logToConsolePref}`,{type:"module"});_ExtensionsWorker||console.error("Could not load Extensions worker! Some extensions may not work as expected."),EventDispatcher.makeEventDispatcher(exports),WorkerComm.createWorkerComm(_ExtensionsWorker,exports)});
+//# sourceMappingURL=ExtensionsWorker.js.map

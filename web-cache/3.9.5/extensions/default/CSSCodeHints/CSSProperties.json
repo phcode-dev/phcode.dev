@@ -1,0 +1,7228 @@
+{
+    "align-content": {
+        "values": [
+            "center",
+            "flex-end",
+            "flex-start",
+            "space-around",
+            "space-between",
+            "stretch",
+            "normal"
+        ]
+    },
+    "align-items": {
+        "values": [
+            "baseline",
+            "center",
+            "flex-end",
+            "flex-start",
+            "stretch",
+            "normal"
+        ]
+    },
+    "align-self": {
+        "values": [
+            "auto",
+            "baseline",
+            "center",
+            "flex-end",
+            "flex-start",
+            "stretch",
+            "normal"
+        ]
+    },
+    "all": {
+        "values": [
+            "initial",
+            "inherit",
+            "unset",
+            "revert"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/all"
+    },
+    "animation": {
+        "values": [
+            "alternate",
+            "alternate-reverse",
+            "backwards",
+            "both",
+            "forwards",
+            "infinite",
+            "none",
+            "normal",
+            "reverse",
+            "ease",
+            "ease-in",
+            "ease-in-out",
+            "ease-out",
+            "linear",
+            "step-end",
+            "step-start",
+            "steps()",
+            "cubic-bezier()",
+            "cubic-bezier(0.6, -0.28, 0.735, 0.045)",
+            "cubic-bezier(0.68, -0.55, 0.265, 1.55)",
+            "cubic-bezier(0.175, 0.885, 0.32, 1.275)",
+            "cubic-bezier(0.6, 0.04, 0.98, 0.335)",
+            "cubic-bezier(0.785, 0.135, 0.15, 0.86)",
+            "cubic-bezier(0.075, 0.82, 0.165, 1)",
+            "cubic-bezier(0.55, 0.055, 0.675, 0.19)",
+            "cubic-bezier(0.645, 0.045, 0.355, 1)",
+            "cubic-bezier(0.215, 0.610, 0.355, 1)",
+            "cubic-bezier(0.95, 0.05, 0.795, 0.035)",
+            "cubic-bezier(1, 0, 0, 1)",
+            "cubic-bezier(0.19, 1, 0.22, 1)",
+            "cubic-bezier(0.47, 0, 0.745, 0.715)",
+            "cubic-bezier(0.445, 0.05, 0.55, 0.95)",
+            "cubic-bezier(0.39, 0.575, 0.565, 1)",
+            "cubic-bezier(0.55, 0.085, 0.68, 0.53)",
+            "cubic-bezier(0.455, 0.03, 0.515, 0.955)",
+            "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+            "cubic-bezier(0.895, 0.03, 0.685, 0.22)",
+            "cubic-bezier(0.77, 0, 0.175, 1)",
+            "cubic-bezier(0.165, 0.84, 0.44, 1)",
+            "cubic-bezier(0.755, 0.05, 0.855, 0.06)",
+            "cubic-bezier(0.86, 0, 0.07, 1)",
+            "cubic-bezier(0.23, 1, 0.320, 1)"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/animation"
+    },
+    "animation-delay": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/animation-delay"
+    },
+    "animation-direction": {
+        "values": [
+            "alternate",
+            "alternate-reverse",
+            "normal",
+            "reverse"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/animation-direction"
+    },
+    "animation-duration": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/animation-duration"
+    },
+    "animation-fill-mode": {
+        "values": [
+            "backwards",
+            "both",
+            "forwards",
+            "none"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/animation-fill-mode"
+    },
+    "animation-iteration-count": {
+        "values": [
+            "infinite"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/animation-iteration-count"
+    },
+    "animation-name": {
+        "values": [
+            "none"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/animation-name"
+    },
+    "animation-play-state": {
+        "values": [
+            "paused",
+            "running"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/animation-play-state"
+    },
+    "animation-timing-function": {
+        "values": [
+            "ease",
+            "ease-in",
+            "ease-in-out",
+            "ease-out",
+            "linear",
+            "step-end",
+            "step-start",
+            "steps()",
+            "cubic-bezier()",
+            "cubic-bezier(0.6, -0.28, 0.735, 0.045)",
+            "cubic-bezier(0.68, -0.55, 0.265, 1.55)",
+            "cubic-bezier(0.175, 0.885, 0.32, 1.275)",
+            "cubic-bezier(0.6, 0.04, 0.98, 0.335)",
+            "cubic-bezier(0.785, 0.135, 0.15, 0.86)",
+            "cubic-bezier(0.075, 0.82, 0.165, 1)",
+            "cubic-bezier(0.55, 0.055, 0.675, 0.19)",
+            "cubic-bezier(0.645, 0.045, 0.355, 1)",
+            "cubic-bezier(0.215, 0.610, 0.355, 1)",
+            "cubic-bezier(0.95, 0.05, 0.795, 0.035)",
+            "cubic-bezier(1, 0, 0, 1)",
+            "cubic-bezier(0.19, 1, 0.22, 1)",
+            "cubic-bezier(0.47, 0, 0.745, 0.715)",
+            "cubic-bezier(0.445, 0.05, 0.55, 0.95)",
+            "cubic-bezier(0.39, 0.575, 0.565, 1)",
+            "cubic-bezier(0.55, 0.085, 0.68, 0.53)",
+            "cubic-bezier(0.455, 0.03, 0.515, 0.955)",
+            "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+            "cubic-bezier(0.895, 0.03, 0.685, 0.22)",
+            "cubic-bezier(0.77, 0, 0.175, 1)",
+            "cubic-bezier(0.165, 0.84, 0.44, 1)",
+            "cubic-bezier(0.755, 0.05, 0.855, 0.06)",
+            "cubic-bezier(0.86, 0, 0.07, 1)",
+            "cubic-bezier(0.23, 1, 0.320, 1)"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/animation-timing-function"
+    },
+    "backface-visibility": {
+        "values": [
+            "hidden",
+            "visible"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/backface-visibility"
+    },
+    "background": {
+        "values": [
+            "fixed",
+            "local",
+            "none",
+            "scroll",
+            "url()",
+            "image()",
+            "-webkit-image-set()",
+            "image-set()",
+            "-moz-element()",
+            "element()",
+            "cross-fade()",
+            "-webkit-gradient()",
+            "-webkit-linear-gradient()",
+            "-moz-linear-gradient()",
+            "-o-linear-gradient()",
+            "linear-gradient()",
+            "-webkit-repeating-linear-gradient()",
+            "-moz-repeating-linear-gradient()",
+            "-o-repeating-linear-gradient()",
+            "repeating-linear-gradient()",
+            "-webkit-radial-gradient()",
+            "-moz-radial-gradient()",
+            "radial-gradient()",
+            "-webkit-repeating-radial-gradient()",
+            "-moz-repeating-radial-gradient()",
+            "repeating-radial-gradient()",
+            "bottom",
+            "center",
+            "left",
+            "right",
+            "top",
+            "no-repeat",
+            "repeat",
+            "repeat-x",
+            "repeat-y",
+            "round",
+            "space",
+            "border-box",
+            "content-box",
+            "padding-box",
+            "*"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/background"
+    },
+    "background-attachment": {
+        "values": [
+            "fixed",
+            "local",
+            "scroll"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/background-attachment"
+    },
+    "background-blend-mode": {
+        "values": [
+            "normal",
+            "multiply",
+            "screen",
+            "overlay",
+            "darken",
+            "lighten",
+            "color-dodge",
+            "color-burn",
+            "hard-light",
+            "soft-light",
+            "difference",
+            "exclusion",
+            "hue",
+            "saturation",
+            "color",
+            "luminosity"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/background-blend-mode"
+    },
+    "background-clip": {
+        "values": [
+            "border-box",
+            "content-box",
+            "padding-box"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/background-clip"
+    },
+    "background-color": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/background-color",
+        "type": "color"
+    },
+    "background-image": {
+        "values": [
+            "none",
+            "url()",
+            "image()",
+            "-webkit-image-set()",
+            "image-set()",
+            "-moz-element()",
+            "element()",
+            "cross-fade()",
+            "-webkit-gradient()",
+            "-webkit-linear-gradient()",
+            "-moz-linear-gradient()",
+            "-o-linear-gradient()",
+            "linear-gradient()",
+            "-webkit-repeating-linear-gradient()",
+            "-moz-repeating-linear-gradient()",
+            "-o-repeating-linear-gradient()",
+            "repeating-linear-gradient()",
+            "-webkit-radial-gradient()",
+            "-moz-radial-gradient()",
+            "radial-gradient()",
+            "-webkit-repeating-radial-gradient()",
+            "-moz-repeating-radial-gradient()",
+            "repeating-radial-gradient()"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/background-image"
+    },
+    "background-origin": {
+        "values": [
+            "border-box",
+            "content-box",
+            "padding-box"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/background-origin"
+    },
+    "background-position": {
+        "values": [
+            "bottom",
+            "center",
+            "left",
+            "right",
+            "top"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/background-position"
+    },
+    "background-repeat": {
+        "values": [
+            "no-repeat",
+            "repeat",
+            "repeat-x",
+            "repeat-y",
+            "round",
+            "space"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/background-repeat"
+    },
+    "background-size": {
+        "values": [
+            "auto",
+            "contain",
+            "cover"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/background-size"
+    },
+    "border": {
+        "values": [
+            "medium",
+            "thick",
+            "thin",
+            "dashed",
+            "dotted",
+            "double",
+            "groove",
+            "hidden",
+            "inset",
+            "none",
+            "outset",
+            "ridge",
+            "solid"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/border"
+    },
+    "border-collapse": {
+        "values": [
+            "collapse",
+            "separate"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/border-collapse"
+    },
+    "border-color": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/border-color",
+        "type": "color"
+    },
+    "border-spacing": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/border-spacing"
+    },
+    "border-style": {
+        "values": [
+            "dashed",
+            "dotted",
+            "double",
+            "groove",
+            "hidden",
+            "inset",
+            "none",
+            "outset",
+            "ridge",
+            "solid"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/border-style"
+    },
+    "border-bottom": {
+        "values": [
+            "medium",
+            "thick",
+            "thin",
+            "dashed",
+            "dotted",
+            "double",
+            "groove",
+            "hidden",
+            "inset",
+            "none",
+            "outset",
+            "ridge",
+            "solid"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/border-bottom"
+    },
+    "border-bottom-color": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/border-bottom-color",
+        "type": "color"
+    },
+    "border-bottom-left-radius": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/border-bottom-left-radius"
+    },
+    "border-bottom-right-radius": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/border-bottom-right-radius"
+    },
+    "border-bottom-style": {
+        "values": [
+            "dashed",
+            "dotted",
+            "double",
+            "groove",
+            "hidden",
+            "inset",
+            "none",
+            "outset",
+            "ridge",
+            "solid"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/border-bottom-style"
+    },
+    "border-bottom-width": {
+        "values": [
+            "medium",
+            "thick",
+            "thin"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/border-bottom-width"
+    },
+    "border-image": {
+        "values": [
+            "auto",
+            "fill",
+            "none",
+            "repeat",
+            "round",
+            "space",
+            "stretch",
+            "url()"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/border-image"
+    },
+    "border-image-outset": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/border-image-outset"
+    },
+    "border-image-slice": {
+        "values": [
+            "fill"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/border-image-slice"
+    },
+    "border-image-source": {
+        "values": [
+            "none",
+            "url()",
+            "image()",
+            "-webkit-image-set()",
+            "image-set()",
+            "-moz-element()",
+            "element()",
+            "cross-fade()",
+            "-webkit-gradient()",
+            "-webkit-linear-gradient()",
+            "-moz-linear-gradient()",
+            "-o-linear-gradient()",
+            "linear-gradient()",
+            "-webkit-repeating-linear-gradient()",
+            "-moz-repeating-linear-gradient()",
+            "-o-repeating-linear-gradient()",
+            "repeating-linear-gradient()",
+            "-webkit-radial-gradient()",
+            "-moz-radial-gradient()",
+            "radial-gradient()",
+            "-webkit-repeating-radial-gradient()",
+            "-moz-repeating-radial-gradient()",
+            "repeating-radial-gradient()"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/border-image-source"
+    },
+    "border-image-repeat": {
+        "values": [
+            "repeat",
+            "round",
+            "space",
+            "stretch"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/border-image-repeat"
+    },
+    "border-image-width": {
+        "values": [
+            "auto"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/border-image-width"
+    },
+    "border-left": {
+        "values": [
+            "medium",
+            "thick",
+            "thin",
+            "dashed",
+            "dotted",
+            "double",
+            "groove",
+            "hidden",
+            "inset",
+            "none",
+            "outset",
+            "ridge",
+            "solid"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/border-left"
+    },
+    "border-left-color": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/border-left-color",
+        "type": "color"
+    },
+    "border-left-style": {
+        "values": [
+            "dashed",
+            "dotted",
+            "double",
+            "groove",
+            "hidden",
+            "inset",
+            "none",
+            "outset",
+            "ridge",
+            "solid"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/border-left-style"
+    },
+    "border-left-width": {
+        "values": [
+            "medium",
+            "thick",
+            "thin"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/border-left-width"
+    },
+    "border-radius": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/border-radius"
+    },
+    "border-right": {
+        "values": [
+            "medium",
+            "thick",
+            "thin",
+            "dashed",
+            "dotted",
+            "double",
+            "groove",
+            "hidden",
+            "inset",
+            "none",
+            "outset",
+            "ridge",
+            "solid"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/border-right"
+    },
+    "border-right-color": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/border-right-color",
+        "type": "color"
+    },
+    "border-right-style": {
+        "values": [
+            "dashed",
+            "dotted",
+            "double",
+            "groove",
+            "hidden",
+            "inset",
+            "none",
+            "outset",
+            "ridge",
+            "solid"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/border-right-style"
+    },
+    "border-right-width": {
+        "values": [
+            "medium",
+            "thick",
+            "thin"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/border-right-width"
+    },
+    "border-top": {
+        "values": [
+            "medium",
+            "thick",
+            "thin",
+            "dashed",
+            "dotted",
+            "double",
+            "groove",
+            "hidden",
+            "inset",
+            "none",
+            "outset",
+            "ridge",
+            "solid"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/border-top"
+    },
+    "border-top-color": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/border-top-color",
+        "type": "color"
+    },
+    "border-top-left-radius": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/border-top-left-radius"
+    },
+    "border-top-right-radius": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/border-top-right-radius"
+    },
+    "border-top-style": {
+        "values": [
+            "dashed",
+            "dotted",
+            "double",
+            "groove",
+            "hidden",
+            "inset",
+            "none",
+            "outset",
+            "ridge",
+            "solid"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/border-top-style"
+    },
+    "border-top-width": {
+        "values": [
+            "medium",
+            "thick",
+            "thin"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/border-top-width"
+    },
+    "border-width": {
+        "values": [
+            "medium",
+            "thick",
+            "thin"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/border-width"
+    },
+    "box-decoration-break": {
+        "values": [
+            "clone",
+            "slice"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/box-decoration-break"
+    },
+    "box-shadow": {
+        "values": [
+            "inset",
+            "none"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/box-shadow"
+    },
+    "box-sizing": {
+        "values": [
+            "border-box",
+            "content-box"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/box-sizing"
+    },
+    "bottom": {
+        "values": [
+            "auto"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/bottom"
+    },
+    "break-after": {
+        "values": [
+            "always",
+            "auto",
+            "avoid",
+            "avoid-column",
+            "avoid-page",
+            "column",
+            "left",
+            "page",
+            "right",
+            "all",
+            "recto",
+            "verso",
+            "avoid-region",
+            "region"
+        ]
+    },
+    "break-before": {
+        "values": [
+            "always",
+            "auto",
+            "avoid",
+            "avoid-column",
+            "avoid-page",
+            "column",
+            "left",
+            "page",
+            "right",
+            "all",
+            "recto",
+            "verso",
+            "avoid-region",
+            "region"
+        ]
+    },
+    "break-inside": {
+        "values": [
+            "auto",
+            "avoid",
+            "avoid-column",
+            "avoid-page",
+            "avoid-region"
+        ]
+    },
+    "caption-side": {
+        "values": [
+            "bottom",
+            "top",
+            "block-start",
+            "block-end",
+            "inline-start",
+            "inline-end"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/caption-side"
+    },
+    "caret-color": {
+        "values": [
+            "auto"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/caret-color",
+        "type": "color"
+    },
+    "clear": {
+        "values": [
+            "both",
+            "left",
+            "none",
+            "right",
+            "inline-start",
+            "inline-end"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/clear"
+    },
+    "clip": {
+        "values": [
+            "auto",
+            "rect()"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/clip"
+    },
+    "color": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/color",
+        "type": "color"
+    },
+    "columns": {
+        "values": [
+            "auto"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/columns"
+    },
+    "column-count": {
+        "values": [
+            "auto"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/column-count"
+    },
+    "column-fill": {
+        "values": [
+            "auto",
+            "balance",
+            "balance-all"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/column-fill"
+    },
+    "column-gap": {
+        "values": [
+            "normal"
+        ]
+    },
+    "column-rule": {
+        "values": [
+            "medium",
+            "thick",
+            "thin",
+            "dashed",
+            "dotted",
+            "double",
+            "groove",
+            "hidden",
+            "inset",
+            "none",
+            "outset",
+            "ridge",
+            "solid"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/column-rule"
+    },
+    "column-rule-color": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/column-rule-color",
+        "type": "color"
+    },
+    "column-rule-style": {
+        "values": [
+            "dashed",
+            "dotted",
+            "double",
+            "groove",
+            "hidden",
+            "inset",
+            "none",
+            "outset",
+            "ridge",
+            "solid"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/column-rule-style"
+    },
+    "column-rule-width": {
+        "values": [
+            "medium",
+            "thick",
+            "thin"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/column-rule-width"
+    },
+    "column-span": {
+        "values": [
+            "all",
+            "none"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/column-span"
+    },
+    "column-width": {
+        "values": [
+            "auto"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/column-width"
+    },
+    "content": {
+        "values": [
+            "attr()",
+            "counter(name)",
+            "icon",
+            "none",
+            "normal",
+            "url()"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/content"
+    },
+    "counter-increment": {
+        "values": [
+            "none"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/counter-increment"
+    },
+    "counter-reset": {
+        "values": [
+            "none"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/counter-reset"
+    },
+    "cursor": {
+        "values": [
+            "alias",
+            "all-scroll",
+            "auto",
+            "cell",
+            "col-resize",
+            "context-menu",
+            "copy",
+            "crosshair",
+            "default",
+            "e-resize",
+            "ew-resize",
+            "grab",
+            "grabbing",
+            "help",
+            "move",
+            "-moz-grab",
+            "-moz-grabbing",
+            "-moz-zoom-in",
+            "-moz-zoom-out",
+            "ne-resize",
+            "nesw-resize",
+            "no-drop",
+            "none",
+            "not-allowed",
+            "n-resize",
+            "ns-resize",
+            "nw-resize",
+            "nwse-resize",
+            "pointer",
+            "progress",
+            "row-resize",
+            "se-resize",
+            "s-resize",
+            "sw-resize",
+            "text",
+            "vertical-text",
+            "wait",
+            "-webkit-grab",
+            "-webkit-grabbing",
+            "-webkit-zoom-in",
+            "-webkit-zoom-out",
+            "w-resize",
+            "zoom-in",
+            "zoom-out",
+            "*"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/cursor"
+    },
+    "direction": {
+        "values": [
+            "ltr",
+            "rtl"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/direction"
+    },
+    "display": {
+        "values": [
+            "block",
+            "contents",
+            "flex",
+            "flexbox",
+            "flow-root",
+            "grid",
+            "inline",
+            "inline-block",
+            "inline-flex",
+            "inline-flexbox",
+            "inline-table",
+            "list-item",
+            "-moz-box",
+            "-moz-deck",
+            "-moz-grid",
+            "-moz-grid-group",
+            "-moz-grid-line",
+            "-moz-groupbox",
+            "-moz-inline-box",
+            "-moz-inline-grid",
+            "-moz-inline-stack",
+            "-moz-marker",
+            "-moz-popup",
+            "-moz-stack",
+            "-ms-flexbox",
+            "-ms-grid",
+            "-ms-inline-flexbox",
+            "-ms-inline-grid",
+            "none",
+            "ruby",
+            "ruby-base",
+            "ruby-base-container",
+            "ruby-text",
+            "ruby-text-container",
+            "run-in",
+            "table",
+            "table-caption",
+            "table-cell",
+            "table-column",
+            "table-column-group",
+            "table-footer-group",
+            "table-header-group",
+            "table-row",
+            "table-row-group",
+            "-webkit-box",
+            "-webkit-flex",
+            "-webkit-inline-box",
+            "-webkit-inline-flex"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/display"
+    },
+    "empty-cells": {
+        "values": [
+            "hide",
+            "-moz-show-background",
+            "show"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/empty-cells"
+    },
+    "filter": {
+        "values": [
+            "none",
+            "blur()",
+            "brightness()",
+            "contrast()",
+            "drop-shadow()",
+            "grayscale()",
+            "hue-rotate()",
+            "invert()",
+            "opacity()",
+            "saturate()",
+            "sepia()",
+            "url()"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/filter"
+    },
+    "flex": {
+        "values": [
+            "auto",
+            "content",
+            "none"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/flex"
+    },
+    "flex-basis": {
+        "values": [
+            "auto",
+            "content"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/flex-basis"
+    },
+    "flex-direction": {
+        "values": [
+            "column",
+            "column-reverse",
+            "row",
+            "row-reverse"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/flex-direction"
+    },
+    "flex-flow": {
+        "values": [
+            "column",
+            "column-reverse",
+            "nowrap",
+            "row",
+            "row-reverse",
+            "wrap",
+            "wrap-reverse"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/flex-flow"
+    },
+    "flex-grow": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/flex-grow"
+    },
+    "flex-shrink": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/flex-shrink"
+    },
+    "flex-wrap": {
+        "values": [
+            "nowrap",
+            "wrap",
+            "wrap-reverse"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/flex-wrap"
+    },
+    "float": {
+        "values": [
+            "inline-end",
+            "inline-start",
+            "left",
+            "none",
+            "right"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/float"
+    },
+    "font": {
+        "values": [
+            "100",
+            "200",
+            "300",
+            "400",
+            "500",
+            "600",
+            "700",
+            "800",
+            "900",
+            "bold",
+            "bolder",
+            "caption",
+            "icon",
+            "italic",
+            "large",
+            "larger",
+            "lighter",
+            "medium",
+            "menu",
+            "message-box",
+            "normal",
+            "oblique",
+            "small",
+            "small-caps",
+            "small-caption",
+            "smaller",
+            "status-bar",
+            "x-large",
+            "x-small",
+            "xx-large",
+            "xx-small"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/font"
+    },
+    "font-display": {
+        "values": [
+            "auto",
+            "block",
+            "swap",
+            "fallback",
+            "optional"
+        ]
+    },
+    "font-family": {
+        "values": [
+            "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
+            "Arial, Helvetica, sans-serif",
+            "Cambria, Cochin, Georgia, Times, 'Times New Roman', serif",
+            "'Courier New', Courier, monospace",
+            "cursive",
+            "fantasy",
+            "'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif",
+            "Georgia, 'Times New Roman', Times, serif",
+            "'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif",
+            "Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif",
+            "'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif",
+            "monospace",
+            "sans-serif",
+            "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
+            "serif",
+            "'Times New Roman', Times, serif",
+            "'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif",
+            "Verdana, Geneva, Tahoma, sans-serif"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/font-family"
+    },
+    "font-feature-settings": {
+        "values": [
+            "\"aalt\"",
+            "\"abvf\"",
+            "\"abvm\"",
+            "\"abvs\"",
+            "\"afrc\"",
+            "\"akhn\"",
+            "\"blwf\"",
+            "\"blwm\"",
+            "\"blws\"",
+            "\"calt\"",
+            "\"case\"",
+            "\"ccmp\"",
+            "\"cfar\"",
+            "\"cjct\"",
+            "\"clig\"",
+            "\"cpct\"",
+            "\"cpsp\"",
+            "\"cswh\"",
+            "\"curs\"",
+            "\"c2pc\"",
+            "\"c2sc\"",
+            "\"dist\"",
+            "\"dlig\"",
+            "\"dnom\"",
+            "\"dtls\"",
+            "\"expt\"",
+            "\"falt\"",
+            "\"fin2\"",
+            "\"fin3\"",
+            "\"fina\"",
+            "\"flac\"",
+            "\"frac\"",
+            "\"fwid\"",
+            "\"half\"",
+            "\"haln\"",
+            "\"halt\"",
+            "\"hist\"",
+            "\"hkna\"",
+            "\"hlig\"",
+            "\"hngl\"",
+            "\"hojo\"",
+            "\"hwid\"",
+            "\"init\"",
+            "\"isol\"",
+            "\"ital\"",
+            "\"jalt\"",
+            "\"jp78\"",
+            "\"jp83\"",
+            "\"jp90\"",
+            "\"jp04\"",
+            "\"kern\"",
+            "\"lfbd\"",
+            "\"liga\"",
+            "\"ljmo\"",
+            "\"lnum\"",
+            "\"locl\"",
+            "\"ltra\"",
+            "\"ltrm\"",
+            "\"mark\"",
+            "\"med2\"",
+            "\"medi\"",
+            "\"mgrk\"",
+            "\"mkmk\"",
+            "\"nalt\"",
+            "\"nlck\"",
+            "\"nukt\"",
+            "\"numr\"",
+            "\"onum\"",
+            "\"opbd\"",
+            "\"ordn\"",
+            "\"ornm\"",
+            "\"palt\"",
+            "\"pcap\"",
+            "\"pkna\"",
+            "\"pnum\"",
+            "\"pref\"",
+            "\"pres\"",
+            "\"pstf\"",
+            "\"psts\"",
+            "\"pwid\"",
+            "\"qwid\"",
+            "\"rand\"",
+            "\"rclt\"",
+            "\"rlig\"",
+            "\"rkrf\"",
+            "\"rphf\"",
+            "\"rtbd\"",
+            "\"rtla\"",
+            "\"rtlm\"",
+            "\"ruby\"",
+            "\"salt\"",
+            "\"sinf\"",
+            "\"size\"",
+            "\"smcp\"",
+            "\"smpl\"",
+            "\"ssty\"",
+            "\"stch\"",
+            "\"subs\"",
+            "\"sups\"",
+            "\"swsh\"",
+            "\"titl\"",
+            "\"tjmo\"",
+            "\"tnam\"",
+            "\"tnum\"",
+            "\"trad\"",
+            "\"twid\"",
+            "\"unic\"",
+            "\"valt\"",
+            "\"vatu\"",
+            "\"vert\"",
+            "\"vhal\"",
+            "\"vjmo\"",
+            "\"vkna\"",
+            "\"vkrn\"",
+            "\"vpal\"",
+            "\"vrt2\"",
+            "\"zero\"",
+            "normal",
+            "off",
+            "on"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/font-feature-settings"
+    },
+    "font-kerning": {
+        "values": [
+            "auto",
+            "none",
+            "normal"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/font-kerning"
+    },
+    "font-language-override": {
+        "values": [
+            "normal"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/font-language-override"
+    },
+    "font-size": {
+        "values": [
+            "large",
+            "larger",
+            "medium",
+            "small",
+            "smaller",
+            "x-large",
+            "x-small",
+            "xx-large",
+            "xx-small"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/font-size"
+    },
+    "font-size-adjust": {
+        "values": [
+            "none",
+            "ex-height",
+            "cap-height",
+            "ch-width",
+            "ic-width",
+            "ic-height",
+            "from-font"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/font-size-adjust"
+    },
+    "font-stretch": {
+        "values": [
+            "condensed",
+            "expanded",
+            "extra-condensed",
+            "extra-expanded",
+            "narrower",
+            "normal",
+            "semi-condensed",
+            "semi-expanded",
+            "ultra-condensed",
+            "ultra-expanded",
+            "wider"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/font-stretch"
+    },
+    "font-style": {
+        "values": [
+            "italic",
+            "normal",
+            "oblique"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/font-style"
+    },
+    "font-synthesis": {
+        "values": [
+            "none",
+            "style",
+            "weight",
+            "small-caps"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/font-synthesis"
+    },
+    "font-variant": {
+        "values": [
+            "normal",
+            "small-caps",
+            "none",
+            "stylistic",
+            "historical-forms",
+            "styleset",
+            "character-variant",
+            "swash",
+            "ornaments",
+            "annotation",
+            "all-small-caps",
+            "petite-caps",
+            "all-petite-caps",
+            "unicase",
+            "titling-caps",
+            "ordinal",
+            "slashed-zero",
+            "ruby"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/font-variant"
+    },
+    "font-variant-alternates": {
+        "values": [
+            "annotation()",
+            "character-variant()",
+            "historical-forms",
+            "normal",
+            "ornaments()",
+            "styleset()",
+            "stylistic()",
+            "swash()",
+            "stylistic",
+            "styleset",
+            "character-variant",
+            "swash",
+            "ornaments",
+            "annotation"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/font-variant-alternates"
+    },
+    "font-variant-caps": {
+        "values": [
+            "all-petite-caps",
+            "all-small-caps",
+            "normal",
+            "petite-caps",
+            "small-caps",
+            "titling-caps",
+            "unicase"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/font-variant-caps"
+    },
+    "font-variant-east-asian": {
+        "values": [
+            "full-width",
+            "jis04",
+            "jis78",
+            "jis83",
+            "jis90",
+            "normal",
+            "proportional-width",
+            "ruby",
+            "simplified",
+            "traditional"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/font-variant-east-asian"
+    },
+    "font-variant-ligatures": {
+        "values": [
+            "additional-ligatures",
+            "common-ligatures",
+            "contextual",
+            "discretionary-ligatures",
+            "historical-ligatures",
+            "no-additional-ligatures",
+            "no-common-ligatures",
+            "no-contextual",
+            "no-discretionary-ligatures",
+            "no-historical-ligatures",
+            "none",
+            "normal"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/font-variant-ligatures"
+    },
+    "font-variant-numeric": {
+        "values": [
+            "diagonal-fractions",
+            "lining-nums",
+            "normal",
+            "oldstyle-nums",
+            "ordinal",
+            "proportional-nums",
+            "slashed-zero",
+            "stacked-fractions",
+            "tabular-nums"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/font-variant-numeric"
+    },
+    "font-variant-position": {
+        "values": [
+            "normal",
+            "sub",
+            "super"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/font-variant-position"
+    },
+    "font-weight": {
+        "values": [
+            "100",
+            "200",
+            "300",
+            "400",
+            "500",
+            "600",
+            "700",
+            "800",
+            "900",
+            "bold",
+            "bolder",
+            "lighter",
+            "normal"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/font-weight"
+    },
+    "grid": {
+        "values": [
+            "auto-flow",
+            "dense"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/grid"
+    },
+    "grid-area": {
+        "values": [
+            "auto",
+            "span"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/grid-area"
+    },
+    "grid-auto-columns": {
+        "values": [
+            "min-content",
+            "max-content",
+            "auto",
+            "minmax()"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/grid-auto-columns"
+    },
+    "grid-auto-flow": {
+        "values": [
+            "row",
+            "column",
+            "dense"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/grid-auto-flow"
+    },
+    "grid-auto-rows": {
+        "values": [
+            "min-content",
+            "max-content",
+            "auto",
+            "minmax()"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/grid-auto-rows"
+    },
+    "grid-column": {
+        "values": [
+            "auto",
+            "span"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/grid-column"
+    },
+    "grid-column-end": {
+        "values": [
+            "auto",
+            "span"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/grid-column-end"
+    },
+    "grid-column-gap": {
+        "values": []
+    },
+    "grid-column-start": {
+        "values": [
+            "auto",
+            "span"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/grid-column-start"
+    },
+    "grid-gap": {
+        "values": []
+    },
+    "grid-row": {
+        "values": [
+            "auto",
+            "span"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/grid-row"
+    },
+    "grid-row-end": {
+        "values": [
+            "auto",
+            "span"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/grid-row-end"
+    },
+    "grid-row-start": {
+        "values": [
+            "auto",
+            "span"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/grid-row-start"
+    },
+    "grid-row-gap": {
+        "values": []
+    },
+    "grid-template": {
+        "values": [
+            "none",
+            "min-content",
+            "max-content",
+            "auto",
+            "subgrid",
+            "minmax()",
+            "repeat()"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/grid-template"
+    },
+    "grid-template-areas": {
+        "values": [
+            "none"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/grid-template-areas"
+    },
+    "grid-template-columns": {
+        "values": [
+            "none",
+            "min-content",
+            "max-content",
+            "auto",
+            "subgrid",
+            "minmax()",
+            "repeat()"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/grid-template-columns"
+    },
+    "grid-template-rows": {
+        "values": [
+            "none",
+            "min-content",
+            "max-content",
+            "auto",
+            "subgrid",
+            "minmax()",
+            "repeat()"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/grid-template-rows"
+    },
+    "hanging-punctuation": {
+        "values": [
+            "none",
+            "first",
+            "force-end",
+            "allow-end",
+            "last"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/hanging-punctuation"
+    },
+    "height": {
+        "values": [
+            "auto",
+            "fit-content",
+            "max-content",
+            "min-content"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/height"
+    },
+    "hyphens": {
+        "values": [
+            "auto",
+            "manual",
+            "none"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/hyphens"
+    },
+    "image-orientation": {
+        "values": [
+            "flip",
+            "from-image"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/image-orientation"
+    },
+    "image-resolution": {
+        "values": [
+            "from-image",
+            "snap"
+        ]
+    },
+    "isolation": {
+        "values": [
+            "auto",
+            "isolate"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/isolation"
+    },
+    "justify-content": {
+        "values": [
+            "center",
+            "start",
+            "end",
+            "left",
+            "right",
+            "safe",
+            "unsafe",
+            "stretch",
+            "space-evenly",
+            "flex-end",
+            "flex-start",
+            "space-around",
+            "space-between",
+            "baseline",
+            "first baseline",
+            "last baseline",
+            "normal"
+        ]
+    },
+    "justify-items": {
+        "values": [
+            "auto",
+            "normal",
+            "end",
+            "start",
+            "flex-end",
+            "flex-start",
+            "self-end",
+            "self-start",
+            "center",
+            "left",
+            "right",
+            "baseline",
+            "first baseline",
+            "last baseline",
+            "stretch",
+            "save",
+            "unsave",
+            "legacy"
+        ]
+    },
+    "justify-self": {
+        "values": [
+            "auto",
+            "normal",
+            "end",
+            "start",
+            "flex-end",
+            "flex-start",
+            "self-end",
+            "self-start",
+            "center",
+            "left",
+            "right",
+            "baseline",
+            "first baseline",
+            "last baseline",
+            "stretch",
+            "save",
+            "unsave"
+        ]
+    },
+    "left": {
+        "values": [
+            "auto"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/left"
+    },
+    "letter-spacing": {
+        "values": [
+            "normal"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/letter-spacing"
+    },
+    "line-height": {
+        "values": [
+            "normal"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/line-height"
+    },
+    "list-style": {
+        "values": [
+            "armenian",
+            "circle",
+            "decimal",
+            "decimal-leading-zero",
+            "disc",
+            "georgian",
+            "inside",
+            "lower-alpha",
+            "lower-greek",
+            "lower-latin",
+            "lower-roman",
+            "none",
+            "outside",
+            "square",
+            "symbols()",
+            "upper-alpha",
+            "upper-latin",
+            "upper-roman",
+            "url()",
+            "image()",
+            "-webkit-image-set()",
+            "image-set()",
+            "-moz-element()",
+            "element()",
+            "cross-fade()",
+            "-webkit-gradient()",
+            "-webkit-linear-gradient()",
+            "-moz-linear-gradient()",
+            "-o-linear-gradient()",
+            "linear-gradient()",
+            "-webkit-repeating-linear-gradient()",
+            "-moz-repeating-linear-gradient()",
+            "-o-repeating-linear-gradient()",
+            "repeating-linear-gradient()",
+            "-webkit-radial-gradient()",
+            "-moz-radial-gradient()",
+            "radial-gradient()",
+            "-webkit-repeating-radial-gradient()",
+            "-moz-repeating-radial-gradient()",
+            "repeating-radial-gradient()"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/list-style"
+    },
+    "list-style-image": {
+        "values": [
+            "none",
+            "url()",
+            "image()",
+            "-webkit-image-set()",
+            "image-set()",
+            "-moz-element()",
+            "element()",
+            "cross-fade()",
+            "-webkit-gradient()",
+            "-webkit-linear-gradient()",
+            "-moz-linear-gradient()",
+            "-o-linear-gradient()",
+            "linear-gradient()",
+            "-webkit-repeating-linear-gradient()",
+            "-moz-repeating-linear-gradient()",
+            "-o-repeating-linear-gradient()",
+            "repeating-linear-gradient()",
+            "-webkit-radial-gradient()",
+            "-moz-radial-gradient()",
+            "radial-gradient()",
+            "-webkit-repeating-radial-gradient()",
+            "-moz-repeating-radial-gradient()",
+            "repeating-radial-gradient()"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/list-style-image"
+    },
+    "list-style-position": {
+        "values": [
+            "inside",
+            "outside"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/list-style-position"
+    },
+    "list-style-type": {
+        "values": [
+            "armenian",
+            "circle",
+            "decimal",
+            "decimal-leading-zero",
+            "disc",
+            "georgian",
+            "lower-alpha",
+            "lower-greek",
+            "lower-latin",
+            "lower-roman",
+            "none",
+            "square",
+            "symbols()",
+            "upper-alpha",
+            "upper-latin",
+            "upper-roman"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/list-style-type"
+    },
+    "margin": {
+        "values": [
+            "auto"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/margin"
+    },
+    "margin-bottom": {
+        "values": [
+            "auto"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/margin-bottom"
+    },
+    "margin-left": {
+        "values": [
+            "auto"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/margin-left"
+    },
+    "margin-right": {
+        "values": [
+            "auto"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/margin-right"
+    },
+    "margin-top": {
+        "values": [
+            "auto"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/margin-top"
+    },
+    "max-height": {
+        "values": [
+            "none",
+            "fit-content",
+            "max-content",
+            "min-content"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/max-height"
+    },
+    "max-width": {
+        "values": [
+            "none",
+            "fit-content",
+            "max-content",
+            "min-content"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/max-width"
+    },
+    "min-height": {
+        "values": [
+            "auto",
+            "fit-content",
+            "max-content",
+            "min-content"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/min-height"
+    },
+    "min-width": {
+        "values": [
+            "auto",
+            "fit-content",
+            "max-content",
+            "min-content"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/min-width"
+    },
+    "mix-blend-mode": {
+        "values": [
+            "normal",
+            "multiply",
+            "screen",
+            "overlay",
+            "darken",
+            "lighten",
+            "color-dodge",
+            "color-burn",
+            "hard-light",
+            "soft-light",
+            "difference",
+            "exclusion",
+            "hue",
+            "saturation",
+            "color",
+            "luminosity"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/mix-blend-mode"
+    },
+    "object-fit": {
+        "values": [
+            "contain",
+            "cover",
+            "fill",
+            "none",
+            "scale-down"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/object-fit"
+    },
+    "object-position": {
+        "values": [
+            "bottom",
+            "center",
+            "left",
+            "right",
+            "top"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/object-position"
+    },
+    "opacity": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/opacity"
+    },
+    "order": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/order"
+    },
+    "orphans": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/orphans"
+    },
+    "outline": {
+        "values": [
+            "auto",
+            "invert",
+            "medium",
+            "thick",
+            "thin",
+            "dashed",
+            "dotted",
+            "double",
+            "groove",
+            "hidden",
+            "inset",
+            "none",
+            "outset",
+            "ridge",
+            "solid"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/outline"
+    },
+    "outline-color": {
+        "values": [
+            "invert"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/outline-color",
+        "type": "color"
+    },
+    "outline-offset": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/outline-offset"
+    },
+    "outline-style": {
+        "values": [
+            "auto",
+            "dashed",
+            "dotted",
+            "double",
+            "groove",
+            "hidden",
+            "inset",
+            "none",
+            "outset",
+            "ridge",
+            "solid"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/outline-style"
+    },
+    "outline-width": {
+        "values": [
+            "medium",
+            "thick",
+            "thin"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/outline-width"
+    },
+    "overflow": {
+        "values": [
+            "auto",
+            "hidden",
+            "-moz-hidden-unscrollable",
+            "scroll",
+            "visible",
+            "clip"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/overflow"
+    },
+    "overflow-x": {
+        "values": [
+            "auto",
+            "hidden",
+            "scroll",
+            "visible",
+            "clip"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/overflow-x"
+    },
+    "overflow-y": {
+        "values": [
+            "auto",
+            "hidden",
+            "scroll",
+            "visible",
+            "clip"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/overflow-y"
+    },
+    "padding": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/padding"
+    },
+    "padding-bottom": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/padding-bottom"
+    },
+    "padding-left": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/padding-left"
+    },
+    "padding-right": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/padding-right"
+    },
+    "padding-top": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/padding-top"
+    },
+    "page-break-after": {
+        "values": [
+            "always",
+            "auto",
+            "avoid",
+            "left",
+            "right",
+            "recto",
+            "verso"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/page-break-after"
+    },
+    "page-break-before": {
+        "values": [
+            "always",
+            "auto",
+            "avoid",
+            "left",
+            "right",
+            "recto",
+            "verso"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/page-break-before"
+    },
+    "page-break-inside": {
+        "values": [
+            "auto",
+            "avoid"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/page-break-inside"
+    },
+    "perspective": {
+        "values": [
+            "none"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/perspective"
+    },
+    "perspective-origin": {
+        "values": [
+            "bottom",
+            "center",
+            "left",
+            "right",
+            "top"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/perspective-origin"
+    },
+    "pointer-events": {
+        "values": [
+            "all",
+            "fill",
+            "none",
+            "painted",
+            "stroke",
+            "visible",
+            "visibleFill",
+            "visiblePainted",
+            "visibleStroke",
+            "auto",
+            "inherit"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/pointer-events"
+    },
+    "position": {
+        "values": [
+            "absolute",
+            "fixed",
+            "-ms-page",
+            "relative",
+            "static",
+            "sticky",
+            "-webkit-sticky"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/position"
+    },
+    "quotes": {
+        "values": [
+            "none",
+            "auto"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/quotes"
+    },
+    "region-break-after": {
+        "values": [
+            "always",
+            "auto",
+            "avoid",
+            "avoid-column",
+            "avoid-page",
+            "avoid-region",
+            "column",
+            "left",
+            "page",
+            "region",
+            "right"
+        ]
+    },
+    "region-break-before": {
+        "values": [
+            "always",
+            "auto",
+            "avoid",
+            "avoid-column",
+            "avoid-page",
+            "avoid-region",
+            "column",
+            "left",
+            "page",
+            "region",
+            "right"
+        ]
+    },
+    "region-break-inside": {
+        "values": [
+            "auto",
+            "avoid",
+            "avoid-column",
+            "avoid-page",
+            "avoid-region"
+        ]
+    },
+    "region-fragment": {
+        "values": [
+            "auto",
+            "break"
+        ]
+    },
+    "resize": {
+        "values": [
+            "both",
+            "horizontal",
+            "none",
+            "vertical",
+            "block",
+            "inline"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/resize"
+    },
+    "right": {
+        "values": [
+            "auto"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/right"
+    },
+    "scroll-behavior": {
+        "values": [
+            "auto",
+            "smooth"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/scroll-behavior"
+    },
+    "scroll-snap-type": {
+        "values": [
+            "none",
+            "mandatory",
+            "proximity",
+            "x",
+            "y",
+            "block",
+            "inline",
+            "both"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/scroll-snap-type"
+    },
+    "src": {
+        "values": [
+            "url()",
+            "format()",
+            "local()",
+            "format",
+            "local"
+        ]
+    },
+    "shape-image-threshold": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/shape-image-threshold"
+    },
+    "shape-inside": {
+        "values": [
+            "auto",
+            "circle()",
+            "ellipse()",
+            "inherit",
+            "outside-shape",
+            "polygon()",
+            "rectangle()"
+        ]
+    },
+    "shape-margin": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/shape-margin"
+    },
+    "shape-outside": {
+        "values": [
+            "margin-box",
+            "none",
+            "url()",
+            "image()",
+            "-webkit-image-set()",
+            "image-set()",
+            "-moz-element()",
+            "element()",
+            "cross-fade()",
+            "-webkit-gradient()",
+            "-webkit-linear-gradient()",
+            "-moz-linear-gradient()",
+            "-o-linear-gradient()",
+            "linear-gradient()",
+            "-webkit-repeating-linear-gradient()",
+            "-moz-repeating-linear-gradient()",
+            "-o-repeating-linear-gradient()",
+            "repeating-linear-gradient()",
+            "-webkit-radial-gradient()",
+            "-moz-radial-gradient()",
+            "radial-gradient()",
+            "-webkit-repeating-radial-gradient()",
+            "-moz-repeating-radial-gradient()",
+            "repeating-radial-gradient()",
+            "border-box",
+            "content-box",
+            "padding-box",
+            "circle()",
+            "ellipse()",
+            "inset()",
+            "polygon()"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/shape-outside"
+    },
+    "tab-size": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/tab-size"
+    },
+    "table-layout": {
+        "values": [
+            "auto",
+            "fixed"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/table-layout"
+    },
+    "text-align": {
+        "values": [
+            "center",
+            "end",
+            "justify",
+            "left",
+            "right",
+            "start",
+            "match-parent"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/text-align"
+    },
+    "text-align-last": {
+        "values": [
+            "auto",
+            "center",
+            "justify",
+            "left",
+            "right",
+            "start",
+            "end"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/text-align-last"
+    },
+    "text-decoration": {
+        "values": [
+            "dashed",
+            "dotted",
+            "double",
+            "line-through",
+            "none",
+            "overline",
+            "solid",
+            "underline",
+            "wavy"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/text-decoration"
+    },
+    "text-decoration-color": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/text-decoration-color",
+        "type": "color"
+    },
+    "text-decoration-line": {
+        "values": [
+            "line-through",
+            "none",
+            "overline",
+            "underline",
+            "blink",
+            "spelling-error",
+            "grammar-error"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/text-decoration-line"
+    },
+    "text-decoration-skip": {
+        "values": [
+            "none",
+            "objects",
+            "spaces",
+            "leading-spaces",
+            "trailing-spaces",
+            "edges",
+            "box-decoration"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/text-decoration-skip"
+    },
+    "text-decoration-style": {
+        "values": [
+            "dashed",
+            "dotted",
+            "double",
+            "none",
+            "solid",
+            "wavy"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/text-decoration-style"
+    },
+    "text-emphasis": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/text-emphasis"
+    },
+    "text-emphasis-color": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/text-emphasis-color",
+        "type": "color"
+    },
+    "text-emphasis-position": {
+        "values": [
+            "over",
+            "under",
+            "right",
+            "left"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/text-emphasis-position"
+    },
+    "text-emphasis-style": {
+        "values": [
+            "none",
+            "filled",
+            "open",
+            "dot",
+            "circle",
+            "double-circle",
+            "triangle",
+            "sesame"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/text-emphasis-style"
+    },
+    "text-indent": {
+        "values": [
+            "hanging",
+            "each-line"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/text-indent"
+    },
+    "text-justify": {
+        "values": [
+            "auto",
+            "distribute",
+            "distribute-all-lines",
+            "inter-cluster",
+            "inter-ideograph",
+            "inter-word",
+            "kashida",
+            "newspaper",
+            "inter-character",
+            "none"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/text-justify"
+    },
+    "text-overflow": {
+        "values": [
+            "clip",
+            "ellipsis"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/text-overflow"
+    },
+    "text-shadow": {
+        "values": [
+            "none"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/text-shadow"
+    },
+    "text-rendering": {
+        "values": [
+            "auto",
+            "geometricPrecision",
+            "optimizeLegibility",
+            "optimizeSpeed"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/text-rendering"
+    },
+    "text-transform": {
+        "values": [
+            "capitalize",
+            "lowercase",
+            "none",
+            "uppercase",
+            "full-width",
+            "full-size-kana"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/text-transform"
+    },
+    "text-underline-position": {
+        "values": [
+            "above",
+            "auto",
+            "below",
+            "from-font",
+            "under",
+            "left",
+            "right"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/text-underline-position"
+    },
+    "top": {
+        "values": [
+            "auto"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/top"
+    },
+    "transform": {
+        "values": [
+            "matrix()",
+            "matrix3d()",
+            "none",
+            "perspective()",
+            "rotate()",
+            "rotate3d()",
+            "rotateX('angle')",
+            "rotateY('angle')",
+            "rotateZ('angle')",
+            "scale()",
+            "scale3d()",
+            "scaleX()",
+            "scaleY()",
+            "scaleZ()",
+            "skew()",
+            "skewX()",
+            "skewY()",
+            "translate()",
+            "translate3d()",
+            "translateX()",
+            "translateY()",
+            "translateZ()"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/transform"
+    },
+    "transform-origin": {
+        "values": [
+            "bottom",
+            "center",
+            "left",
+            "right",
+            "top"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/transform-origin"
+    },
+    "transform-style": {
+        "values": [
+            "flat",
+            "preserve-3d",
+            "preserve-",
+            "d"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/transform-style"
+    },
+    "transition": {
+        "values": [
+            "all",
+            "none",
+            "ease",
+            "ease-in",
+            "ease-in-out",
+            "ease-out",
+            "linear",
+            "step-end",
+            "step-start",
+            "steps()",
+            "cubic-bezier()",
+            "cubic-bezier(0.6, -0.28, 0.735, 0.045)",
+            "cubic-bezier(0.68, -0.55, 0.265, 1.55)",
+            "cubic-bezier(0.175, 0.885, 0.32, 1.275)",
+            "cubic-bezier(0.6, 0.04, 0.98, 0.335)",
+            "cubic-bezier(0.785, 0.135, 0.15, 0.86)",
+            "cubic-bezier(0.075, 0.82, 0.165, 1)",
+            "cubic-bezier(0.55, 0.055, 0.675, 0.19)",
+            "cubic-bezier(0.645, 0.045, 0.355, 1)",
+            "cubic-bezier(0.215, 0.610, 0.355, 1)",
+            "cubic-bezier(0.95, 0.05, 0.795, 0.035)",
+            "cubic-bezier(1, 0, 0, 1)",
+            "cubic-bezier(0.19, 1, 0.22, 1)",
+            "cubic-bezier(0.47, 0, 0.745, 0.715)",
+            "cubic-bezier(0.445, 0.05, 0.55, 0.95)",
+            "cubic-bezier(0.39, 0.575, 0.565, 1)",
+            "cubic-bezier(0.55, 0.085, 0.68, 0.53)",
+            "cubic-bezier(0.455, 0.03, 0.515, 0.955)",
+            "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+            "cubic-bezier(0.895, 0.03, 0.685, 0.22)",
+            "cubic-bezier(0.77, 0, 0.175, 1)",
+            "cubic-bezier(0.165, 0.84, 0.44, 1)",
+            "cubic-bezier(0.755, 0.05, 0.855, 0.06)",
+            "cubic-bezier(0.86, 0, 0.07, 1)",
+            "cubic-bezier(0.23, 1, 0.320, 1)"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/transition"
+    },
+    "transition-delay": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/transition-delay"
+    },
+    "transition-duration": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/transition-duration"
+    },
+    "transition-property": {
+        "values": [
+            "all",
+            "none"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/transition-property"
+    },
+    "transition-timing-function": {
+        "values": [
+            "ease",
+            "ease-in",
+            "ease-in-out",
+            "ease-out",
+            "linear",
+            "step-end",
+            "step-start",
+            "steps()",
+            "cubic-bezier()",
+            "cubic-bezier(0.6, -0.28, 0.735, 0.045)",
+            "cubic-bezier(0.68, -0.55, 0.265, 1.55)",
+            "cubic-bezier(0.175, 0.885, 0.32, 1.275)",
+            "cubic-bezier(0.6, 0.04, 0.98, 0.335)",
+            "cubic-bezier(0.785, 0.135, 0.15, 0.86)",
+            "cubic-bezier(0.075, 0.82, 0.165, 1)",
+            "cubic-bezier(0.55, 0.055, 0.675, 0.19)",
+            "cubic-bezier(0.645, 0.045, 0.355, 1)",
+            "cubic-bezier(0.215, 0.610, 0.355, 1)",
+            "cubic-bezier(0.95, 0.05, 0.795, 0.035)",
+            "cubic-bezier(1, 0, 0, 1)",
+            "cubic-bezier(0.19, 1, 0.22, 1)",
+            "cubic-bezier(0.47, 0, 0.745, 0.715)",
+            "cubic-bezier(0.445, 0.05, 0.55, 0.95)",
+            "cubic-bezier(0.39, 0.575, 0.565, 1)",
+            "cubic-bezier(0.55, 0.085, 0.68, 0.53)",
+            "cubic-bezier(0.455, 0.03, 0.515, 0.955)",
+            "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+            "cubic-bezier(0.895, 0.03, 0.685, 0.22)",
+            "cubic-bezier(0.77, 0, 0.175, 1)",
+            "cubic-bezier(0.165, 0.84, 0.44, 1)",
+            "cubic-bezier(0.755, 0.05, 0.855, 0.06)",
+            "cubic-bezier(0.86, 0, 0.07, 1)",
+            "cubic-bezier(0.23, 1, 0.320, 1)"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/transition-timing-function"
+    },
+    "unicode-bidi": {
+        "values": [
+            "bidi-override",
+            "embed",
+            "isolate",
+            "isolate-override",
+            "normal",
+            "plaintext"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/unicode-bidi"
+    },
+    "unicode-range": {
+        "values": [
+            "U+26",
+            "U+20-24F, U+2B0-2FF, U+370-4FF, U+1E00-1EFF, U+2000-20CF, U+2100-23FF, U+2500-26FF, U+E000-F8FF, U+FB00–FB4F",
+            "U+20-17F, U+2B0-2FF, U+2000-206F, U+20A0-20CF, U+2100-21FF, U+2600-26FF",
+            "U+20-2FF, U+370-4FF, U+1E00-20CF, U+2100-23FF, U+2500-26FF, U+FB00-FB4F, U+FFF0-FFFD",
+            "U+20-4FF, U+530-58F, U+10D0-10FF, U+1E00-23FF, U+2440-245F, U+2500-26FF, U+FB00-FB4F, U+FE20-FE2F, U+FFF0-FFFD",
+            "U+00-7F",
+            "U+80-FF",
+            "U+100-17F",
+            "U+180-24F",
+            "U+1E00-1EFF",
+            "U+250-2AF",
+            "U+370-3FF",
+            "U+1F00-1FFF",
+            "U+400-4FF",
+            "U+500-52F",
+            "U+00-52F, U+1E00-1FFF, U+2200–22FF",
+            "U+530–58F",
+            "U+590–5FF",
+            "U+600–6FF",
+            "U+750–77F",
+            "U+8A0–8FF",
+            "U+700–74F",
+            "U+900–97F",
+            "U+980–9FF",
+            "U+A00–A7F",
+            "U+A80–AFF",
+            "U+B00–B7F",
+            "U+B80–BFF",
+            "U+C00–C7F",
+            "U+C80–CFF",
+            "U+D00–D7F",
+            "U+D80–DFF",
+            "U+118A0–118FF",
+            "U+E00–E7F",
+            "U+1A20–1AAF",
+            "U+AA80–AADF",
+            "U+E80–EFF",
+            "U+F00–FFF",
+            "U+1000–109F",
+            "U+10A0–10FF",
+            "U+1200–137F",
+            "U+1380–139F",
+            "U+2D80–2DDF",
+            "U+AB00–AB2F",
+            "U+1780–17FF",
+            "U+1800–18AF",
+            "U+1B80–1BBF",
+            "U+1CC0–1CCF",
+            "U+4E00–9FD5",
+            "U+3400–4DB5",
+            "U+2F00–2FDF",
+            "U+2E80–2EFF",
+            "U+1100–11FF",
+            "U+AC00–D7AF",
+            "U+3040–309F",
+            "U+30A0–30FF",
+            "U+A5, U+4E00-9FFF, U+30??, U+FF00-FF9F",
+            "U+A4D0–A4FF",
+            "U+A000–A48F",
+            "U+A490–A4CF",
+            "U+2000-206F",
+            "U+3000–303F",
+            "U+2070–209F",
+            "U+20A0–20CF",
+            "U+2100–214F",
+            "U+2150–218F",
+            "U+2190–21FF",
+            "U+2200–22FF",
+            "U+2300–23FF",
+            "U+E000-F8FF",
+            "U+FB00–FB4F",
+            "U+FB50–FDFF",
+            "U+1F600–1F64F",
+            "U+2600–26FF",
+            "U+1F300–1F5FF",
+            "U+1F900–1F9FF",
+            "U+1F680–1F6FF"
+        ]
+    },
+    "user-select": {
+        "values": [
+            "all",
+            "auto",
+            "contain",
+            "none",
+            "text"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/user-select"
+    },
+    "vertical-align": {
+        "values": [
+            "auto",
+            "baseline",
+            "bottom",
+            "middle",
+            "sub",
+            "super",
+            "text-bottom",
+            "text-top",
+            "top",
+            "-webkit-baseline-middle"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/vertical-align"
+    },
+    "visibility": {
+        "values": [
+            "collapse",
+            "hidden",
+            "visible"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/visibility"
+    },
+    "white-space": {
+        "values": [
+            "normal",
+            "nowrap",
+            "pre",
+            "pre-line",
+            "pre-wrap",
+            "break-spaces"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/white-space"
+    },
+    "widows": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/widows"
+    },
+    "width": {
+        "values": [
+            "auto",
+            "fit-content",
+            "max-content",
+            "min-content"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/width"
+    },
+    "will-change": {
+        "values": [
+            "auto",
+            "contents",
+            "scroll-position"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/will-change"
+    },
+    "word-break": {
+        "values": [
+            "break-all",
+            "keep-all",
+            "normal",
+            "break-word"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/word-break"
+    },
+    "word-spacing": {
+        "values": [
+            "normal"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/word-spacing"
+    },
+    "word-wrap": {
+        "values": [
+            "break-word",
+            "normal"
+        ]
+    },
+    "z-index": {
+        "values": [
+            "auto"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/z-index"
+    },
+    "additive-symbols": {
+        "values": [
+            "url()",
+            "image()",
+            "-webkit-image-set()",
+            "image-set()",
+            "-moz-element()",
+            "element()",
+            "cross-fade()",
+            "-webkit-gradient()",
+            "-webkit-linear-gradient()",
+            "-moz-linear-gradient()",
+            "-o-linear-gradient()",
+            "linear-gradient()",
+            "-webkit-repeating-linear-gradient()",
+            "-moz-repeating-linear-gradient()",
+            "-o-repeating-linear-gradient()",
+            "repeating-linear-gradient()",
+            "-webkit-radial-gradient()",
+            "-moz-radial-gradient()",
+            "radial-gradient()",
+            "-webkit-repeating-radial-gradient()",
+            "-moz-repeating-radial-gradient()",
+            "repeating-radial-gradient()"
+        ]
+    },
+    "alt": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/alt"
+    },
+    "background-position-x": {
+        "values": [
+            "center",
+            "left",
+            "right",
+            "x-start",
+            "x-end"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/background-position-x"
+    },
+    "background-position-y": {
+        "values": [
+            "bottom",
+            "center",
+            "top",
+            "y-start",
+            "y-end"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/background-position-y"
+    },
+    "behavior": {
+        "values": []
+    },
+    "block-size": {
+        "values": [
+            "auto"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/block-size"
+    },
+    "border-block-end": {
+        "values": [
+            "medium",
+            "thick",
+            "thin",
+            "dashed",
+            "dotted",
+            "double",
+            "groove",
+            "hidden",
+            "inset",
+            "none",
+            "outset",
+            "ridge",
+            "solid"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/border-block-end"
+    },
+    "border-block-start": {
+        "values": [
+            "medium",
+            "thick",
+            "thin",
+            "dashed",
+            "dotted",
+            "double",
+            "groove",
+            "hidden",
+            "inset",
+            "none",
+            "outset",
+            "ridge",
+            "solid"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/border-block-start"
+    },
+    "border-block-end-color": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/border-block-end-color",
+        "type": "color"
+    },
+    "border-block-start-color": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/border-block-start-color",
+        "type": "color"
+    },
+    "border-block-end-style": {
+        "values": [
+            "dashed",
+            "dotted",
+            "double",
+            "groove",
+            "hidden",
+            "inset",
+            "none",
+            "outset",
+            "ridge",
+            "solid"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/border-block-end-style"
+    },
+    "border-block-start-style": {
+        "values": [
+            "dashed",
+            "dotted",
+            "double",
+            "groove",
+            "hidden",
+            "inset",
+            "none",
+            "outset",
+            "ridge",
+            "solid"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/border-block-start-style"
+    },
+    "border-block-end-width": {
+        "values": [
+            "medium",
+            "thick",
+            "thin"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/border-block-end-width"
+    },
+    "border-block-start-width": {
+        "values": [
+            "medium",
+            "thick",
+            "thin"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/border-block-start-width"
+    },
+    "border-inline-end": {
+        "values": [
+            "medium",
+            "thick",
+            "thin",
+            "dashed",
+            "dotted",
+            "double",
+            "groove",
+            "hidden",
+            "inset",
+            "none",
+            "outset",
+            "ridge",
+            "solid"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/border-inline-end"
+    },
+    "border-inline-start": {
+        "values": [
+            "medium",
+            "thick",
+            "thin",
+            "dashed",
+            "dotted",
+            "double",
+            "groove",
+            "hidden",
+            "inset",
+            "none",
+            "outset",
+            "ridge",
+            "solid"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/border-inline-start"
+    },
+    "border-inline-end-color": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/border-inline-end-color",
+        "type": "color"
+    },
+    "border-inline-start-color": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/border-inline-start-color",
+        "type": "color"
+    },
+    "border-inline-end-style": {
+        "values": [
+            "dashed",
+            "dotted",
+            "double",
+            "groove",
+            "hidden",
+            "inset",
+            "none",
+            "outset",
+            "ridge",
+            "solid"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/border-inline-end-style"
+    },
+    "border-inline-start-style": {
+        "values": [
+            "dashed",
+            "dotted",
+            "double",
+            "groove",
+            "hidden",
+            "inset",
+            "none",
+            "outset",
+            "ridge",
+            "solid"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/border-inline-start-style"
+    },
+    "border-inline-end-width": {
+        "values": [
+            "medium",
+            "thick",
+            "thin"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/border-inline-end-width"
+    },
+    "border-inline-start-width": {
+        "values": [
+            "medium",
+            "thick",
+            "thin"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/border-inline-start-width"
+    },
+    "clip-path": {
+        "values": [
+            "none",
+            "url()",
+            "circle()",
+            "ellipse()",
+            "inset()",
+            "polygon()",
+            "margin-box",
+            "fill-box",
+            "stroke-box",
+            "view-box"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/clip-path"
+    },
+    "clip-rule": {
+        "values": [
+            "evenodd",
+            "nonzero"
+        ]
+    },
+    "color-interpolation-filters": {
+        "values": [
+            "auto",
+            "linearRGB",
+            "sRGB"
+        ],
+        "type": "color"
+    },
+    "contain": {
+        "values": [
+            "none",
+            "strict",
+            "content",
+            "size",
+            "layout",
+            "style",
+            "paint"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/contain"
+    },
+    "enable-background": {
+        "values": [
+            "accumulate",
+            "new"
+        ]
+    },
+    "fallback": {
+        "values": []
+    },
+    "fill": {
+        "values": [
+            "url()",
+            "none"
+        ]
+    },
+    "fill-opacity": {
+        "values": []
+    },
+    "fill-rule": {
+        "values": [
+            "evenodd",
+            "nonzero"
+        ]
+    },
+    "flood-color": {
+        "values": [],
+        "type": "color"
+    },
+    "flood-opacity": {
+        "values": []
+    },
+    "glyph-orientation-horizontal": {
+        "values": []
+    },
+    "glyph-orientation-vertical": {
+        "values": [
+            "auto"
+        ]
+    },
+    "image-rendering": {
+        "values": [
+            "auto",
+            "crisp-edges",
+            "-moz-crisp-edges",
+            "optimizeQuality",
+            "optimizeSpeed",
+            "pixelated"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/image-rendering"
+    },
+    "ime-mode": {
+        "values": [
+            "active",
+            "auto",
+            "disabled",
+            "inactive",
+            "normal"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/ime-mode"
+    },
+    "inline-size": {
+        "values": [
+            "auto"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/inline-size"
+    },
+    "kerning": {
+        "values": [
+            "auto"
+        ]
+    },
+    "lighting-color": {
+        "values": [],
+        "type": "color"
+    },
+    "line-break": {
+        "values": [
+            "auto",
+            "loose",
+            "normal",
+            "strict",
+            "anywhere"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/line-break"
+    },
+    "margin-block-end": {
+        "values": [
+            "auto"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/margin-block-end"
+    },
+    "margin-block-start": {
+        "values": [
+            "auto"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/margin-block-start"
+    },
+    "margin-inline-end": {
+        "values": [
+            "auto"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/margin-inline-end"
+    },
+    "margin-inline-start": {
+        "values": [
+            "auto"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/margin-inline-start"
+    },
+    "marker": {
+        "values": [
+            "none",
+            "url()"
+        ]
+    },
+    "marker-end": {
+        "values": [
+            "none",
+            "url()"
+        ]
+    },
+    "marker-mid": {
+        "values": [
+            "none",
+            "url()"
+        ]
+    },
+    "marker-start": {
+        "values": [
+            "none",
+            "url()"
+        ]
+    },
+    "mask-image": {
+        "values": [
+            "none",
+            "url()",
+            "image()",
+            "-webkit-image-set()",
+            "image-set()",
+            "-moz-element()",
+            "element()",
+            "cross-fade()",
+            "-webkit-gradient()",
+            "-webkit-linear-gradient()",
+            "-moz-linear-gradient()",
+            "-o-linear-gradient()",
+            "linear-gradient()",
+            "-webkit-repeating-linear-gradient()",
+            "-moz-repeating-linear-gradient()",
+            "-o-repeating-linear-gradient()",
+            "repeating-linear-gradient()",
+            "-webkit-radial-gradient()",
+            "-moz-radial-gradient()",
+            "radial-gradient()",
+            "-webkit-repeating-radial-gradient()",
+            "-moz-repeating-radial-gradient()",
+            "repeating-radial-gradient()"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/mask-image"
+    },
+    "mask-mode": {
+        "values": [
+            "alpha",
+            "auto",
+            "luminance",
+            "url()",
+            "image()",
+            "-webkit-image-set()",
+            "image-set()",
+            "-moz-element()",
+            "element()",
+            "cross-fade()",
+            "-webkit-gradient()",
+            "-webkit-linear-gradient()",
+            "-moz-linear-gradient()",
+            "-o-linear-gradient()",
+            "linear-gradient()",
+            "-webkit-repeating-linear-gradient()",
+            "-moz-repeating-linear-gradient()",
+            "-o-repeating-linear-gradient()",
+            "repeating-linear-gradient()",
+            "-webkit-radial-gradient()",
+            "-moz-radial-gradient()",
+            "radial-gradient()",
+            "-webkit-repeating-radial-gradient()",
+            "-moz-repeating-radial-gradient()",
+            "repeating-radial-gradient()"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/mask-mode"
+    },
+    "mask-origin": {
+        "values": [
+            "margin-box",
+            "fill-box",
+            "stroke-box",
+            "view-box"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/mask-origin"
+    },
+    "mask-position": {
+        "values": [
+            "bottom",
+            "center",
+            "left",
+            "right",
+            "top"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/mask-position"
+    },
+    "mask-repeat": {
+        "values": [
+            "no-repeat",
+            "repeat",
+            "repeat-x",
+            "repeat-y",
+            "round",
+            "space"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/mask-repeat"
+    },
+    "mask-size": {
+        "values": [
+            "auto",
+            "contain",
+            "cover"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/mask-size"
+    },
+    "mask-type": {
+        "values": [
+            "alpha",
+            "luminance"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/mask-type"
+    },
+    "max-block-size": {
+        "values": [
+            "none"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/max-block-size"
+    },
+    "max-inline-size": {
+        "values": [
+            "none"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/max-inline-size"
+    },
+    "min-block-size": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/min-block-size"
+    },
+    "min-inline-size": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/min-inline-size"
+    },
+    "motion": {
+        "values": [
+            "none",
+            "path()",
+            "auto",
+            "reverse",
+            "circle()",
+            "ellipse()",
+            "inset()",
+            "polygon()",
+            "margin-box",
+            "fill-box",
+            "stroke-box",
+            "view-box"
+        ]
+    },
+    "motion-offset": {
+        "values": []
+    },
+    "motion-path": {
+        "values": [
+            "none",
+            "path()",
+            "circle()",
+            "ellipse()",
+            "inset()",
+            "polygon()",
+            "margin-box",
+            "fill-box",
+            "stroke-box",
+            "view-box"
+        ]
+    },
+    "motion-rotation": {
+        "values": [
+            "auto",
+            "reverse"
+        ]
+    },
+    "-moz-animation": {
+        "values": [
+            "alternate",
+            "alternate-reverse",
+            "backwards",
+            "both",
+            "forwards",
+            "infinite",
+            "none",
+            "normal",
+            "reverse",
+            "ease",
+            "ease-in",
+            "ease-in-out",
+            "ease-out",
+            "linear",
+            "step-end",
+            "step-start",
+            "steps()",
+            "cubic-bezier()",
+            "cubic-bezier(0.6, -0.28, 0.735, 0.045)",
+            "cubic-bezier(0.68, -0.55, 0.265, 1.55)",
+            "cubic-bezier(0.175, 0.885, 0.32, 1.275)",
+            "cubic-bezier(0.6, 0.04, 0.98, 0.335)",
+            "cubic-bezier(0.785, 0.135, 0.15, 0.86)",
+            "cubic-bezier(0.075, 0.82, 0.165, 1)",
+            "cubic-bezier(0.55, 0.055, 0.675, 0.19)",
+            "cubic-bezier(0.645, 0.045, 0.355, 1)",
+            "cubic-bezier(0.215, 0.610, 0.355, 1)",
+            "cubic-bezier(0.95, 0.05, 0.795, 0.035)",
+            "cubic-bezier(1, 0, 0, 1)",
+            "cubic-bezier(0.19, 1, 0.22, 1)",
+            "cubic-bezier(0.47, 0, 0.745, 0.715)",
+            "cubic-bezier(0.445, 0.05, 0.55, 0.95)",
+            "cubic-bezier(0.39, 0.575, 0.565, 1)",
+            "cubic-bezier(0.55, 0.085, 0.68, 0.53)",
+            "cubic-bezier(0.455, 0.03, 0.515, 0.955)",
+            "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+            "cubic-bezier(0.895, 0.03, 0.685, 0.22)",
+            "cubic-bezier(0.77, 0, 0.175, 1)",
+            "cubic-bezier(0.165, 0.84, 0.44, 1)",
+            "cubic-bezier(0.755, 0.05, 0.855, 0.06)",
+            "cubic-bezier(0.86, 0, 0.07, 1)",
+            "cubic-bezier(0.23, 1, 0.320, 1)"
+        ]
+    },
+    "-moz-animation-delay": {
+        "values": []
+    },
+    "-moz-animation-direction": {
+        "values": [
+            "alternate",
+            "alternate-reverse",
+            "normal",
+            "reverse"
+        ]
+    },
+    "-moz-animation-duration": {
+        "values": []
+    },
+    "-moz-animation-iteration-count": {
+        "values": [
+            "infinite"
+        ]
+    },
+    "-moz-animation-name": {
+        "values": [
+            "none"
+        ]
+    },
+    "-moz-animation-play-state": {
+        "values": [
+            "paused",
+            "running"
+        ]
+    },
+    "-moz-animation-timing-function": {
+        "values": [
+            "ease",
+            "ease-in",
+            "ease-in-out",
+            "ease-out",
+            "linear",
+            "step-end",
+            "step-start",
+            "steps()",
+            "cubic-bezier()",
+            "cubic-bezier(0.6, -0.28, 0.735, 0.045)",
+            "cubic-bezier(0.68, -0.55, 0.265, 1.55)",
+            "cubic-bezier(0.175, 0.885, 0.32, 1.275)",
+            "cubic-bezier(0.6, 0.04, 0.98, 0.335)",
+            "cubic-bezier(0.785, 0.135, 0.15, 0.86)",
+            "cubic-bezier(0.075, 0.82, 0.165, 1)",
+            "cubic-bezier(0.55, 0.055, 0.675, 0.19)",
+            "cubic-bezier(0.645, 0.045, 0.355, 1)",
+            "cubic-bezier(0.215, 0.610, 0.355, 1)",
+            "cubic-bezier(0.95, 0.05, 0.795, 0.035)",
+            "cubic-bezier(1, 0, 0, 1)",
+            "cubic-bezier(0.19, 1, 0.22, 1)",
+            "cubic-bezier(0.47, 0, 0.745, 0.715)",
+            "cubic-bezier(0.445, 0.05, 0.55, 0.95)",
+            "cubic-bezier(0.39, 0.575, 0.565, 1)",
+            "cubic-bezier(0.55, 0.085, 0.68, 0.53)",
+            "cubic-bezier(0.455, 0.03, 0.515, 0.955)",
+            "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+            "cubic-bezier(0.895, 0.03, 0.685, 0.22)",
+            "cubic-bezier(0.77, 0, 0.175, 1)",
+            "cubic-bezier(0.165, 0.84, 0.44, 1)",
+            "cubic-bezier(0.755, 0.05, 0.855, 0.06)",
+            "cubic-bezier(0.86, 0, 0.07, 1)",
+            "cubic-bezier(0.23, 1, 0.320, 1)"
+        ]
+    },
+    "-moz-appearance": {
+        "values": [
+            "button",
+            "button-arrow-down",
+            "button-arrow-next",
+            "button-arrow-previous",
+            "button-arrow-up",
+            "button-bevel",
+            "checkbox",
+            "checkbox-container",
+            "checkbox-label",
+            "dialog",
+            "groupbox",
+            "listbox",
+            "menuarrow",
+            "menuimage",
+            "menuitem",
+            "menuitemtext",
+            "menulist",
+            "menulist-button",
+            "menulist-text",
+            "menulist-textfield",
+            "menupopup",
+            "menuradio",
+            "menuseparator",
+            "-moz-mac-unified-toolbar",
+            "-moz-win-borderless-glass",
+            "-moz-win-browsertabbar-toolbox",
+            "-moz-win-communications-toolbox",
+            "-moz-win-glass",
+            "-moz-win-media-toolbox",
+            "none",
+            "progressbar",
+            "progresschunk",
+            "radio",
+            "radio-container",
+            "radio-label",
+            "radiomenuitem",
+            "resizer",
+            "resizerpanel",
+            "scrollbarbutton-down",
+            "scrollbarbutton-left",
+            "scrollbarbutton-right",
+            "scrollbarbutton-up",
+            "scrollbar-small",
+            "scrollbartrack-horizontal",
+            "scrollbartrack-vertical",
+            "separator",
+            "spinner",
+            "spinner-downbutton",
+            "spinner-textfield",
+            "spinner-upbutton",
+            "statusbar",
+            "statusbarpanel",
+            "tab",
+            "tabpanels",
+            "tab-scroll-arrow-back",
+            "tab-scroll-arrow-forward",
+            "textfield",
+            "textfield-multiline",
+            "toolbar",
+            "toolbox",
+            "tooltip",
+            "treeheadercell",
+            "treeheadersortarrow",
+            "treeitem",
+            "treetwistyopen",
+            "treeview",
+            "treewisty",
+            "window",
+            "button-focus",
+            "caret",
+            "checkmenuitem",
+            "dualbutton",
+            "listitem",
+            "menubar",
+            "menucheckbox",
+            "meterbar",
+            "meterchunk",
+            "progressbar-vertical",
+            "progresschunk-vertical",
+            "range",
+            "range-thumb",
+            "scale-horizontal",
+            "scalethumbend",
+            "scalethumb-horizontal",
+            "scalethumbstart",
+            "scalethumbtick",
+            "scalethumb-vertical",
+            "scale-vertical",
+            "scrollbarthumb-horizontal",
+            "scrollbarthumb-vertical",
+            "searchfield",
+            "sheet",
+            "splitter",
+            "tabpanel",
+            "toolbarbutton",
+            "toolbarbutton-dropdown",
+            "toolbargripper",
+            "treeheader",
+            "treeline",
+            "treetwisty",
+            "-moz-win-communicationstext",
+            "-moz-win-exclude-glass",
+            "-moz-win-mediatext",
+            "-moz-window-button-box",
+            "-moz-window-button-box-maximized",
+            "-moz-window-button-close",
+            "-moz-window-button-maximize",
+            "-moz-window-button-minimize",
+            "-moz-window-button-restore",
+            "-moz-window-frame-bottom",
+            "-moz-window-frame-left",
+            "-moz-window-frame-right",
+            "-moz-window-titlebar",
+            "-moz-window-titlebar-maximized"
+        ]
+    },
+    "-moz-backface-visibility": {
+        "values": [
+            "hidden",
+            "visible"
+        ]
+    },
+    "-moz-background-clip": {
+        "values": [
+            "padding",
+            "border-box",
+            "content-box",
+            "padding-box"
+        ]
+    },
+    "-moz-background-inline-policy": {
+        "values": [
+            "bounding-box",
+            "continuous",
+            "each-box"
+        ]
+    },
+    "-moz-background-origin": {
+        "values": [
+            "border-box",
+            "content-box",
+            "padding-box"
+        ]
+    },
+    "-moz-border-bottom-colors": {
+        "values": [
+            "none"
+        ],
+        "type": "color"
+    },
+    "-moz-border-image": {
+        "values": [
+            "auto",
+            "fill",
+            "none",
+            "repeat",
+            "round",
+            "space",
+            "stretch",
+            "url()"
+        ]
+    },
+    "-moz-border-left-colors": {
+        "values": [
+            "none"
+        ],
+        "type": "color"
+    },
+    "-moz-border-right-colors": {
+        "values": [
+            "none"
+        ],
+        "type": "color"
+    },
+    "-moz-border-top-colors": {
+        "values": [
+            "none"
+        ],
+        "type": "color"
+    },
+    "-moz-box-align": {
+        "values": [
+            "baseline",
+            "center",
+            "end",
+            "start",
+            "stretch"
+        ]
+    },
+    "-moz-box-direction": {
+        "values": [
+            "normal",
+            "reverse"
+        ]
+    },
+    "-moz-box-flex": {
+        "values": []
+    },
+    "-moz-box-flexgroup": {
+        "values": []
+    },
+    "-moz-box-ordinal-group": {
+        "values": []
+    },
+    "-moz-box-orient": {
+        "values": [
+            "block-axis",
+            "horizontal",
+            "inline-axis",
+            "vertical"
+        ]
+    },
+    "-moz-box-pack": {
+        "values": [
+            "center",
+            "end",
+            "justify",
+            "start"
+        ]
+    },
+    "-moz-box-sizing": {
+        "values": [
+            "border-box",
+            "content-box",
+            "padding-box"
+        ]
+    },
+    "-moz-column-count": {
+        "values": [
+            "auto"
+        ]
+    },
+    "-moz-column-gap": {
+        "values": [
+            "normal"
+        ]
+    },
+    "-moz-column-rule": {
+        "values": [
+            "medium",
+            "thick",
+            "thin",
+            "dashed",
+            "dotted",
+            "double",
+            "groove",
+            "hidden",
+            "inset",
+            "none",
+            "outset",
+            "ridge",
+            "solid"
+        ]
+    },
+    "-moz-column-rule-color": {
+        "values": [],
+        "type": "color"
+    },
+    "-moz-column-rule-style": {
+        "values": [
+            "dashed",
+            "dotted",
+            "double",
+            "groove",
+            "hidden",
+            "inset",
+            "none",
+            "outset",
+            "ridge",
+            "solid"
+        ]
+    },
+    "-moz-column-rule-width": {
+        "values": [
+            "medium",
+            "thick",
+            "thin"
+        ]
+    },
+    "-moz-columns": {
+        "values": [
+            "auto"
+        ]
+    },
+    "-moz-column-width": {
+        "values": [
+            "auto"
+        ]
+    },
+    "-moz-font-feature-settings": {
+        "values": [
+            "\"c2cs\"",
+            "\"dlig\"",
+            "\"kern\"",
+            "\"liga\"",
+            "\"lnum\"",
+            "\"onum\"",
+            "\"smcp\"",
+            "\"swsh\"",
+            "\"tnum\"",
+            "normal",
+            "off",
+            "on"
+        ]
+    },
+    "-moz-hyphens": {
+        "values": [
+            "auto",
+            "manual",
+            "none"
+        ]
+    },
+    "-moz-perspective": {
+        "values": [
+            "none"
+        ]
+    },
+    "-moz-perspective-origin": {
+        "values": [
+            "bottom",
+            "center",
+            "left",
+            "right",
+            "top"
+        ]
+    },
+    "-moz-text-align-last": {
+        "values": [
+            "auto",
+            "center",
+            "justify",
+            "left",
+            "right"
+        ]
+    },
+    "-moz-text-decoration-color": {
+        "values": [],
+        "type": "color"
+    },
+    "-moz-text-decoration-line": {
+        "values": [
+            "line-through",
+            "none",
+            "overline",
+            "underline"
+        ]
+    },
+    "-moz-text-decoration-style": {
+        "values": [
+            "dashed",
+            "dotted",
+            "double",
+            "none",
+            "solid",
+            "wavy"
+        ]
+    },
+    "-moz-text-size-adjust": {
+        "values": [
+            "auto",
+            "none"
+        ]
+    },
+    "-moz-transform": {
+        "values": [
+            "matrix()",
+            "matrix3d()",
+            "none",
+            "perspective",
+            "rotate()",
+            "rotate3d()",
+            "rotateX('angle')",
+            "rotateY('angle')",
+            "rotateZ('angle')",
+            "scale()",
+            "scale3d()",
+            "scaleX()",
+            "scaleY()",
+            "scaleZ()",
+            "skew()",
+            "skewX()",
+            "skewY()",
+            "translate()",
+            "translate3d()",
+            "translateX()",
+            "translateY()",
+            "translateZ()"
+        ]
+    },
+    "-moz-transform-origin": {
+        "values": [
+            "bottom",
+            "center",
+            "left",
+            "right",
+            "top"
+        ]
+    },
+    "-moz-transition": {
+        "values": [
+            "all",
+            "none",
+            "ease",
+            "ease-in",
+            "ease-in-out",
+            "ease-out",
+            "linear",
+            "step-end",
+            "step-start",
+            "steps()",
+            "cubic-bezier()",
+            "cubic-bezier(0.6, -0.28, 0.735, 0.045)",
+            "cubic-bezier(0.68, -0.55, 0.265, 1.55)",
+            "cubic-bezier(0.175, 0.885, 0.32, 1.275)",
+            "cubic-bezier(0.6, 0.04, 0.98, 0.335)",
+            "cubic-bezier(0.785, 0.135, 0.15, 0.86)",
+            "cubic-bezier(0.075, 0.82, 0.165, 1)",
+            "cubic-bezier(0.55, 0.055, 0.675, 0.19)",
+            "cubic-bezier(0.645, 0.045, 0.355, 1)",
+            "cubic-bezier(0.215, 0.610, 0.355, 1)",
+            "cubic-bezier(0.95, 0.05, 0.795, 0.035)",
+            "cubic-bezier(1, 0, 0, 1)",
+            "cubic-bezier(0.19, 1, 0.22, 1)",
+            "cubic-bezier(0.47, 0, 0.745, 0.715)",
+            "cubic-bezier(0.445, 0.05, 0.55, 0.95)",
+            "cubic-bezier(0.39, 0.575, 0.565, 1)",
+            "cubic-bezier(0.55, 0.085, 0.68, 0.53)",
+            "cubic-bezier(0.455, 0.03, 0.515, 0.955)",
+            "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+            "cubic-bezier(0.895, 0.03, 0.685, 0.22)",
+            "cubic-bezier(0.77, 0, 0.175, 1)",
+            "cubic-bezier(0.165, 0.84, 0.44, 1)",
+            "cubic-bezier(0.755, 0.05, 0.855, 0.06)",
+            "cubic-bezier(0.86, 0, 0.07, 1)",
+            "cubic-bezier(0.23, 1, 0.320, 1)"
+        ]
+    },
+    "-moz-transition-delay": {
+        "values": []
+    },
+    "-moz-transition-duration": {
+        "values": []
+    },
+    "-moz-transition-property": {
+        "values": [
+            "all",
+            "none"
+        ]
+    },
+    "-moz-transition-timing-function": {
+        "values": [
+            "ease",
+            "ease-in",
+            "ease-in-out",
+            "ease-out",
+            "linear",
+            "step-end",
+            "step-start",
+            "steps()",
+            "cubic-bezier()",
+            "cubic-bezier(0.6, -0.28, 0.735, 0.045)",
+            "cubic-bezier(0.68, -0.55, 0.265, 1.55)",
+            "cubic-bezier(0.175, 0.885, 0.32, 1.275)",
+            "cubic-bezier(0.6, 0.04, 0.98, 0.335)",
+            "cubic-bezier(0.785, 0.135, 0.15, 0.86)",
+            "cubic-bezier(0.075, 0.82, 0.165, 1)",
+            "cubic-bezier(0.55, 0.055, 0.675, 0.19)",
+            "cubic-bezier(0.645, 0.045, 0.355, 1)",
+            "cubic-bezier(0.215, 0.610, 0.355, 1)",
+            "cubic-bezier(0.95, 0.05, 0.795, 0.035)",
+            "cubic-bezier(1, 0, 0, 1)",
+            "cubic-bezier(0.19, 1, 0.22, 1)",
+            "cubic-bezier(0.47, 0, 0.745, 0.715)",
+            "cubic-bezier(0.445, 0.05, 0.55, 0.95)",
+            "cubic-bezier(0.39, 0.575, 0.565, 1)",
+            "cubic-bezier(0.55, 0.085, 0.68, 0.53)",
+            "cubic-bezier(0.455, 0.03, 0.515, 0.955)",
+            "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+            "cubic-bezier(0.895, 0.03, 0.685, 0.22)",
+            "cubic-bezier(0.77, 0, 0.175, 1)",
+            "cubic-bezier(0.165, 0.84, 0.44, 1)",
+            "cubic-bezier(0.755, 0.05, 0.855, 0.06)",
+            "cubic-bezier(0.86, 0, 0.07, 1)",
+            "cubic-bezier(0.23, 1, 0.320, 1)"
+        ]
+    },
+    "-moz-user-focus": {
+        "values": [
+            "ignore",
+            "normal",
+            "select-after",
+            "select-before",
+            "select-menu",
+            "select-same",
+            "select-all",
+            "none"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/-moz-user-focus"
+    },
+    "-moz-user-select": {
+        "values": [
+            "all",
+            "element",
+            "elements",
+            "-moz-all",
+            "-moz-none",
+            "none",
+            "text",
+            "toggle"
+        ]
+    },
+    "-ms-accelerator": {
+        "values": [
+            "false",
+            "true"
+        ]
+    },
+    "-ms-behavior": {
+        "values": []
+    },
+    "-ms-block-progression": {
+        "values": [
+            "bt",
+            "lr",
+            "rl",
+            "tb"
+        ]
+    },
+    "-ms-content-zoom-chaining": {
+        "values": [
+            "chained",
+            "none"
+        ]
+    },
+    "-ms-content-zooming": {
+        "values": [
+            "none",
+            "zoom"
+        ]
+    },
+    "-ms-content-zoom-limit": {
+        "values": []
+    },
+    "-ms-content-zoom-limit-max": {
+        "values": []
+    },
+    "-ms-content-zoom-limit-min": {
+        "values": []
+    },
+    "-ms-content-zoom-snap": {
+        "values": [
+            "mandatory",
+            "none",
+            "proximity",
+            "snapInterval(100%, 100%)",
+            "snapList()"
+        ]
+    },
+    "-ms-content-zoom-snap-points": {
+        "values": [
+            "snapInterval(100%, 100%)",
+            "snapList()",
+            "snapInterval",
+            "snapList"
+        ]
+    },
+    "-ms-content-zoom-snap-type": {
+        "values": [
+            "mandatory",
+            "none",
+            "proximity"
+        ]
+    },
+    "-ms-filter": {
+        "values": []
+    },
+    "-ms-flex": {
+        "values": [
+            "auto",
+            "none"
+        ]
+    },
+    "-ms-flex-align": {
+        "values": [
+            "baseline",
+            "center",
+            "end",
+            "start",
+            "stretch"
+        ]
+    },
+    "-ms-flex-direction": {
+        "values": [
+            "column",
+            "column-reverse",
+            "row",
+            "row-reverse"
+        ]
+    },
+    "-ms-flex-flow": {
+        "values": [
+            "column",
+            "column-reverse",
+            "nowrap",
+            "row",
+            "wrap",
+            "wrap-reverse"
+        ]
+    },
+    "-ms-flex-item-align": {
+        "values": [
+            "auto",
+            "baseline",
+            "center",
+            "end",
+            "start",
+            "stretch"
+        ]
+    },
+    "-ms-flex-line-pack": {
+        "values": [
+            "center",
+            "distribute",
+            "end",
+            "justify",
+            "start",
+            "stretch"
+        ]
+    },
+    "-ms-flex-order": {
+        "values": []
+    },
+    "-ms-flex-pack": {
+        "values": [
+            "center",
+            "distribute",
+            "end",
+            "justify",
+            "start"
+        ]
+    },
+    "-ms-flex-wrap": {
+        "values": [
+            "nowrap",
+            "wrap",
+            "wrap-reverse"
+        ]
+    },
+    "-ms-flow-from": {
+        "values": [
+            "none"
+        ]
+    },
+    "-ms-flow-into": {
+        "values": [
+            "none"
+        ]
+    },
+    "-ms-grid-column": {
+        "values": [
+            "auto",
+            "end",
+            "start"
+        ]
+    },
+    "-ms-grid-column-align": {
+        "values": [
+            "center",
+            "end",
+            "start",
+            "stretch"
+        ]
+    },
+    "-ms-grid-columns": {
+        "values": [
+            "none"
+        ]
+    },
+    "-ms-grid-column-span": {
+        "values": []
+    },
+    "-ms-grid-layer": {
+        "values": []
+    },
+    "-ms-grid-row": {
+        "values": [
+            "auto",
+            "end",
+            "start"
+        ]
+    },
+    "-ms-grid-row-align": {
+        "values": [
+            "center",
+            "end",
+            "start",
+            "stretch"
+        ]
+    },
+    "-ms-grid-rows": {
+        "values": [
+            "none"
+        ]
+    },
+    "-ms-grid-row-span": {
+        "values": []
+    },
+    "-ms-high-contrast-adjust": {
+        "values": [
+            "auto",
+            "none"
+        ]
+    },
+    "-ms-hyphenate-limit-chars": {
+        "values": [
+            "auto"
+        ]
+    },
+    "-ms-hyphenate-limit-lines": {
+        "values": [
+            "no-limit"
+        ]
+    },
+    "-ms-hyphenate-limit-zone": {
+        "values": []
+    },
+    "-ms-hyphens": {
+        "values": [
+            "auto",
+            "manual",
+            "none"
+        ]
+    },
+    "-ms-ime-mode": {
+        "values": [
+            "active",
+            "auto",
+            "disabled",
+            "inactive",
+            "normal"
+        ]
+    },
+    "-ms-interpolation-mode": {
+        "values": [
+            "bicubic",
+            "nearest-neighbor"
+        ]
+    },
+    "-ms-layout-grid": {
+        "values": [
+            "char",
+            "line",
+            "mode",
+            "type"
+        ]
+    },
+    "-ms-layout-grid-char": {
+        "values": [
+            "auto",
+            "none"
+        ]
+    },
+    "-ms-layout-grid-line": {
+        "values": [
+            "auto",
+            "none"
+        ]
+    },
+    "-ms-layout-grid-mode": {
+        "values": [
+            "both",
+            "char",
+            "line",
+            "none"
+        ]
+    },
+    "-ms-layout-grid-type": {
+        "values": [
+            "fixed",
+            "loose",
+            "strict"
+        ]
+    },
+    "-ms-line-break": {
+        "values": [
+            "auto",
+            "keep-all",
+            "newspaper",
+            "normal",
+            "strict"
+        ]
+    },
+    "-ms-overflow-style": {
+        "values": [
+            "auto",
+            "-ms-autohiding-scrollbar",
+            "none",
+            "scrollbar"
+        ]
+    },
+    "-ms-perspective": {
+        "values": [
+            "none"
+        ]
+    },
+    "-ms-perspective-origin": {
+        "values": [
+            "bottom",
+            "center",
+            "left",
+            "right",
+            "top"
+        ]
+    },
+    "-ms-perspective-origin-x": {
+        "values": [
+            "bottom",
+            "center",
+            "left",
+            "right",
+            "top"
+        ]
+    },
+    "-ms-perspective-origin-y": {
+        "values": [
+            "bottom",
+            "center",
+            "left",
+            "right",
+            "top"
+        ]
+    },
+    "-ms-progress-appearance": {
+        "values": [
+            "bar",
+            "ring"
+        ]
+    },
+    "-ms-scrollbar-3dlight-color": {
+        "values": [],
+        "type": "color"
+    },
+    "-ms-scrollbar-arrow-color": {
+        "values": [],
+        "type": "color"
+    },
+    "-ms-scrollbar-base-color": {
+        "values": [],
+        "type": "color"
+    },
+    "-ms-scrollbar-darkshadow-color": {
+        "values": [],
+        "type": "color"
+    },
+    "-ms-scrollbar-face-color": {
+        "values": [],
+        "type": "color"
+    },
+    "-ms-scrollbar-highlight-color": {
+        "values": [],
+        "type": "color"
+    },
+    "-ms-scrollbar-shadow-color": {
+        "values": [],
+        "type": "color"
+    },
+    "-ms-scrollbar-track-color": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/-ms-scrollbar-track-color",
+        "type": "color"
+    },
+    "-ms-scroll-chaining": {
+        "values": [
+            "chained",
+            "none"
+        ]
+    },
+    "-ms-scroll-limit": {
+        "values": [
+            "auto"
+        ]
+    },
+    "-ms-scroll-limit-x-max": {
+        "values": [
+            "auto"
+        ]
+    },
+    "-ms-scroll-limit-x-min": {
+        "values": []
+    },
+    "-ms-scroll-limit-y-max": {
+        "values": [
+            "auto"
+        ]
+    },
+    "-ms-scroll-limit-y-min": {
+        "values": []
+    },
+    "-ms-scroll-rails": {
+        "values": [
+            "none",
+            "railed"
+        ]
+    },
+    "-ms-scroll-snap-points-x": {
+        "values": [
+            "snapInterval(100%, 100%)",
+            "snapList()",
+            "snapInterval",
+            "snapList"
+        ]
+    },
+    "-ms-scroll-snap-points-y": {
+        "values": [
+            "snapInterval(100%, 100%)",
+            "snapList()",
+            "snapInterval",
+            "snapList"
+        ]
+    },
+    "-ms-scroll-snap-type": {
+        "values": [
+            "none",
+            "mandatory",
+            "proximity"
+        ]
+    },
+    "-ms-scroll-snap-x": {
+        "values": [
+            "mandatory",
+            "none",
+            "proximity",
+            "snapInterval(100%, 100%)",
+            "snapList()"
+        ]
+    },
+    "-ms-scroll-snap-y": {
+        "values": [
+            "mandatory",
+            "none",
+            "proximity",
+            "snapInterval(100%, 100%)",
+            "snapList()"
+        ]
+    },
+    "-ms-scroll-translation": {
+        "values": [
+            "none",
+            "vertical-to-horizontal"
+        ]
+    },
+    "-ms-text-align-last": {
+        "values": [
+            "auto",
+            "center",
+            "justify",
+            "left",
+            "right"
+        ]
+    },
+    "-ms-text-autospace": {
+        "values": [
+            "ideograph-alpha",
+            "ideograph-numeric",
+            "ideograph-parenthesis",
+            "ideograph-space",
+            "none",
+            "punctuation"
+        ]
+    },
+    "-ms-text-combine-horizontal": {
+        "values": [
+            "all",
+            "digits",
+            "none"
+        ]
+    },
+    "-ms-text-justify": {
+        "values": [
+            "auto",
+            "distribute",
+            "inter-cluster",
+            "inter-ideograph",
+            "inter-word",
+            "kashida"
+        ]
+    },
+    "-ms-text-kashida-space": {
+        "values": []
+    },
+    "-ms-text-overflow": {
+        "values": [
+            "clip",
+            "ellipsis"
+        ]
+    },
+    "-ms-text-size-adjust": {
+        "values": [
+            "auto",
+            "none"
+        ]
+    },
+    "-ms-text-underline-position": {
+        "values": [
+            "alphabetic",
+            "auto",
+            "over",
+            "under"
+        ]
+    },
+    "-ms-touch-action": {
+        "values": [
+            "auto",
+            "double-tap-zoom",
+            "manipulation",
+            "none",
+            "pan-x",
+            "pan-y",
+            "pinch-zoom"
+        ]
+    },
+    "-ms-touch-select": {
+        "values": [
+            "grippers",
+            "none"
+        ]
+    },
+    "-ms-transform": {
+        "values": [
+            "matrix()",
+            "matrix3d()",
+            "none",
+            "rotate()",
+            "rotate3d()",
+            "rotateX('angle')",
+            "rotateY('angle')",
+            "rotateZ('angle')",
+            "scale()",
+            "scale3d()",
+            "scaleX()",
+            "scaleY()",
+            "scaleZ()",
+            "skew()",
+            "skewX()",
+            "skewY()",
+            "translate()",
+            "translate3d()",
+            "translateX()",
+            "translateY()",
+            "translateZ()"
+        ]
+    },
+    "-ms-transform-origin": {
+        "values": [
+            "bottom",
+            "center",
+            "left",
+            "right",
+            "top"
+        ]
+    },
+    "-ms-transform-origin-x": {
+        "values": []
+    },
+    "-ms-transform-origin-y": {
+        "values": []
+    },
+    "-ms-transform-origin-z": {
+        "values": []
+    },
+    "-ms-user-select": {
+        "values": [
+            "element",
+            "none",
+            "text"
+        ]
+    },
+    "-ms-word-break": {
+        "values": [
+            "break-all",
+            "keep-all",
+            "normal"
+        ]
+    },
+    "-ms-word-wrap": {
+        "values": [
+            "break-word",
+            "normal"
+        ]
+    },
+    "-ms-wrap-flow": {
+        "values": [
+            "auto",
+            "both",
+            "clear",
+            "end",
+            "maximum",
+            "minimum",
+            "start"
+        ]
+    },
+    "-ms-wrap-margin": {
+        "values": []
+    },
+    "-ms-wrap-through": {
+        "values": [
+            "none",
+            "wrap"
+        ]
+    },
+    "-ms-writing-mode": {
+        "values": [
+            "bt-lr",
+            "bt-rl",
+            "lr-bt",
+            "lr-tb",
+            "rl-bt",
+            "rl-tb",
+            "tb-lr",
+            "tb-rl"
+        ]
+    },
+    "-ms-zoom": {
+        "values": [
+            "normal"
+        ]
+    },
+    "-ms-zoom-animation": {
+        "values": [
+            "default",
+            "none"
+        ]
+    },
+    "nav-down": {
+        "values": [
+            "auto",
+            "current",
+            "root"
+        ]
+    },
+    "nav-index": {
+        "values": [
+            "auto"
+        ]
+    },
+    "nav-left": {
+        "values": [
+            "auto",
+            "current",
+            "root"
+        ]
+    },
+    "nav-right": {
+        "values": [
+            "auto",
+            "current",
+            "root"
+        ]
+    },
+    "nav-up": {
+        "values": [
+            "auto",
+            "current",
+            "root"
+        ]
+    },
+    "negative": {
+        "values": [
+            "url()",
+            "image()",
+            "-webkit-image-set()",
+            "image-set()",
+            "-moz-element()",
+            "element()",
+            "cross-fade()",
+            "-webkit-gradient()",
+            "-webkit-linear-gradient()",
+            "-moz-linear-gradient()",
+            "-o-linear-gradient()",
+            "linear-gradient()",
+            "-webkit-repeating-linear-gradient()",
+            "-moz-repeating-linear-gradient()",
+            "-o-repeating-linear-gradient()",
+            "repeating-linear-gradient()",
+            "-webkit-radial-gradient()",
+            "-moz-radial-gradient()",
+            "radial-gradient()",
+            "-webkit-repeating-radial-gradient()",
+            "-moz-repeating-radial-gradient()",
+            "repeating-radial-gradient()"
+        ]
+    },
+    "-o-animation": {
+        "values": [
+            "alternate",
+            "alternate-reverse",
+            "backwards",
+            "both",
+            "forwards",
+            "infinite",
+            "none",
+            "normal",
+            "reverse",
+            "ease",
+            "ease-in",
+            "ease-in-out",
+            "ease-out",
+            "linear",
+            "step-end",
+            "step-start",
+            "steps()",
+            "cubic-bezier()",
+            "cubic-bezier(0.6, -0.28, 0.735, 0.045)",
+            "cubic-bezier(0.68, -0.55, 0.265, 1.55)",
+            "cubic-bezier(0.175, 0.885, 0.32, 1.275)",
+            "cubic-bezier(0.6, 0.04, 0.98, 0.335)",
+            "cubic-bezier(0.785, 0.135, 0.15, 0.86)",
+            "cubic-bezier(0.075, 0.82, 0.165, 1)",
+            "cubic-bezier(0.55, 0.055, 0.675, 0.19)",
+            "cubic-bezier(0.645, 0.045, 0.355, 1)",
+            "cubic-bezier(0.215, 0.610, 0.355, 1)",
+            "cubic-bezier(0.95, 0.05, 0.795, 0.035)",
+            "cubic-bezier(1, 0, 0, 1)",
+            "cubic-bezier(0.19, 1, 0.22, 1)",
+            "cubic-bezier(0.47, 0, 0.745, 0.715)",
+            "cubic-bezier(0.445, 0.05, 0.55, 0.95)",
+            "cubic-bezier(0.39, 0.575, 0.565, 1)",
+            "cubic-bezier(0.55, 0.085, 0.68, 0.53)",
+            "cubic-bezier(0.455, 0.03, 0.515, 0.955)",
+            "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+            "cubic-bezier(0.895, 0.03, 0.685, 0.22)",
+            "cubic-bezier(0.77, 0, 0.175, 1)",
+            "cubic-bezier(0.165, 0.84, 0.44, 1)",
+            "cubic-bezier(0.755, 0.05, 0.855, 0.06)",
+            "cubic-bezier(0.86, 0, 0.07, 1)",
+            "cubic-bezier(0.23, 1, 0.320, 1)"
+        ]
+    },
+    "-o-animation-delay": {
+        "values": []
+    },
+    "-o-animation-direction": {
+        "values": [
+            "alternate",
+            "alternate-reverse",
+            "normal",
+            "reverse"
+        ]
+    },
+    "-o-animation-duration": {
+        "values": []
+    },
+    "-o-animation-fill-mode": {
+        "values": [
+            "backwards",
+            "both",
+            "forwards",
+            "none"
+        ]
+    },
+    "-o-animation-iteration-count": {
+        "values": [
+            "infinite"
+        ]
+    },
+    "-o-animation-name": {
+        "values": [
+            "none"
+        ]
+    },
+    "-o-animation-play-state": {
+        "values": [
+            "paused",
+            "running"
+        ]
+    },
+    "-o-animation-timing-function": {
+        "values": [
+            "ease",
+            "ease-in",
+            "ease-in-out",
+            "ease-out",
+            "linear",
+            "step-end",
+            "step-start",
+            "steps()",
+            "cubic-bezier()",
+            "cubic-bezier(0.6, -0.28, 0.735, 0.045)",
+            "cubic-bezier(0.68, -0.55, 0.265, 1.55)",
+            "cubic-bezier(0.175, 0.885, 0.32, 1.275)",
+            "cubic-bezier(0.6, 0.04, 0.98, 0.335)",
+            "cubic-bezier(0.785, 0.135, 0.15, 0.86)",
+            "cubic-bezier(0.075, 0.82, 0.165, 1)",
+            "cubic-bezier(0.55, 0.055, 0.675, 0.19)",
+            "cubic-bezier(0.645, 0.045, 0.355, 1)",
+            "cubic-bezier(0.215, 0.610, 0.355, 1)",
+            "cubic-bezier(0.95, 0.05, 0.795, 0.035)",
+            "cubic-bezier(1, 0, 0, 1)",
+            "cubic-bezier(0.19, 1, 0.22, 1)",
+            "cubic-bezier(0.47, 0, 0.745, 0.715)",
+            "cubic-bezier(0.445, 0.05, 0.55, 0.95)",
+            "cubic-bezier(0.39, 0.575, 0.565, 1)",
+            "cubic-bezier(0.55, 0.085, 0.68, 0.53)",
+            "cubic-bezier(0.455, 0.03, 0.515, 0.955)",
+            "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+            "cubic-bezier(0.895, 0.03, 0.685, 0.22)",
+            "cubic-bezier(0.77, 0, 0.175, 1)",
+            "cubic-bezier(0.165, 0.84, 0.44, 1)",
+            "cubic-bezier(0.755, 0.05, 0.855, 0.06)",
+            "cubic-bezier(0.86, 0, 0.07, 1)",
+            "cubic-bezier(0.23, 1, 0.320, 1)"
+        ]
+    },
+    "-o-border-image": {
+        "values": [
+            "auto",
+            "fill",
+            "none",
+            "repeat",
+            "round",
+            "space",
+            "stretch",
+            "url()",
+            "image()",
+            "-webkit-image-set()",
+            "image-set()",
+            "-moz-element()",
+            "element()",
+            "cross-fade()",
+            "-webkit-gradient()",
+            "-webkit-linear-gradient()",
+            "-moz-linear-gradient()",
+            "-o-linear-gradient()",
+            "linear-gradient()",
+            "-webkit-repeating-linear-gradient()",
+            "-moz-repeating-linear-gradient()",
+            "-o-repeating-linear-gradient()",
+            "repeating-linear-gradient()",
+            "-webkit-radial-gradient()",
+            "-moz-radial-gradient()",
+            "radial-gradient()",
+            "-webkit-repeating-radial-gradient()",
+            "-moz-repeating-radial-gradient()",
+            "repeating-radial-gradient()"
+        ]
+    },
+    "-o-object-fit": {
+        "values": [
+            "contain",
+            "cover",
+            "fill",
+            "none",
+            "scale-down"
+        ]
+    },
+    "-o-object-position": {
+        "values": [
+            "bottom",
+            "center",
+            "left",
+            "right",
+            "top"
+        ]
+    },
+    "-o-table-baseline": {
+        "values": []
+    },
+    "-o-tab-size": {
+        "values": []
+    },
+    "-o-text-overflow": {
+        "values": [
+            "clip",
+            "ellipsis"
+        ]
+    },
+    "-o-transform": {
+        "values": [
+            "matrix()",
+            "matrix3d()",
+            "none",
+            "rotate()",
+            "rotate3d()",
+            "rotateX('angle')",
+            "rotateY('angle')",
+            "rotateZ('angle')",
+            "scale()",
+            "scale3d()",
+            "scaleX()",
+            "scaleY()",
+            "scaleZ()",
+            "skew()",
+            "skewX()",
+            "skewY()",
+            "translate()",
+            "translate3d()",
+            "translateX()",
+            "translateY()",
+            "translateZ()"
+        ]
+    },
+    "-o-transform-origin": {
+        "values": []
+    },
+    "-o-transition": {
+        "values": [
+            "all",
+            "none",
+            "ease",
+            "ease-in",
+            "ease-in-out",
+            "ease-out",
+            "linear",
+            "step-end",
+            "step-start",
+            "steps()",
+            "cubic-bezier()",
+            "cubic-bezier(0.6, -0.28, 0.735, 0.045)",
+            "cubic-bezier(0.68, -0.55, 0.265, 1.55)",
+            "cubic-bezier(0.175, 0.885, 0.32, 1.275)",
+            "cubic-bezier(0.6, 0.04, 0.98, 0.335)",
+            "cubic-bezier(0.785, 0.135, 0.15, 0.86)",
+            "cubic-bezier(0.075, 0.82, 0.165, 1)",
+            "cubic-bezier(0.55, 0.055, 0.675, 0.19)",
+            "cubic-bezier(0.645, 0.045, 0.355, 1)",
+            "cubic-bezier(0.215, 0.610, 0.355, 1)",
+            "cubic-bezier(0.95, 0.05, 0.795, 0.035)",
+            "cubic-bezier(1, 0, 0, 1)",
+            "cubic-bezier(0.19, 1, 0.22, 1)",
+            "cubic-bezier(0.47, 0, 0.745, 0.715)",
+            "cubic-bezier(0.445, 0.05, 0.55, 0.95)",
+            "cubic-bezier(0.39, 0.575, 0.565, 1)",
+            "cubic-bezier(0.55, 0.085, 0.68, 0.53)",
+            "cubic-bezier(0.455, 0.03, 0.515, 0.955)",
+            "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+            "cubic-bezier(0.895, 0.03, 0.685, 0.22)",
+            "cubic-bezier(0.77, 0, 0.175, 1)",
+            "cubic-bezier(0.165, 0.84, 0.44, 1)",
+            "cubic-bezier(0.755, 0.05, 0.855, 0.06)",
+            "cubic-bezier(0.86, 0, 0.07, 1)",
+            "cubic-bezier(0.23, 1, 0.320, 1)"
+        ]
+    },
+    "-o-transition-delay": {
+        "values": []
+    },
+    "-o-transition-duration": {
+        "values": []
+    },
+    "-o-transition-property": {
+        "values": [
+            "all",
+            "none"
+        ]
+    },
+    "-o-transition-timing-function": {
+        "values": [
+            "ease",
+            "ease-in",
+            "ease-in-out",
+            "ease-out",
+            "linear",
+            "step-end",
+            "step-start",
+            "steps()",
+            "cubic-bezier()",
+            "cubic-bezier(0.6, -0.28, 0.735, 0.045)",
+            "cubic-bezier(0.68, -0.55, 0.265, 1.55)",
+            "cubic-bezier(0.175, 0.885, 0.32, 1.275)",
+            "cubic-bezier(0.6, 0.04, 0.98, 0.335)",
+            "cubic-bezier(0.785, 0.135, 0.15, 0.86)",
+            "cubic-bezier(0.075, 0.82, 0.165, 1)",
+            "cubic-bezier(0.55, 0.055, 0.675, 0.19)",
+            "cubic-bezier(0.645, 0.045, 0.355, 1)",
+            "cubic-bezier(0.215, 0.610, 0.355, 1)",
+            "cubic-bezier(0.95, 0.05, 0.795, 0.035)",
+            "cubic-bezier(1, 0, 0, 1)",
+            "cubic-bezier(0.19, 1, 0.22, 1)",
+            "cubic-bezier(0.47, 0, 0.745, 0.715)",
+            "cubic-bezier(0.445, 0.05, 0.55, 0.95)",
+            "cubic-bezier(0.39, 0.575, 0.565, 1)",
+            "cubic-bezier(0.55, 0.085, 0.68, 0.53)",
+            "cubic-bezier(0.455, 0.03, 0.515, 0.955)",
+            "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+            "cubic-bezier(0.895, 0.03, 0.685, 0.22)",
+            "cubic-bezier(0.77, 0, 0.175, 1)",
+            "cubic-bezier(0.165, 0.84, 0.44, 1)",
+            "cubic-bezier(0.755, 0.05, 0.855, 0.06)",
+            "cubic-bezier(0.86, 0, 0.07, 1)",
+            "cubic-bezier(0.23, 1, 0.320, 1)"
+        ]
+    },
+    "offset-block-end": {
+        "values": [
+            "auto"
+        ]
+    },
+    "offset-block-start": {
+        "values": [
+            "auto"
+        ]
+    },
+    "offset-inline-end": {
+        "values": [
+            "auto"
+        ]
+    },
+    "offset-inline-start": {
+        "values": [
+            "auto"
+        ]
+    },
+    "overflow-wrap": {
+        "values": [
+            "break-word",
+            "normal",
+            "anywhere"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/overflow-wrap"
+    },
+    "pad": {
+        "values": [
+            "url()",
+            "image()",
+            "-webkit-image-set()",
+            "image-set()",
+            "-moz-element()",
+            "element()",
+            "cross-fade()",
+            "-webkit-gradient()",
+            "-webkit-linear-gradient()",
+            "-moz-linear-gradient()",
+            "-o-linear-gradient()",
+            "linear-gradient()",
+            "-webkit-repeating-linear-gradient()",
+            "-moz-repeating-linear-gradient()",
+            "-o-repeating-linear-gradient()",
+            "repeating-linear-gradient()",
+            "-webkit-radial-gradient()",
+            "-moz-radial-gradient()",
+            "radial-gradient()",
+            "-webkit-repeating-radial-gradient()",
+            "-moz-repeating-radial-gradient()",
+            "repeating-radial-gradient()"
+        ]
+    },
+    "padding-block-end": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/padding-block-end"
+    },
+    "padding-block-start": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/padding-block-start"
+    },
+    "padding-inline-end": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/padding-inline-end"
+    },
+    "padding-inline-start": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/padding-inline-start"
+    },
+    "paint-order": {
+        "values": [
+            "fill",
+            "markers",
+            "normal",
+            "stroke"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/paint-order"
+    },
+    "prefix": {
+        "values": [
+            "url()",
+            "image()",
+            "-webkit-image-set()",
+            "image-set()",
+            "-moz-element()",
+            "element()",
+            "cross-fade()",
+            "-webkit-gradient()",
+            "-webkit-linear-gradient()",
+            "-moz-linear-gradient()",
+            "-o-linear-gradient()",
+            "linear-gradient()",
+            "-webkit-repeating-linear-gradient()",
+            "-moz-repeating-linear-gradient()",
+            "-o-repeating-linear-gradient()",
+            "repeating-linear-gradient()",
+            "-webkit-radial-gradient()",
+            "-moz-radial-gradient()",
+            "radial-gradient()",
+            "-webkit-repeating-radial-gradient()",
+            "-moz-repeating-radial-gradient()",
+            "repeating-radial-gradient()"
+        ]
+    },
+    "range": {
+        "values": [
+            "auto",
+            "infinite"
+        ]
+    },
+    "ruby-align": {
+        "values": [
+            "auto",
+            "center",
+            "distribute-letter",
+            "distribute-space",
+            "left",
+            "line-edge",
+            "right",
+            "start",
+            "space-between",
+            "space-around"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/ruby-align"
+    },
+    "ruby-overhang": {
+        "values": [
+            "auto",
+            "end",
+            "none",
+            "start"
+        ]
+    },
+    "ruby-position": {
+        "values": [
+            "after",
+            "before",
+            "inline",
+            "right",
+            "alternate",
+            "over",
+            "under",
+            "inter-character"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/ruby-position"
+    },
+    "ruby-span": {
+        "values": [
+            "attr(x)",
+            "none"
+        ]
+    },
+    "scrollbar-3dlight-color": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/scrollbar-3dlight-color",
+        "type": "color"
+    },
+    "scrollbar-arrow-color": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/scrollbar-arrow-color",
+        "type": "color"
+    },
+    "scrollbar-base-color": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/scrollbar-base-color",
+        "type": "color"
+    },
+    "scrollbar-darkshadow-color": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/scrollbar-darkshadow-color",
+        "type": "color"
+    },
+    "scrollbar-face-color": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/scrollbar-face-color",
+        "type": "color"
+    },
+    "scrollbar-highlight-color": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/scrollbar-highlight-color",
+        "type": "color"
+    },
+    "scrollbar-shadow-color": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/scrollbar-shadow-color",
+        "type": "color"
+    },
+    "scrollbar-track-color": {
+        "values": [],
+        "type": "color"
+    },
+    "scroll-snap-coordinate": {
+        "values": [
+            "none",
+            "bottom",
+            "center",
+            "left",
+            "right",
+            "top"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/scroll-snap-coordinate"
+    },
+    "scroll-snap-destination": {
+        "values": [
+            "bottom",
+            "center",
+            "left",
+            "right",
+            "top"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/scroll-snap-destination"
+    },
+    "scroll-snap-points-x": {
+        "values": [
+            "none",
+            "repeat()",
+            "repeat"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/scroll-snap-points-x"
+    },
+    "scroll-snap-points-y": {
+        "values": [
+            "none",
+            "repeat()",
+            "repeat"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/scroll-snap-points-y"
+    },
+    "shape-rendering": {
+        "values": [
+            "auto",
+            "crispEdges",
+            "geometricPrecision",
+            "optimizeSpeed"
+        ]
+    },
+    "size": {
+        "values": [
+            "auto",
+            "portrait",
+            "landscape"
+        ]
+    },
+    "stop-color": {
+        "values": [],
+        "type": "color"
+    },
+    "stop-opacity": {
+        "values": []
+    },
+    "stroke": {
+        "values": [
+            "url()",
+            "none"
+        ]
+    },
+    "stroke-dasharray": {
+        "values": [
+            "none"
+        ]
+    },
+    "stroke-dashoffset": {
+        "values": []
+    },
+    "stroke-linecap": {
+        "values": [
+            "butt",
+            "round",
+            "square"
+        ]
+    },
+    "stroke-linejoin": {
+        "values": [
+            "bevel",
+            "miter",
+            "round"
+        ]
+    },
+    "stroke-miterlimit": {
+        "values": []
+    },
+    "stroke-opacity": {
+        "values": []
+    },
+    "stroke-width": {
+        "values": []
+    },
+    "suffix": {
+        "values": [
+            "url()",
+            "image()",
+            "-webkit-image-set()",
+            "image-set()",
+            "-moz-element()",
+            "element()",
+            "cross-fade()",
+            "-webkit-gradient()",
+            "-webkit-linear-gradient()",
+            "-moz-linear-gradient()",
+            "-o-linear-gradient()",
+            "linear-gradient()",
+            "-webkit-repeating-linear-gradient()",
+            "-moz-repeating-linear-gradient()",
+            "-o-repeating-linear-gradient()",
+            "repeating-linear-gradient()",
+            "-webkit-radial-gradient()",
+            "-moz-radial-gradient()",
+            "radial-gradient()",
+            "-webkit-repeating-radial-gradient()",
+            "-moz-repeating-radial-gradient()",
+            "repeating-radial-gradient()"
+        ]
+    },
+    "system": {
+        "values": [
+            "additive",
+            "alphabetic",
+            "cyclic",
+            "extends",
+            "fixed",
+            "numeric",
+            "symbolic"
+        ]
+    },
+    "symbols": {
+        "values": [
+            "url()",
+            "image()",
+            "-webkit-image-set()",
+            "image-set()",
+            "-moz-element()",
+            "element()",
+            "cross-fade()",
+            "-webkit-gradient()",
+            "-webkit-linear-gradient()",
+            "-moz-linear-gradient()",
+            "-o-linear-gradient()",
+            "linear-gradient()",
+            "-webkit-repeating-linear-gradient()",
+            "-moz-repeating-linear-gradient()",
+            "-o-repeating-linear-gradient()",
+            "repeating-linear-gradient()",
+            "-webkit-radial-gradient()",
+            "-moz-radial-gradient()",
+            "radial-gradient()",
+            "-webkit-repeating-radial-gradient()",
+            "-moz-repeating-radial-gradient()",
+            "repeating-radial-gradient()"
+        ]
+    },
+    "text-anchor": {
+        "values": [
+            "end",
+            "middle",
+            "start"
+        ]
+    },
+    "text-orientation": {
+        "values": [
+            "sideways",
+            "sideways-right",
+            "upright",
+            "mixed"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/text-orientation"
+    },
+    "touch-action": {
+        "values": [
+            "auto",
+            "cross-slide-x",
+            "cross-slide-y",
+            "double-tap-zoom",
+            "manipulation",
+            "none",
+            "pan-x",
+            "pan-y",
+            "pinch-zoom",
+            "pan-left",
+            "pan-right",
+            "pan-up",
+            "pan-down"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/touch-action"
+    },
+    "-webkit-animation": {
+        "values": [
+            "alternate",
+            "alternate-reverse",
+            "backwards",
+            "both",
+            "forwards",
+            "infinite",
+            "none",
+            "normal",
+            "reverse",
+            "ease",
+            "ease-in",
+            "ease-in-out",
+            "ease-out",
+            "linear",
+            "step-end",
+            "step-start",
+            "steps()",
+            "cubic-bezier()",
+            "cubic-bezier(0.6, -0.28, 0.735, 0.045)",
+            "cubic-bezier(0.68, -0.55, 0.265, 1.55)",
+            "cubic-bezier(0.175, 0.885, 0.32, 1.275)",
+            "cubic-bezier(0.6, 0.04, 0.98, 0.335)",
+            "cubic-bezier(0.785, 0.135, 0.15, 0.86)",
+            "cubic-bezier(0.075, 0.82, 0.165, 1)",
+            "cubic-bezier(0.55, 0.055, 0.675, 0.19)",
+            "cubic-bezier(0.645, 0.045, 0.355, 1)",
+            "cubic-bezier(0.215, 0.610, 0.355, 1)",
+            "cubic-bezier(0.95, 0.05, 0.795, 0.035)",
+            "cubic-bezier(1, 0, 0, 1)",
+            "cubic-bezier(0.19, 1, 0.22, 1)",
+            "cubic-bezier(0.47, 0, 0.745, 0.715)",
+            "cubic-bezier(0.445, 0.05, 0.55, 0.95)",
+            "cubic-bezier(0.39, 0.575, 0.565, 1)",
+            "cubic-bezier(0.55, 0.085, 0.68, 0.53)",
+            "cubic-bezier(0.455, 0.03, 0.515, 0.955)",
+            "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+            "cubic-bezier(0.895, 0.03, 0.685, 0.22)",
+            "cubic-bezier(0.77, 0, 0.175, 1)",
+            "cubic-bezier(0.165, 0.84, 0.44, 1)",
+            "cubic-bezier(0.755, 0.05, 0.855, 0.06)",
+            "cubic-bezier(0.86, 0, 0.07, 1)",
+            "cubic-bezier(0.23, 1, 0.320, 1)"
+        ]
+    },
+    "-webkit-animation-delay": {
+        "values": []
+    },
+    "-webkit-animation-direction": {
+        "values": [
+            "alternate",
+            "alternate-reverse",
+            "normal",
+            "reverse"
+        ]
+    },
+    "-webkit-animation-duration": {
+        "values": []
+    },
+    "-webkit-animation-fill-mode": {
+        "values": [
+            "backwards",
+            "both",
+            "forwards",
+            "none"
+        ]
+    },
+    "-webkit-animation-iteration-count": {
+        "values": [
+            "infinite"
+        ]
+    },
+    "-webkit-animation-name": {
+        "values": [
+            "none"
+        ]
+    },
+    "-webkit-animation-play-state": {
+        "values": [
+            "paused",
+            "running"
+        ]
+    },
+    "-webkit-animation-timing-function": {
+        "values": [
+            "ease",
+            "ease-in",
+            "ease-in-out",
+            "ease-out",
+            "linear",
+            "step-end",
+            "step-start",
+            "steps()",
+            "cubic-bezier()",
+            "cubic-bezier(0.6, -0.28, 0.735, 0.045)",
+            "cubic-bezier(0.68, -0.55, 0.265, 1.55)",
+            "cubic-bezier(0.175, 0.885, 0.32, 1.275)",
+            "cubic-bezier(0.6, 0.04, 0.98, 0.335)",
+            "cubic-bezier(0.785, 0.135, 0.15, 0.86)",
+            "cubic-bezier(0.075, 0.82, 0.165, 1)",
+            "cubic-bezier(0.55, 0.055, 0.675, 0.19)",
+            "cubic-bezier(0.645, 0.045, 0.355, 1)",
+            "cubic-bezier(0.215, 0.610, 0.355, 1)",
+            "cubic-bezier(0.95, 0.05, 0.795, 0.035)",
+            "cubic-bezier(1, 0, 0, 1)",
+            "cubic-bezier(0.19, 1, 0.22, 1)",
+            "cubic-bezier(0.47, 0, 0.745, 0.715)",
+            "cubic-bezier(0.445, 0.05, 0.55, 0.95)",
+            "cubic-bezier(0.39, 0.575, 0.565, 1)",
+            "cubic-bezier(0.55, 0.085, 0.68, 0.53)",
+            "cubic-bezier(0.455, 0.03, 0.515, 0.955)",
+            "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+            "cubic-bezier(0.895, 0.03, 0.685, 0.22)",
+            "cubic-bezier(0.77, 0, 0.175, 1)",
+            "cubic-bezier(0.165, 0.84, 0.44, 1)",
+            "cubic-bezier(0.755, 0.05, 0.855, 0.06)",
+            "cubic-bezier(0.86, 0, 0.07, 1)",
+            "cubic-bezier(0.23, 1, 0.320, 1)"
+        ]
+    },
+    "-webkit-appearance": {
+        "values": [
+            "button",
+            "button-bevel",
+            "caps-lock-indicator",
+            "caret",
+            "checkbox",
+            "default-button",
+            "listbox",
+            "listitem",
+            "media-fullscreen-button",
+            "media-mute-button",
+            "media-play-button",
+            "media-seek-back-button",
+            "media-seek-forward-button",
+            "media-slider",
+            "media-sliderthumb",
+            "menulist",
+            "menulist-button",
+            "menulist-text",
+            "menulist-textfield",
+            "none",
+            "push-button",
+            "radio",
+            "scrollbarbutton-down",
+            "scrollbarbutton-left",
+            "scrollbarbutton-right",
+            "scrollbarbutton-up",
+            "scrollbargripper-horizontal",
+            "scrollbargripper-vertical",
+            "scrollbarthumb-horizontal",
+            "scrollbarthumb-vertical",
+            "scrollbartrack-horizontal",
+            "scrollbartrack-vertical",
+            "searchfield",
+            "searchfield-cancel-button",
+            "searchfield-decoration",
+            "searchfield-results-button",
+            "searchfield-results-decoration",
+            "slider-horizontal",
+            "sliderthumb-horizontal",
+            "sliderthumb-vertical",
+            "slider-vertical",
+            "square-button",
+            "textarea",
+            "textfield",
+            "inner-spin-button",
+            "media-controls-background",
+            "media-controls-fullscreen-background",
+            "media-current-time-display",
+            "media-enter-fullscreen-button",
+            "media-exit-fullscreen-button",
+            "media-overlay-play-button",
+            "media-time-remaining-display",
+            "media-toggle-closed-captions-button",
+            "media-volume-slider",
+            "media-volume-slider-container",
+            "media-volume-sliderthumb",
+            "meter",
+            "progress-bar",
+            "progress-bar-value",
+            "-apple-pay-button"
+        ]
+    },
+    "-webkit-backdrop-filter": {
+        "values": [
+            "none",
+            "blur()",
+            "brightness()",
+            "contrast()",
+            "drop-shadow()",
+            "grayscale()",
+            "hue-rotate()",
+            "invert()",
+            "opacity()",
+            "saturate()",
+            "sepia()",
+            "url()"
+        ]
+    },
+    "-webkit-backface-visibility": {
+        "values": [
+            "hidden",
+            "visible"
+        ]
+    },
+    "-webkit-background-clip": {
+        "values": [
+            "border-box",
+            "content-box",
+            "padding-box"
+        ]
+    },
+    "-webkit-background-composite": {
+        "values": [
+            "border",
+            "padding"
+        ]
+    },
+    "-webkit-background-origin": {
+        "values": [
+            "border-box",
+            "content-box",
+            "padding-box"
+        ]
+    },
+    "-webkit-border-image": {
+        "values": [
+            "auto",
+            "fill",
+            "none",
+            "repeat",
+            "round",
+            "space",
+            "stretch",
+            "url()"
+        ]
+    },
+    "-webkit-box-align": {
+        "values": [
+            "baseline",
+            "center",
+            "end",
+            "start",
+            "stretch"
+        ]
+    },
+    "-webkit-box-direction": {
+        "values": [
+            "normal",
+            "reverse"
+        ]
+    },
+    "-webkit-box-flex": {
+        "values": []
+    },
+    "-webkit-box-flex-group": {
+        "values": []
+    },
+    "-webkit-box-ordinal-group": {
+        "values": []
+    },
+    "-webkit-box-orient": {
+        "values": [
+            "block-axis",
+            "horizontal",
+            "inline-axis",
+            "vertical"
+        ]
+    },
+    "-webkit-box-pack": {
+        "values": [
+            "center",
+            "end",
+            "justify",
+            "start"
+        ]
+    },
+    "-webkit-box-reflect": {
+        "values": [
+            "above",
+            "below",
+            "left",
+            "right"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/-webkit-box-reflect"
+    },
+    "-webkit-box-sizing": {
+        "values": [
+            "border-box",
+            "content-box"
+        ]
+    },
+    "-webkit-break-after": {
+        "values": [
+            "always",
+            "auto",
+            "avoid",
+            "avoid-column",
+            "avoid-page",
+            "avoid-region",
+            "column",
+            "left",
+            "page",
+            "region",
+            "right"
+        ]
+    },
+    "-webkit-break-before": {
+        "values": [
+            "always",
+            "auto",
+            "avoid",
+            "avoid-column",
+            "avoid-page",
+            "avoid-region",
+            "column",
+            "left",
+            "page",
+            "region",
+            "right"
+        ]
+    },
+    "-webkit-break-inside": {
+        "values": [
+            "auto",
+            "avoid",
+            "avoid-column",
+            "avoid-page",
+            "avoid-region"
+        ]
+    },
+    "-webkit-column-break-after": {
+        "values": [
+            "always",
+            "auto",
+            "avoid",
+            "avoid-column",
+            "avoid-page",
+            "avoid-region",
+            "column",
+            "left",
+            "page",
+            "region",
+            "right"
+        ]
+    },
+    "-webkit-column-break-before": {
+        "values": [
+            "always",
+            "auto",
+            "avoid",
+            "avoid-column",
+            "avoid-page",
+            "avoid-region",
+            "column",
+            "left",
+            "page",
+            "region",
+            "right"
+        ]
+    },
+    "-webkit-column-break-inside": {
+        "values": [
+            "auto",
+            "avoid",
+            "avoid-column",
+            "avoid-page",
+            "avoid-region"
+        ]
+    },
+    "-webkit-column-count": {
+        "values": [
+            "auto"
+        ]
+    },
+    "-webkit-column-gap": {
+        "values": [
+            "normal"
+        ]
+    },
+    "-webkit-column-rule": {
+        "values": [
+            "medium",
+            "thick",
+            "thin",
+            "dashed",
+            "dotted",
+            "double",
+            "groove",
+            "hidden",
+            "inset",
+            "none",
+            "outset",
+            "ridge",
+            "solid"
+        ]
+    },
+    "-webkit-column-rule-color": {
+        "values": [],
+        "type": "color"
+    },
+    "-webkit-column-rule-style": {
+        "values": [
+            "dashed",
+            "dotted",
+            "double",
+            "groove",
+            "hidden",
+            "inset",
+            "none",
+            "outset",
+            "ridge",
+            "solid"
+        ]
+    },
+    "-webkit-column-rule-width": {
+        "values": [
+            "medium",
+            "thick",
+            "thin"
+        ]
+    },
+    "-webkit-columns": {
+        "values": [
+            "auto"
+        ]
+    },
+    "-webkit-column-span": {
+        "values": [
+            "all",
+            "none"
+        ]
+    },
+    "-webkit-column-width": {
+        "values": [
+            "auto"
+        ]
+    },
+    "-webkit-filter": {
+        "values": [
+            "none",
+            "blur()",
+            "brightness()",
+            "contrast()",
+            "drop-shadow()",
+            "grayscale()",
+            "hue-rotate()",
+            "invert()",
+            "opacity()",
+            "saturate()",
+            "sepia()",
+            "url()"
+        ]
+    },
+    "-webkit-flow-from": {
+        "values": [
+            "none"
+        ]
+    },
+    "-webkit-flow-into": {
+        "values": [
+            "none"
+        ]
+    },
+    "-webkit-font-feature-settings": {
+        "values": [
+            "\"c2cs\"",
+            "\"dlig\"",
+            "\"kern\"",
+            "\"liga\"",
+            "\"lnum\"",
+            "\"onum\"",
+            "\"smcp\"",
+            "\"swsh\"",
+            "\"tnum\"",
+            "normal",
+            "off",
+            "on"
+        ]
+    },
+    "-webkit-hyphens": {
+        "values": [
+            "auto",
+            "manual",
+            "none"
+        ]
+    },
+    "-webkit-line-break": {
+        "values": [
+            "after-white-space",
+            "normal"
+        ]
+    },
+    "-webkit-margin-bottom-collapse": {
+        "values": [
+            "collapse",
+            "discard",
+            "separate"
+        ]
+    },
+    "-webkit-margin-collapse": {
+        "values": [
+            "collapse",
+            "discard",
+            "separate"
+        ]
+    },
+    "-webkit-margin-start": {
+        "values": [
+            "auto"
+        ]
+    },
+    "-webkit-margin-top-collapse": {
+        "values": [
+            "collapse",
+            "discard",
+            "separate"
+        ]
+    },
+    "-webkit-mask-clip": {
+        "values": [
+            "border-box",
+            "content-box",
+            "padding-box",
+            "border",
+            "padding",
+            "content",
+            "text"
+        ]
+    },
+    "-webkit-mask-image": {
+        "values": [
+            "none",
+            "url()",
+            "image()",
+            "-webkit-image-set()",
+            "image-set()",
+            "-moz-element()",
+            "element()",
+            "cross-fade()",
+            "-webkit-gradient()",
+            "-webkit-linear-gradient()",
+            "-moz-linear-gradient()",
+            "-o-linear-gradient()",
+            "linear-gradient()",
+            "-webkit-repeating-linear-gradient()",
+            "-moz-repeating-linear-gradient()",
+            "-o-repeating-linear-gradient()",
+            "repeating-linear-gradient()",
+            "-webkit-radial-gradient()",
+            "-moz-radial-gradient()",
+            "radial-gradient()",
+            "-webkit-repeating-radial-gradient()",
+            "-moz-repeating-radial-gradient()",
+            "repeating-radial-gradient()"
+        ]
+    },
+    "-webkit-mask-origin": {
+        "values": [
+            "border-box",
+            "content-box",
+            "padding-box",
+            "border",
+            "padding",
+            "content"
+        ]
+    },
+    "-webkit-mask-repeat": {
+        "values": [
+            "no-repeat",
+            "repeat",
+            "repeat-x",
+            "repeat-y",
+            "round",
+            "space"
+        ]
+    },
+    "-webkit-mask-size": {
+        "values": [
+            "auto",
+            "contain",
+            "cover"
+        ]
+    },
+    "-webkit-nbsp-mode": {
+        "values": [
+            "normal",
+            "space"
+        ]
+    },
+    "-webkit-overflow-scrolling": {
+        "values": [
+            "auto",
+            "touch"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/-webkit-overflow-scrolling"
+    },
+    "-webkit-padding-start": {
+        "values": []
+    },
+    "-webkit-perspective": {
+        "values": [
+            "none"
+        ]
+    },
+    "-webkit-perspective-origin": {
+        "values": [
+            "bottom",
+            "center",
+            "left",
+            "right",
+            "top"
+        ]
+    },
+    "-webkit-region-fragment": {
+        "values": [
+            "auto",
+            "break"
+        ]
+    },
+    "-webkit-tap-highlight-color": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/-webkit-tap-highlight-color",
+        "type": "color"
+    },
+    "-webkit-text-fill-color": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/-webkit-text-fill-color",
+        "type": "color"
+    },
+    "-webkit-text-size-adjust": {
+        "values": [
+            "auto",
+            "none"
+        ]
+    },
+    "-webkit-text-stroke": {
+        "values": [
+            "medium",
+            "thick",
+            "thin"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/-webkit-text-stroke"
+    },
+    "-webkit-text-stroke-color": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/-webkit-text-stroke-color",
+        "type": "color"
+    },
+    "-webkit-text-stroke-width": {
+        "values": [
+            "medium",
+            "thick",
+            "thin"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/-webkit-text-stroke-width"
+    },
+    "-webkit-touch-callout": {
+        "values": [
+            "none",
+            "default"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/-webkit-touch-callout"
+    },
+    "-webkit-transform": {
+        "values": [
+            "matrix()",
+            "matrix3d()",
+            "none",
+            "perspective()",
+            "rotate()",
+            "rotate3d()",
+            "rotateX('angle')",
+            "rotateY('angle')",
+            "rotateZ('angle')",
+            "scale()",
+            "scale3d()",
+            "scaleX()",
+            "scaleY()",
+            "scaleZ()",
+            "skew()",
+            "skewX()",
+            "skewY()",
+            "translate()",
+            "translate3d()",
+            "translateX()",
+            "translateY()",
+            "translateZ()"
+        ]
+    },
+    "-webkit-transform-origin": {
+        "values": [
+            "bottom",
+            "center",
+            "left",
+            "right",
+            "top"
+        ]
+    },
+    "-webkit-transform-origin-x": {
+        "values": []
+    },
+    "-webkit-transform-origin-y": {
+        "values": []
+    },
+    "-webkit-transform-origin-z": {
+        "values": []
+    },
+    "-webkit-transform-style": {
+        "values": [
+            "flat"
+        ]
+    },
+    "-webkit-transition": {
+        "values": [
+            "all",
+            "none",
+            "ease",
+            "ease-in",
+            "ease-in-out",
+            "ease-out",
+            "linear",
+            "step-end",
+            "step-start",
+            "steps()",
+            "cubic-bezier()",
+            "cubic-bezier(0.6, -0.28, 0.735, 0.045)",
+            "cubic-bezier(0.68, -0.55, 0.265, 1.55)",
+            "cubic-bezier(0.175, 0.885, 0.32, 1.275)",
+            "cubic-bezier(0.6, 0.04, 0.98, 0.335)",
+            "cubic-bezier(0.785, 0.135, 0.15, 0.86)",
+            "cubic-bezier(0.075, 0.82, 0.165, 1)",
+            "cubic-bezier(0.55, 0.055, 0.675, 0.19)",
+            "cubic-bezier(0.645, 0.045, 0.355, 1)",
+            "cubic-bezier(0.215, 0.610, 0.355, 1)",
+            "cubic-bezier(0.95, 0.05, 0.795, 0.035)",
+            "cubic-bezier(1, 0, 0, 1)",
+            "cubic-bezier(0.19, 1, 0.22, 1)",
+            "cubic-bezier(0.47, 0, 0.745, 0.715)",
+            "cubic-bezier(0.445, 0.05, 0.55, 0.95)",
+            "cubic-bezier(0.39, 0.575, 0.565, 1)",
+            "cubic-bezier(0.55, 0.085, 0.68, 0.53)",
+            "cubic-bezier(0.455, 0.03, 0.515, 0.955)",
+            "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+            "cubic-bezier(0.895, 0.03, 0.685, 0.22)",
+            "cubic-bezier(0.77, 0, 0.175, 1)",
+            "cubic-bezier(0.165, 0.84, 0.44, 1)",
+            "cubic-bezier(0.755, 0.05, 0.855, 0.06)",
+            "cubic-bezier(0.86, 0, 0.07, 1)",
+            "cubic-bezier(0.23, 1, 0.320, 1)"
+        ]
+    },
+    "-webkit-transition-delay": {
+        "values": []
+    },
+    "-webkit-transition-duration": {
+        "values": []
+    },
+    "-webkit-transition-property": {
+        "values": [
+            "all",
+            "none"
+        ]
+    },
+    "-webkit-transition-timing-function": {
+        "values": [
+            "ease",
+            "ease-in",
+            "ease-in-out",
+            "ease-out",
+            "linear",
+            "step-end",
+            "step-start",
+            "steps()",
+            "cubic-bezier()",
+            "cubic-bezier(0.6, -0.28, 0.735, 0.045)",
+            "cubic-bezier(0.68, -0.55, 0.265, 1.55)",
+            "cubic-bezier(0.175, 0.885, 0.32, 1.275)",
+            "cubic-bezier(0.6, 0.04, 0.98, 0.335)",
+            "cubic-bezier(0.785, 0.135, 0.15, 0.86)",
+            "cubic-bezier(0.075, 0.82, 0.165, 1)",
+            "cubic-bezier(0.55, 0.055, 0.675, 0.19)",
+            "cubic-bezier(0.645, 0.045, 0.355, 1)",
+            "cubic-bezier(0.215, 0.610, 0.355, 1)",
+            "cubic-bezier(0.95, 0.05, 0.795, 0.035)",
+            "cubic-bezier(1, 0, 0, 1)",
+            "cubic-bezier(0.19, 1, 0.22, 1)",
+            "cubic-bezier(0.47, 0, 0.745, 0.715)",
+            "cubic-bezier(0.445, 0.05, 0.55, 0.95)",
+            "cubic-bezier(0.39, 0.575, 0.565, 1)",
+            "cubic-bezier(0.55, 0.085, 0.68, 0.53)",
+            "cubic-bezier(0.455, 0.03, 0.515, 0.955)",
+            "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+            "cubic-bezier(0.895, 0.03, 0.685, 0.22)",
+            "cubic-bezier(0.77, 0, 0.175, 1)",
+            "cubic-bezier(0.165, 0.84, 0.44, 1)",
+            "cubic-bezier(0.755, 0.05, 0.855, 0.06)",
+            "cubic-bezier(0.86, 0, 0.07, 1)",
+            "cubic-bezier(0.23, 1, 0.320, 1)"
+        ]
+    },
+    "-webkit-user-drag": {
+        "values": [
+            "auto",
+            "element",
+            "none"
+        ]
+    },
+    "-webkit-user-modify": {
+        "values": [
+            "read-only",
+            "read-write",
+            "read-write-plaintext-only"
+        ]
+    },
+    "-webkit-user-select": {
+        "values": [
+            "auto",
+            "none",
+            "text"
+        ]
+    },
+    "writing-mode": {
+        "values": [
+            "horizontal-tb",
+            "sideways-lr",
+            "sideways-rl",
+            "vertical-lr",
+            "vertical-rl"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/writing-mode"
+    },
+    "zoom": {
+        "values": [
+            "normal",
+            "auto"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/zoom"
+    },
+    "-ms-ime-align": {
+        "values": [
+            "auto",
+            "after"
+        ]
+    },
+    "-moz-binding": {
+        "values": [
+            "none"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/-moz-binding"
+    },
+    "-moz-context-properties": {
+        "values": [
+            "none",
+            "fill",
+            "fill-opacity",
+            "stroke",
+            "stroke-opacity"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/-moz-context-properties"
+    },
+    "-moz-float-edge": {
+        "values": [
+            "border-box",
+            "content-box",
+            "margin-box",
+            "padding-box"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/-moz-float-edge"
+    },
+    "-moz-force-broken-image-icon": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/-moz-force-broken-image-icon"
+    },
+    "-moz-image-region": {
+        "values": [
+            "auto"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/-moz-image-region"
+    },
+    "-moz-orient": {
+        "values": [
+            "inline",
+            "block",
+            "horizontal",
+            "vertical"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/-moz-orient"
+    },
+    "-moz-outline-radius": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/-moz-outline-radius"
+    },
+    "-moz-outline-radius-bottomleft": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/-moz-outline-radius-bottomleft"
+    },
+    "-moz-outline-radius-bottomright": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/-moz-outline-radius-bottomright"
+    },
+    "-moz-outline-radius-topleft": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/-moz-outline-radius-topleft"
+    },
+    "-moz-outline-radius-topright": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/-moz-outline-radius-topright"
+    },
+    "-moz-stack-sizing": {
+        "values": [
+            "ignore",
+            "stretch-to-fit"
+        ]
+    },
+    "-moz-text-blink": {
+        "values": [
+            "none",
+            "blink"
+        ]
+    },
+    "-moz-user-input": {
+        "values": [
+            "auto",
+            "none",
+            "enabled",
+            "disabled"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/-moz-user-input"
+    },
+    "-moz-user-modify": {
+        "values": [
+            "read-only",
+            "read-write",
+            "write-only"
+        ]
+    },
+    "-moz-window-dragging": {
+        "values": [
+            "drag",
+            "no-drag"
+        ]
+    },
+    "-moz-window-shadow": {
+        "values": [
+            "default",
+            "menu",
+            "tooltip",
+            "sheet",
+            "none"
+        ]
+    },
+    "-webkit-border-before": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/-webkit-border-before"
+    },
+    "-webkit-border-before-color": {
+        "values": [],
+        "type": "color"
+    },
+    "-webkit-border-before-style": {
+        "values": []
+    },
+    "-webkit-border-before-width": {
+        "values": []
+    },
+    "-webkit-line-clamp": {
+        "values": [
+            "none"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/-webkit-line-clamp"
+    },
+    "-webkit-mask": {
+        "values": [
+            "border",
+            "padding",
+            "content",
+            "text"
+        ]
+    },
+    "-webkit-mask-attachment": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/-webkit-mask-attachment"
+    },
+    "-webkit-mask-composite": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/-webkit-mask-composite"
+    },
+    "-webkit-mask-position": {
+        "values": []
+    },
+    "-webkit-mask-position-x": {
+        "values": [
+            "left",
+            "center",
+            "right"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/-webkit-mask-position-x"
+    },
+    "-webkit-mask-position-y": {
+        "values": [
+            "top",
+            "center",
+            "bottom"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/-webkit-mask-position-y"
+    },
+    "-webkit-mask-repeat-x": {
+        "values": [
+            "repeat",
+            "no-repeat",
+            "space",
+            "round"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/-webkit-mask-repeat-x"
+    },
+    "-webkit-mask-repeat-y": {
+        "values": [
+            "repeat",
+            "no-repeat",
+            "space",
+            "round"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/-webkit-mask-repeat-y"
+    },
+    "accent-color": {
+        "values": [
+            "auto"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/accent-color",
+        "type": "color"
+    },
+    "align-tracks": {
+        "values": [
+            "normal"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/align-tracks"
+    },
+    "appearance": {
+        "values": [
+            "none",
+            "auto",
+            "textfield",
+            "menulist-button"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/appearance"
+    },
+    "aspect-ratio": {
+        "values": [
+            "auto"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/aspect-ratio"
+    },
+    "azimuth": {
+        "values": [
+            "left-side",
+            "far-left",
+            "left",
+            "center-left",
+            "center",
+            "center-right",
+            "right",
+            "far-right",
+            "right-side",
+            "behind",
+            "leftwards",
+            "rightwards"
+        ]
+    },
+    "backdrop-filter": {
+        "values": [
+            "none"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/backdrop-filter"
+    },
+    "border-block": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/border-block"
+    },
+    "border-block-color": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/border-block-color",
+        "type": "color"
+    },
+    "border-block-style": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/border-block-style"
+    },
+    "border-block-width": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/border-block-width"
+    },
+    "border-end-end-radius": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/border-end-end-radius"
+    },
+    "border-end-start-radius": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/border-end-start-radius"
+    },
+    "border-inline": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/border-inline"
+    },
+    "border-inline-color": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/border-inline-color",
+        "type": "color"
+    },
+    "border-inline-style": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/border-inline-style"
+    },
+    "border-inline-width": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/border-inline-width"
+    },
+    "border-start-end-radius": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/border-start-end-radius"
+    },
+    "border-start-start-radius": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/border-start-start-radius"
+    },
+    "box-align": {
+        "values": [
+            "start",
+            "center",
+            "end",
+            "baseline",
+            "stretch"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/box-align"
+    },
+    "box-direction": {
+        "values": [
+            "normal",
+            "reverse",
+            "inherit"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/box-direction"
+    },
+    "box-flex": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/box-flex"
+    },
+    "box-flex-group": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/box-flex-group"
+    },
+    "box-lines": {
+        "values": [
+            "single",
+            "multiple"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/box-lines"
+    },
+    "box-ordinal-group": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/box-ordinal-group"
+    },
+    "box-orient": {
+        "values": [
+            "horizontal",
+            "vertical",
+            "inline-axis",
+            "block-axis",
+            "inherit"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/box-orient"
+    },
+    "box-pack": {
+        "values": [
+            "start",
+            "center",
+            "end",
+            "justify"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/box-pack"
+    },
+    "color-adjust": {
+        "values": [
+            "economy",
+            "exact"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/color-adjust",
+        "type": "color"
+    },
+    "color-scheme": {
+        "values": [
+            "normal",
+            "light",
+            "dark"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/color-scheme",
+        "type": "color"
+    },
+    "content-visibility": {
+        "values": [
+            "visible",
+            "auto",
+            "hidden"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/content-visibility"
+    },
+    "counter-set": {
+        "values": [
+            "none"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/counter-set"
+    },
+    "font-optical-sizing": {
+        "values": [
+            "auto",
+            "none"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/font-optical-sizing"
+    },
+    "font-variation-settings": {
+        "values": [
+            "normal"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/font-variation-settings"
+    },
+    "font-smooth": {
+        "values": [
+            "auto",
+            "never",
+            "always"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/font-smooth"
+    },
+    "forced-color-adjust": {
+        "values": [
+            "auto",
+            "none"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/forced-color-adjust",
+        "type": "color"
+    },
+    "gap": {
+        "values": []
+    },
+    "initial-letter": {
+        "values": [
+            "normal"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/initial-letter"
+    },
+    "initial-letter-align": {
+        "values": [
+            "auto",
+            "alphabetic",
+            "hanging",
+            "ideographic"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/initial-letter-align"
+    },
+    "inset": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/inset"
+    },
+    "inset-block": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/inset-block"
+    },
+    "inset-block-end": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/inset-block-end"
+    },
+    "inset-block-start": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/inset-block-start"
+    },
+    "inset-inline": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/inset-inline"
+    },
+    "inset-inline-end": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/inset-inline-end"
+    },
+    "inset-inline-start": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/inset-inline-start"
+    },
+    "justify-tracks": {
+        "values": [
+            "normal",
+            "left",
+            "right"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/justify-tracks"
+    },
+    "line-clamp": {
+        "values": [
+            "none"
+        ]
+    },
+    "line-height-step": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/line-height-step"
+    },
+    "margin-block": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/margin-block"
+    },
+    "margin-inline": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/margin-inline"
+    },
+    "margin-trim": {
+        "values": [
+            "none",
+            "in-flow",
+            "all"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/margin-trim"
+    },
+    "mask": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/mask"
+    },
+    "mask-border": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/mask-border"
+    },
+    "mask-border-mode": {
+        "values": [
+            "luminance",
+            "alpha"
+        ]
+    },
+    "mask-border-outset": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/mask-border-outset"
+    },
+    "mask-border-repeat": {
+        "values": [
+            "stretch",
+            "repeat",
+            "round",
+            "space"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/mask-border-repeat"
+    },
+    "mask-border-slice": {
+        "values": [
+            "fill"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/mask-border-slice"
+    },
+    "mask-border-source": {
+        "values": [
+            "none"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/mask-border-source"
+    },
+    "mask-border-width": {
+        "values": [
+            "auto"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/mask-border-width"
+    },
+    "mask-clip": {
+        "values": [
+            "no-clip"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/mask-clip"
+    },
+    "mask-composite": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/mask-composite"
+    },
+    "masonry-auto-flow": {
+        "values": [
+            "pack",
+            "next",
+            "definite-first",
+            "ordered"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/masonry-auto-flow"
+    },
+    "math-style": {
+        "values": [
+            "normal",
+            "compact"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/math-style"
+    },
+    "max-lines": {
+        "values": [
+            "none"
+        ]
+    },
+    "offset": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/offset"
+    },
+    "offset-anchor": {
+        "values": [
+            "auto"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/offset-anchor"
+    },
+    "offset-distance": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/offset-distance"
+    },
+    "offset-path": {
+        "values": [
+            "none",
+            "ray",
+            "contain"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/offset-path"
+    },
+    "offset-position": {
+        "values": [
+            "auto"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/offset-position"
+    },
+    "offset-rotate": {
+        "values": [
+            "auto",
+            "reverse"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/offset-rotate"
+    },
+    "overflow-anchor": {
+        "values": [
+            "auto",
+            "none"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/overflow-anchor"
+    },
+    "overflow-block": {
+        "values": [
+            "visible",
+            "hidden",
+            "clip",
+            "scroll",
+            "auto"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/overflow-block"
+    },
+    "overflow-clip-box": {
+        "values": [
+            "padding-box",
+            "content-box"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Mozilla/Gecko/Chrome/CSS/overflow-clip-box"
+    },
+    "overflow-clip-margin": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/overflow-clip-margin"
+    },
+    "overflow-inline": {
+        "values": [
+            "visible",
+            "hidden",
+            "clip",
+            "scroll",
+            "auto"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/overflow-inline"
+    },
+    "overscroll-behavior": {
+        "values": [
+            "contain",
+            "none",
+            "auto"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior"
+    },
+    "overscroll-behavior-block": {
+        "values": [
+            "contain",
+            "none",
+            "auto"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior-block"
+    },
+    "overscroll-behavior-inline": {
+        "values": [
+            "contain",
+            "none",
+            "auto"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior-inline"
+    },
+    "overscroll-behavior-x": {
+        "values": [
+            "contain",
+            "none",
+            "auto"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior-x"
+    },
+    "overscroll-behavior-y": {
+        "values": [
+            "contain",
+            "none",
+            "auto"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior-y"
+    },
+    "padding-block": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/padding-block"
+    },
+    "padding-inline": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/padding-inline"
+    },
+    "place-content": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/place-content"
+    },
+    "place-items": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/place-items"
+    },
+    "place-self": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/place-self"
+    },
+    "rotate": {
+        "values": [
+            "none",
+            "x",
+            "y",
+            "z"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/rotate"
+    },
+    "row-gap": {
+        "values": [
+            "normal"
+        ]
+    },
+    "ruby-merge": {
+        "values": [
+            "separate",
+            "collapse",
+            "auto"
+        ]
+    },
+    "scale": {
+        "values": [
+            "none"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/scale"
+    },
+    "scrollbar-color": {
+        "values": [
+            "auto"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/scrollbar-color",
+        "type": "color"
+    },
+    "scrollbar-gutter": {
+        "values": [
+            "auto",
+            "stable",
+            "both-edges"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/scrollbar-gutter"
+    },
+    "scrollbar-width": {
+        "values": [
+            "auto",
+            "thin",
+            "none"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/scrollbar-width"
+    },
+    "scroll-margin": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/scroll-margin"
+    },
+    "scroll-margin-block": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/scroll-margin-block"
+    },
+    "scroll-margin-block-start": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/scroll-margin-block-start"
+    },
+    "scroll-margin-block-end": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/scroll-margin-block-end"
+    },
+    "scroll-margin-bottom": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/scroll-margin-bottom"
+    },
+    "scroll-margin-inline": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/scroll-margin-inline"
+    },
+    "scroll-margin-inline-start": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/scroll-margin-inline-start"
+    },
+    "scroll-margin-inline-end": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/scroll-margin-inline-end"
+    },
+    "scroll-margin-left": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/scroll-margin-left"
+    },
+    "scroll-margin-right": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/scroll-margin-right"
+    },
+    "scroll-margin-top": {
+        "values": [],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/scroll-margin-top"
+    },
+    "scroll-padding": {
+        "values": [
+            "auto"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/scroll-padding"
+    },
+    "scroll-padding-block": {
+        "values": [
+            "auto"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/scroll-padding-block"
+    },
+    "scroll-padding-block-start": {
+        "values": [
+            "auto"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/scroll-padding-block-start"
+    },
+    "scroll-padding-block-end": {
+        "values": [
+            "auto"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/scroll-padding-block-end"
+    },
+    "scroll-padding-bottom": {
+        "values": [
+            "auto"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/scroll-padding-bottom"
+    },
+    "scroll-padding-inline": {
+        "values": [
+            "auto"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/scroll-padding-inline"
+    },
+    "scroll-padding-inline-start": {
+        "values": [
+            "auto"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/scroll-padding-inline-start"
+    },
+    "scroll-padding-inline-end": {
+        "values": [
+            "auto"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/scroll-padding-inline-end"
+    },
+    "scroll-padding-left": {
+        "values": [
+            "auto"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/scroll-padding-left"
+    },
+    "scroll-padding-right": {
+        "values": [
+            "auto"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/scroll-padding-right"
+    },
+    "scroll-padding-top": {
+        "values": [
+            "auto"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/scroll-padding-top"
+    },
+    "scroll-snap-align": {
+        "values": [
+            "none",
+            "start",
+            "end",
+            "center"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/scroll-snap-align"
+    },
+    "scroll-snap-stop": {
+        "values": [
+            "normal",
+            "always"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/scroll-snap-stop"
+    },
+    "scroll-snap-type-x": {
+        "values": [
+            "none",
+            "mandatory",
+            "proximity"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/scroll-snap-type-x"
+    },
+    "scroll-snap-type-y": {
+        "values": [
+            "none",
+            "mandatory",
+            "proximity"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/scroll-snap-type-y"
+    },
+    "text-combine-upright": {
+        "values": [
+            "none",
+            "all",
+            "digits"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/text-combine-upright"
+    },
+    "text-decoration-skip-ink": {
+        "values": [
+            "auto",
+            "all",
+            "none"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/text-decoration-skip-ink"
+    },
+    "text-decoration-thickness": {
+        "values": [
+            "auto",
+            "from-font"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/text-decoration-thickness"
+    },
+    "text-size-adjust": {
+        "values": [
+            "none",
+            "auto"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/text-size-adjust"
+    },
+    "text-underline-offset": {
+        "values": [
+            "auto"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/text-underline-offset"
+    },
+    "transform-box": {
+        "values": [
+            "content-box",
+            "border-box",
+            "fill-box",
+            "stroke-box",
+            "view-box"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/transform-box"
+    },
+    "translate": {
+        "values": [
+            "none"
+        ],
+        "MDN_URL": "https://developer.mozilla.org/docs/Web/CSS/translate"
+    },
+    "speak-as": {
+        "values": [
+            "auto",
+            "bullets",
+            "numbers",
+            "words",
+            "spell-out"
+        ]
+    },
+    "ascent-override": {
+        "values": [
+            "normal"
+        ]
+    },
+    "descent-override": {
+        "values": [
+            "normal"
+        ]
+    },
+    "line-gap-override": {
+        "values": [
+            "normal"
+        ]
+    },
+    "size-adjust": {
+        "values": []
+    },
+    "bleed": {
+        "values": [
+            "auto"
+        ]
+    },
+    "marks": {
+        "values": [
+            "none",
+            "crop",
+            "cross"
+        ]
+    },
+    "syntax": {
+        "values": []
+    },
+    "inherits": {
+        "values": [
+            "true",
+            "false"
+        ]
+    },
+    "initial-value": {
+        "values": []
+    },
+    "max-zoom": {
+        "values": [
+            "auto"
+        ]
+    },
+    "min-zoom": {
+        "values": [
+            "auto"
+        ]
+    },
+    "orientation": {
+        "values": [
+            "auto",
+            "portrait",
+            "landscape"
+        ]
+    },
+    "user-zoom": {
+        "values": [
+            "zoom",
+            "fixed"
+        ]
+    },
+    "viewport-fit": {
+        "values": [
+            "auto",
+            "contain",
+            "cover"
+        ]
+    }
+}

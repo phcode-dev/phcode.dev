@@ -1,0 +1,41 @@
+<table class="bottom-panel-table table table-striped table-condensed row-highlight">
+    <tbody>
+        {{#reportList}}
+        <tr class="inspector-section">
+            <td colspan="4">
+                <span class="disclosure-triangle {{#isExpanded}}expanded{{/isExpanded}}"></span>
+                <input type="hidden" value="{{providerName}}" />
+                {{providerName}} ({{results.length}})
+            </td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        {{#results}}
+        <tr class="{{display}} inspector-line">
+            <td class="line-number" data-line="{{pos.line}}" data-character="{{pos.ch}}">{{friendlyLine}}</td>
+            <td class="line-icon">
+                <i class="{{iconClass}}"></i>
+            </td>
+            <td class="line-text">{{message}}{{{htmlMessage}}}</td>
+            <td>
+                <button class="btn btn-mini table-copy-err-button ph-copy-problem" title="{{Strings.COPY_ERROR}}"
+                        data-message="{{message}}">
+                    <i class="fa-solid fa-copy ph-copy-problem"></i>
+                </button>
+            </td>
+            <td>
+                {{#fix.id}}
+                <button class="btn btn-mini table-fix-err-button ph-fix-problem"
+                        data-fixid="{{fix.id}}">
+                    {{Strings.FIX}}
+                </button>
+                {{/fix.id}}
+            </td>
+            <td class="line-snippet">{{codeSnippet}}</td>
+        </tr>
+        {{/results}}
+        {{/reportList}}
+    </tbody>
+</table>

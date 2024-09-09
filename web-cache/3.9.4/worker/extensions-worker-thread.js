@@ -1,2 +1,0 @@
-const urlParams=new URLSearchParams(location.search),debugMode="true"===urlParams.get("debug");let baseURL=location.origin+location.pathname;baseURL=(baseURL=baseURL.substring(0,baseURL.lastIndexOf("/"))).substring(0,baseURL.lastIndexOf("/")+1),self.Phoenix={baseURL:baseURL};import*as EventDispatcher from"../utils/EventDispatcher.js";import*as WorkerComm from"./WorkerComm.js";console.log("Extensions worker loaded in debug mode: ",debugMode),debugMode||(console.log=console.info=function(){});
-//# sourceMappingURL=extensions-worker-thread.js.map

@@ -1,0 +1,2 @@
+define(function(require,exports,module){var _=require("thirdparty/lodash"),_factories=[];function registerViewFactory(factory){_factories.push(factory)}function findSuitableFactoryForPath(fullPath){return _.find(_factories,function(factory){return factory.canOpenFile(fullPath)})}exports.registerViewFactory=registerViewFactory,exports.findSuitableFactoryForPath=findSuitableFactoryForPath});
+//# sourceMappingURL=MainViewFactory.js.map
