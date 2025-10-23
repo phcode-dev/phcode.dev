@@ -1,0 +1,2 @@
+define(function(require,exports,module){const EventDispatcher=require("utils/EventDispatcher"),KernalModeTrust=window.KernalModeTrust;if(!KernalModeTrust)throw new Error("Login service should have access to KernalModeTrust. Cannot boot without trust ring");const secureExports={};EventDispatcher.makeEventDispatcher(secureExports),KernalModeTrust.loginService=secureExports});
+//# sourceMappingURL=setup-login-service.js.map
