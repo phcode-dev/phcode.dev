@@ -1,2 +1,0 @@
-define(function(require,exports,module){const SnippetHintsList=[];exports.SnippetHintsList=SnippetHintsList});
-//# sourceMappingURL=global.js.map

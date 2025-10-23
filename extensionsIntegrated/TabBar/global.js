@@ -1,2 +1,0 @@
-define(function(require,exports,module){let firstPaneWorkingSet=[],secondPaneWorkingSet=[];module.exports={firstPaneWorkingSet:firstPaneWorkingSet,secondPaneWorkingSet:secondPaneWorkingSet}});
-//# sourceMappingURL=global.js.map
